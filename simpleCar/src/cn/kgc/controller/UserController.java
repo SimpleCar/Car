@@ -16,6 +16,6 @@ public class UserController {
     @RequestMapping("test")
     public String test(Model model){
         model.addAttribute("userList",userService.selectAll());
-        return "signIn";
+        return "test";
     }
 }
