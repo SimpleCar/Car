@@ -16,6 +16,5 @@
     </script>
   </head>
   <body onload="index()">
-  <h1>结局难更改</h1>
   </body>
 </html>
