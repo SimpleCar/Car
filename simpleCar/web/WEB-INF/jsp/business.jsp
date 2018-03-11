@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/3/10
-  Time: 16:52
+  Date: 0011 2018年03月11日
+  Time: 下午 18:11:17
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  <h1>外</h1>
-  </body>
+<head>
+    <title>我是商家</title>
+</head>
+<body>
+
+</body>
 </html>

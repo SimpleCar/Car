@@ -13,9 +13,13 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("test")
-    public String test(Model model){
-        model.addAttribute("userList",userService.selectAll());
-        return "test";
+    @RequestMapping("index")
+    public String index(Model model){
+        model.addAttribute("userList","userService.selectAll()");
+        return "index";
+    }
+    @RequestMapping("business")
+    public String business(){
+        return "business";
     }
 }
