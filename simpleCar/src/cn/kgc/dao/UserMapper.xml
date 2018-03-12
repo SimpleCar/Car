@@ -6,4 +6,8 @@
     <select id="selectAll" resultType="User">
         SELECT * FROM user;
     </select>
+
+    <select id="selectUser" resultType="User">
+        SELECT u.uanme,u.upwd from user AS u where u.uname=#{uname} and u.upwd=#{upwd}
+    </select>
 </mapper>

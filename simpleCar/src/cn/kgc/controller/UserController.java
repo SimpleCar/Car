@@ -1,5 +1,6 @@
 package cn.kgc.controller;
 
+import cn.kgc.entity.User;
 import cn.kgc.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +14,16 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("test")
+
+    @RequestMapping("index")
     public String test(Model model){
         model.addAttribute("userList",userService.selectAll());
-        return "test";
+        return "index";
+    }
+
+    @RequestMapping("goSignIn")
+    public String goSignIn(User user,Model model){
+        model.addAttribute("user",user);
+        return "signIn";
     }
 }

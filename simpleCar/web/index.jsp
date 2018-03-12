@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>$SimpleCar$</title>
+    <script type="application/javascript">
+      function index() {
+          window.location="userController/index"
+      }
+    </script>
   </head>
-  <body>
-  <a href="userController/test">test</a>
+  <body onload="index()">
+
   </body>
 </html>
