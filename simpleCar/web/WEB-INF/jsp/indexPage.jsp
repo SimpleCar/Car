@@ -66,8 +66,8 @@
         <!-- right -->
         <ul class="clearfix shortcut_info float-r">
             <li>
-                <span>欢迎来到淘车</span>
-                <a href="javascript:;" class="active" id="tc_top_myNickName" onclick="location.href='https://home.taoche.com/login/?returnurl='+encodeURIComponent(location.href)">登录</a>
+                <span>欢迎${phone}来到淘车</span>
+                <a href="/userController/goSignIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche" _islog="1">我的淘车

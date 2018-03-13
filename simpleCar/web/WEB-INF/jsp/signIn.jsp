@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/3/12
-  Time: 10:18
+  Date: 2018/3/10
+  Time: 13:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -50,7 +50,7 @@
 
     <link href="../../statics/css/index.css" rel="stylesheet" type="text/css" />
     <script>
-        var returnurl = "http://xin.taoche.com/guangzhou/";
+        var returnurl = "http://www.taoche.com/all/?WT.mc_id=PC_PZ_BD&from=9408";
         // var loadsign = 'login';
         var loadsign = false;
         CODE_GETTING_URL='/Login/GetCodeII';
@@ -82,7 +82,7 @@
         <ul class="clearfix shortcut_info float-r">
             <li>
                 <span>欢迎来到淘车</span>
-                <a href="javascript:;" class="active" id="tc_top_myNickName" onclick="location.href='https://home.taoche.com/login/?returnurl='+encodeURIComponent(location.href)">登录</a>
+                <a href="/userController/goSignIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
@@ -119,10 +119,6 @@
                     <a href="//app.yiche.com/taoche/" target="_blank" rel="nofollow" logwt="navigation_header_app_ersc">淘车二手车</a>
                     <a href="//www.daikuan.com/app/" target="_blank" rel="nofollow">易鑫车贷</a>
                 </div>
-            </li>
-            <li class="yx-zp">
-                <a rel="nofollow" target="_blank" href="//job.yxqiche.com/" title="易鑫招聘" class="info-link">易鑫招聘</a>
-            </li>
         </ul>
     </div>
 </div>
@@ -173,7 +169,7 @@
 <div class="nav_menu">
     <ul id="ul_menu" class="area clearfix">
         <li data-menu="home" class="home">
-            <a logwt="navigation_home" class="link" href="//www.taoche.com/" _islog="1">
+            <a logwt="navigation_home" class="link" href="" _islog="1">
                 <span>首页</span>
             </a>
             <em class="spacer"></em>
@@ -213,7 +209,7 @@
 
 <!-- -----------------------头结束--------------------------- -->
 <!-- header -->
-<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='y91GimhSAotK8qnEfzYmiQCD3ExwONO-jC-eB76ShmTQYP9pjvTUD43URhhmbbtbb3J1jv2d_SU5pCrVLh2dwPxiOU81' value='y91GimhSAotK8qnEfzYmiQCD3ExwONO-jC-eB76ShmTQYP9pjvTUD43URhhmbbtbb3J1jv2d_SU5pCrVLh2dwPxiOU81'>
+<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='OEsD0-BIWo_2sLUBgVsN8yV1NTJ94W2fOWDTwe8UBefdXZ4_Q_dymVDJHhdaYlds8LgsgFxJg0lRcek_GhqzWRbwjMM1' value='OEsD0-BIWo_2sLUBgVsN8yV1NTJ94W2fOWDTwe8UBefdXZ4_Q_dymVDJHhdaYlds8LgsgFxJg0lRcek_GhqzWRbwjMM1'>
 
 <!--Content-->
 
@@ -225,7 +221,7 @@
             <div class="form clrfix">
                 <header class="tab-box clrfix">
                     <aside id="2" class="fl tab cur-p cur">手机快捷登录</aside>
-                    <aside id="1" class="fl tab cur-p cur">账号密码登录</aside>
+                    <aside id="1" class="fl tab cur-p">账号密码登录</aside>
                 </header>
                 <article class="login-con">
                     <blockquote id="form">
@@ -252,7 +248,7 @@
                             <div class="jyts-box"><span class="jyts jyts-imgValidateCode">请输入正确的验证码</span></div>
                             <div class="clrfix tools-box">
                                 <div class="fl"><input id="rememberMe1" name="rememberMe" class="data" type="checkbox" value="false"> 自动登录</div>
-                                <a class="apart hide fr" href="/ForgetPwd?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f">忘记密码</a>
+                                <a class="apart hide fr" href="/ForgetPwd?returnurl=http%253a%252f%252fwww.taoche.com%252fall%252f%253fWT.mc_id%253dPC_PZ_BD%2526from%253d9408">忘记密码</a>
                             </div>
                         </blockquote>
 
@@ -285,16 +281,7 @@
                             <a href="/userController/goSignUp">免费注册</a>
                         </div>
 
-                        <dl class="other-login">
-                            <dt>其他方式登录</dt>
-                            <dd>
-                                <a href="/login/LoginWeiXin?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f" class="icon01"></a>
-                                <a href="/login/LoginSina?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f" class="icon02"></a>
-                                <a href="/login/LoginQQ?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f" class="icon03"></a>
-                                <a href="/login/LoginJD?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f" class="icon04"></a>
-                                <a href="/login/LoginYiChe?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f" class="icon05"></a>
-                            </dd>
-                        </dl>
+
                     </blockquote>
                 </article>
             </div>
@@ -310,19 +297,19 @@
 <!--整屏蒙层end-->
 
 
-<script src="//img2.yixinfinance.com/taoche/common/common.js?v=201801301002"></script>
+<script src="../../statics/js/common.js"></script>
 
 
-<script src="//img4.yixinfinance.com/taoche/usercenter/login/index.js?v=201801301002"></script>
+<script src="../../statics/js/index.js"></script>
 
 <!-- -----------------------尾开始--------------------------- -->
-<p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img class="ft-rc3" src="//image.bitautoimg.com/taoche/2018_pc_usedcar/adv-group.png" alt="广告" /></p>
+<p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</p>
 
 <!-- -----------------------尾结束--------------------------- -->
 <!-- 2018 Taoche PC改版新车和二手车公共头部所需JS引用 -->
-<script src="//cache.taoche.cn/packjs/taoche_pc_header_common.js?v=201801301002"></script>
+<script src="../../statics/js/header_common.js"></script>
 <!-- 广告代码 -->
-<script src="//g.taoche.cn/js/senseNew.js"></script>
+<script src="../../statics/js/senseNew.js"></script>
 
 <!--百度统计PC-->
 <script>
@@ -335,7 +322,7 @@
     })();
 </script>
 <!--webtrendsPC-->
-<script type="text/javascript" src="https://st1.taoche.cn/tongji/webtrends/dcs_ucar.js"></script>
+<script type="text/javascript" src="../../statics/js/dcs_ucar.js"></script>
 <!--大数据-->
 <script type="text/javascript">
     (function () {
