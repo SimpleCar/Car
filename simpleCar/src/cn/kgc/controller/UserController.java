@@ -33,4 +33,9 @@ public class UserController {
 
         return "signUp";
     }
+
+    @RequestMapping("goOrder")
+    public String goOrder(){ return "order"; }
+
+
 }
