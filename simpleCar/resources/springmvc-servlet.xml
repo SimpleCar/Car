@@ -40,7 +40,7 @@
    		</mvc:message-converters>
    </mvc:annotation-driven>
    
-  <mvc:resources location="/statics/" mapping="/static/**"></mvc:resources>
+  <mvc:resources location="/statics/" mapping="/statics/**"></mvc:resources>
 
     <!-- 配置多视图解析器 -->
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">

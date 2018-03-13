@@ -274,7 +274,7 @@ header#Header .hd-top-con li.xc-phone i {
     float: left;
     width: 12px;
     height: 19px;
-    background: url(/taoche/common/images/header_icon.b8bcf3.png) no-repeat -103px top;
+    background: url(../image/header_icon.b8bcf3.png) no-repeat -103px top;
     margin: 10px 10px 0
 }
 
@@ -283,7 +283,7 @@ header#Header .hd-top-con li.xc-pub i {
     float: left;
     width: 22px;
     height: 18px;
-    background: url(/taoche/common/images/header_icon.b8bcf3.png) no-repeat -43px -1px;
+    background: url(../image/header_icon.b8bcf3.png) no-repeat -43px -1px;
     margin: 10px 10px 0
 }
 
@@ -1513,7 +1513,7 @@ header#Header .qrCodeWeixin img {
     height: 40px;
     top: 0;
     right: 0;
-    background: url(/taoche/common/images/rit_nav_bg.5b82c0.png) no-repeat right 0;
+    background: url(../image/rit_nav_bg.5b82c0.png) no-repeat right 0;
     position: absolute;
     z-index: 1;
     font-size: 14px;
@@ -1530,7 +1530,7 @@ header#Header .qrCodeWeixin img {
     width: 40px;
     height: 40px;
     display: block;
-    background: url(/taoche/common/images/rit_nav_bg.5b82c0.png) no-repeat right 0;
+    background: url(../image/rit_nav_bg.5b82c0.png) no-repeat right 0;
     text-decoration: none;
     position: relative;
     z-index: 2
