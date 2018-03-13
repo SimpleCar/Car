@@ -22,4 +22,15 @@ public class UserController {
     public String business(){
         return "business";
     }
+
+    @RequestMapping("goSignIn")
+    public String goSignIn(){
+        return "signIn";
+    }
+
+    @RequestMapping("goSignUp")
+    public String goSignUp(){
+
+        return "signUp";
+    }
 }
