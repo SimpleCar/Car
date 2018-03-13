@@ -225,7 +225,7 @@
             <div class="form clrfix">
                 <header class="tab-box clrfix">
                     <aside id="2" class="fl tab cur-p cur">手机快捷登录</aside>
-                    <aside id="1" class="fl tab cur-p">账号密码登录</aside>
+                    <aside id="1" class="fl tab cur-p cur">账号密码登录</aside>
                 </header>
                 <article class="login-con">
                     <blockquote id="form">
@@ -282,7 +282,7 @@
                         <div id="user-btn2" class="btn user-btn disabled">立即登录</div>
 
                         <div class="reg-link">
-                            <a href="/Register?returnurl=http%253a%252f%252fxin.taoche.com%252fguangzhou%252f">免费注册</a>
+                            <a href="/userController/goSignUp">免费注册</a>
                         </div>
 
                         <dl class="other-login">

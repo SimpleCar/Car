@@ -13,5 +13,6 @@
 <body>
 <h1>${userList}</h1>
 <a href="business">去我是商家页面</a>
+<a href="/userController/goSignIn">进入注册登录页面</a>
 </body>
 </html>

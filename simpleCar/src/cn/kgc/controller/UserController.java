@@ -26,5 +26,14 @@ public class UserController {
         return "business";
     }
 
+    @RequestMapping("goSignIn")
+    public String goSignIn(){
+        return "signIn";
+    }
 
+    @RequestMapping("goSignUp")
+    public String goSignUp(){
+
+        return "signUp";
+    }
 }
