@@ -12,15 +12,15 @@ import javax.annotation.Resource;
 public class UserController {
     @Resource
     private UserService userService;
-    @RequestMapping("indexPages")
+    @RequestMapping("indexPage")
     public String indexPage(){
         return "indexPage";
     }
-    @RequestMapping("index")
-    public String index(Model model){
-        model.addAttribute("userList","userService.selectAll()");
-        return "index";
+    @RequestMapping("trys")
+    public String trys(){
+        return "try";
     }
+
     @RequestMapping("business")
     public String business(){
         return "business";
