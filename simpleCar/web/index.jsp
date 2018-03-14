@@ -11,7 +11,7 @@
     <title>$SimpleCar$</title>
     <script type="application/javascript">
       function index() {
-          window.location="userController/index"
+          window.location="userController/indexPage"
       }
     </script>
   </head>

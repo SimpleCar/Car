@@ -25,13 +25,16 @@ public class CarInfo {
     private String carDesc;
     //车的状态
     private int carState;
+    //商家
+    private String business;
+    //车的照片路径
+    private String imgUrl;
 
     //无参构造方法
     public CarInfo() {
     }
-
-    //有参构造方法
-    public CarInfo(int carId, String carName, String carBrand, String carPrice, String carLevel, String carFirstPay, String carPayNumber, String carLastPay, String carDesc, int carState) {
+    //有参数构造方法
+    public CarInfo(int carId, String carName, String carBrand, String carPrice, String carLevel, String carFirstPay, String carPayNumber, String carLastPay, String carDesc, int carState, String business, String imgUrl) {
         this.carId = carId;
         this.carName = carName;
         this.carBrand = carBrand;
@@ -42,26 +45,10 @@ public class CarInfo {
         this.carLastPay = carLastPay;
         this.carDesc = carDesc;
         this.carState = carState;
+        this.business = business;
+        this.imgUrl = imgUrl;
     }
-
-    //toString方法
-    @Override
-    public String toString() {
-        return "CarInfo{" +
-                "carId=" + carId +
-                ", carName='" + carName + '\'' +
-                ", carBrand='" + carBrand + '\'' +
-                ", carPrice='" + carPrice + '\'' +
-                ", carLevel='" + carLevel + '\'' +
-                ", carFirstPay='" + carFirstPay + '\'' +
-                ", carPayNumber='" + carPayNumber + '\'' +
-                ", carLastPay='" + carLastPay + '\'' +
-                ", carDesc='" + carDesc + '\'' +
-                ", carState=" + carState +
-                '}';
-    }
-
-    //set和get方法
+    //set和get
 
     public int getCarId() {
         return carId;
@@ -143,6 +130,21 @@ public class CarInfo {
         this.carState = carState;
     }
 
+    public String getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(String business) {
+        this.business = business;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 //    CREATE TABLE CarInfo(
 //            carId INT(24) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 //    carName VARCHAR(24) COMMENT"车的名字",
@@ -153,6 +155,8 @@ public class CarInfo {
 //    carPayNumber VARCHAR(24) DEFAULT "0" COMMENT"分几期",
 //    carLastPay VARCHAR(24) DEFAULT "0.00" COMMENT"减去首付还该支付多少钱",
 //    carDesc VARCHAR(24) COMMENT"车的描述信息",
-//    carState VARCHAR(24) DEFAULT "未卖出" COMMENT"车的卖出状态"
+//    carState VARCHAR(24) DEFAULT "未卖出" COMMENT"车的卖出状态",
+//    business VARCHAR(24) COMMENT"商家是谁",
+//    imgUrl VARCHAR(24) COMMENT"车的照片"
 //            )CHARSET="utf8" COMMENT"车的信息表";
 }

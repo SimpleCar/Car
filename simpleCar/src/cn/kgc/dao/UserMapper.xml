@@ -8,6 +8,9 @@
     </select>
 
     <select id="selectUser" resultType="User">
-        SELECT u.uanme,u.upwd from user AS u where u.uname=#{uname} and u.upwd=#{upwd}
+        SELECT u.uanme,u.upwd,u.uphone from user AS u where u.uphone=#{uphone}
+        <if test="upwd!=null">
+            and u.upwd=#{upwd}
+        </if>
     </select>
 </mapper>
