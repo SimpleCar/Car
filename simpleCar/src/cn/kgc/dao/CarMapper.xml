@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kgc.dao.CarMapper">
+    <!--查跑车-->
+    <select id="selectCar" resultType="Car" parameterType="Car">
+        SELECT * FROM car WHERE cstock!=0 AND  cmax &lt;#{cmax} AND cmin &gt;#{cmin} ;
+    </select>
+
+    <!--查找大于45以上的跑车-->
+    <select id="selectGreaterThanSuperCar" resultType="Car">
+        SELECT * FROM car WHERE cstock!=0  AND cmin &gt; 45 AND cleavel=0;
+
+    </select>
+    <!--查豪车-->
+    <select id="selectGreaterThanLuxuryCar" resultType="Car">
+        SELECT * FROM car WHERE cstock!=0  AND cmin &gt; 45 AND cleavel=1;
+
+    </select>
+    <!--查跑车条数-->
+    <select id="selectCarCount" resultType="Car">
+        SELECT count(*) FROM car WHERE cstock!=0 AND  cmax &lt;#{cmax} AND cmin &gt;#{cmin} ;
+
+    </select>
+    <!--查找大于45以上的跑车条数-->
+    <select id="selectGreaterThanSuperCarCount" resultType="Car">
+        SELECT count(*) FROM car WHERE cstock!=0 AND cmin &gt; 45 AND cleavel=0;
+
+    </select>
+    <!--查豪车条数-->
+    <select id="selectGreaterThanLuxuryCarCount" resultType="Car">
+          SELECT count(*) FROM car WHERE cstock!=0  AND cmin &gt; 45 AND cleavel=1;
+
+    </select>
+
+
+
+
+</mapper>
