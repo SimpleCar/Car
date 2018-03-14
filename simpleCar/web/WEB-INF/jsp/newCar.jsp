@@ -33,10 +33,10 @@
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="location" content="province=广东;city=广州;coord=113.30765,23.120049">
-    <link rel="dns-prefetch" href="http://www.daikuan.com/">
-    <link rel="dns-prefetch" href="http://img1.yixinfinance.com/">
-    <link rel="dns-prefetch" href="http://img2.yixinfinance.com/">
-    <link rel="dns-prefetch" href="http://img3.yixinfinance.com/">
+    <link rel="dns-prefetch" href="#">
+    <link rel="dns-prefetch" href="#">
+    <link rel="dns-prefetch" href="#">
+    <link rel="dns-prefetch" href="#>
     <link rel="dns-prefetch" href="http://img4.yixinfinance.com/">
     <link rel="icon" type="image/x-icon" href="http://cache.taoche.com/favicon.ico">
 
@@ -206,8 +206,8 @@
         </div>
         <div class="search clearfix">
             <div class="search-tab">
-                <a href="javascript:" class="current" id="tc_search_newcarTab">新车</a>
-                <a href="javascript:" id="tc_search_ershoucheTab">二手车</a>
+                <a href="#" class="current" id="tc_search_newcarTab">新车</a>
+                    <a href="#" id="tc_search_ershoucheTab">二手车</a>
             </div>
             <span class="sel-car-wrapper"><input type="text" id="tc_search_txtNewcar" name="tc_search_txtNewcar"
                                                  autocomplete="off" placeholder="请输入心仪的品牌或车型"><div
@@ -220,7 +220,7 @@
             <a class="search-btn" id="tc_search_btnNewcar" href="javascript:;">搜索</a>
             <input type="text" id="tc_search_txtErshouche" name="tc_search_txtErshouche" autocomplete="off"
                    placeholder="搜“5万 捷达”试试" style="display:none;">
-            <a class="search-btn" href="javascript:;" id="tc_search_btnErshouche" style="display:none;">搜索</a>
+            <a class="search-btn" href="#" id="tc_search_btnErshouche" style="display:none;">搜索</a>
             <!-- 搜索历史记录 -->
             <div id="divList" class="search-layer" style="display:none;"></div>
         </div>
@@ -245,10 +245,11 @@
             <em class="spacer"></em>
         </li>
         <li data-menu="ershouche" id="tc_top_liMenuErshouche">
-            <a id="tc_top_menuErshouche" href="#" class="link sub"
+            <a id="qq"  class="link sub"
                logwt="navigation_usedcar" _islog="1">
                 <span>二手车</span>
             </a>
+
             <em class="spacer"></em>
         </li>
         <li data-menu="fenqi">
@@ -1309,9 +1310,9 @@
             <li><a href="#" target="_blank">8-10万</a></li>
             <li><a href="#" target="_blank">10-15万</a></li>
             <li><a href="#" target="_blank">15-20万</a></li>
-            <li><a href="carController/" target="_blank">20-30万</a></li>
-            <li><a href="carController/" target="_blank">30-45万</a></li>
-            <li><a href="carController/" target="_blank">45万以上</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/goSelectAll2030" target="_blank">20-30万</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/superCar20" target="_blank">30-45万</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/superCar20" target="_blank">45万以上</a></li>
         </ul>
 
     </div>
@@ -1741,7 +1742,8 @@
 
 
 <!--艾瑞统计-->
-<script src="../../statics/js/iwt-min.js"></script><script>
+<script src="../../statics/js/iwt-min.js"></script>
+<script>
     (function (G, D, s, c, p) {
         c = {
             UA: "UA-taoche-000001",
@@ -1750,21 +1752,26 @@
             URL: '../../statics/js/iwt-min.js'
         };
         G._iwt ? G._iwt.track(c, p) : (G._iwtTQ = G._iwtTQ || []).push([c, p]), !G._iwtLoading && lo();
+
         function lo(t) {
-            G._iwtLoading = 1; s = D.createElement("script"); s.src = c.URL;
-            t = D.getElementsByTagName("script"); t = t[t.length - 1];
+            G._iwtLoading = 1;
+            s = D.createElement("script");
+            s.src = c.URL;
+            t = D.getElementsByTagName("script");
+            t = t[t.length - 1];
             t.parentNode.insertBefore(s, t);
         }
     })(this, document);
 </script>
 
 <!-- 广告代码 -->
-<script src="../../statics/js/senseNew.js"></script><script src="../../statics/js/getAdDataByDiv.ashx"></script>
+<script src="../../statics/js/senseNew.js"></script>
+<script src="../../statics/js/getAdDataByDiv.ashx"></script>
 
 <!--百度统计PC-->
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?b43ce35f868b496d8c3af5108a539019";
         var s = document.getElementsByTagName("script")[0];
@@ -1776,17 +1783,20 @@
 <!--大数据-->
 <script type="text/javascript">
     (function () {
-        var dc = document.createElement("script"); dc.type = "text/javascript"; dc.async = true;
+        var dc = document.createElement("script");
+        dc.type = "text/javascript";
+        dc.async = true;
         dc.src = ("https:" == document.location.protocol ? "https://" : "http://") + "js.ctags.cn/dc.js?163"; //此ID为系统生成的网站唯一标识
-        var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(dc, s);
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(dc, s);
     })();
 </script>
 <!-- 百度统计pc端 -->
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
-        hm.src = window.location.host.indexOf("etaoche.cn")>=0?"https://hm.baidu.com/hm.js?f68148618e51c0e86681df69a3d0d08d":"https://hm.baidu.com/hm.js?db7dedc48a653d8087cb460082e491b4";
+        hm.src = window.location.host.indexOf("etaoche.cn") >= 0 ? "https://hm.baidu.com/hm.js?f68148618e51c0e86681df69a3d0d08d" : "https://hm.baidu.com/hm.js?db7dedc48a653d8087cb460082e491b4";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
@@ -1795,9 +1805,12 @@
 <!-- 易鑫统计基础代码 -->
 <script>
     (function () {
-        var bc = document.createElement('script'); bc.type = 'text/javascript'; bc.async = true;
+        var bc = document.createElement('script');
+        bc.type = 'text/javascript';
+        bc.async = true;
         bc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dt.taoche.com/bc.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(bc, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(bc, s);
     })();
 </script>
 

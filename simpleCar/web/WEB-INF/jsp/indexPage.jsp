@@ -66,7 +66,7 @@
         <ul class="clearfix shortcut_info float-r">
             <li>
                 <span>欢迎来到淘车</span>
-                <a href="javascript:;" class="active" id="tc_top_myNickName" onclick="location.href='https://home.taoche.com/login/?returnurl='+encodeURIComponent(location.href)">登录</a>
+                <a href="/userController/goSignIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche" _islog="1">我的淘车
@@ -160,7 +160,7 @@
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="http://xin.taoche.com/" _islog="1">
+                <a logwt="navigation_newcar" class="link" href="${pageContext.request.contextPath}/carController/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>

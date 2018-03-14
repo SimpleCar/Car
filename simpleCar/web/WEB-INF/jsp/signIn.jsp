@@ -179,7 +179,7 @@
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="//xin.taoche.com/" _islog="1">
+            <a logwt="navigation_newcar" class="link" href="carController/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
