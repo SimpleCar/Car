@@ -20,18 +20,31 @@
             }),$("#1").on("click",function () {
                 $("#tab1").show();
                 $("#1").addClass("cur");
-                $("#2").removeClass("cur");
+
                 $("#tab2").hide();
             }),$("#2").on("click",function () {
                 $("#tab2").show();
                 $("#2").addClass("cur");
-                $("#1").removeClass("cur");
                 $("#tab1").hide();
             })
         })
+        function checkMobile(){
+            var sMobile1 = document.getElementById("mobile1");
+            var sMobile=sMobile1.value();
+            alert(sMobile);
+            if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile))){
+                alert("不是完整的11位手机号或者正确的手机号前七位");
+
+                document.mobileform.mobile.focus();
+                return false;
+            }
+        }
     </script>
+
 </head>
 <body>
+<jsp:include page="top.jsp"/>
+
 <div class="login"
      style="background-image: url('//img1.yixinfinance.com/chedai/a82583d3-bd93-4eef-a35c-4692515ea748.jpg')">
     <article class="content clrfix">
@@ -44,13 +57,14 @@
                 <article class="login-con">
                     <blockquote id="form">
                         <!-- 账号密码登录 -->
-                        <blockquote id="tab1" class="hide">
+                        <blockquote id="tab1" >
                             <form id="signInForm1" method="post" action="/userController/signIn">
                                 <%--输入手机--%>
                                 <div class="pad10B pad30RL">
                                     <div class="input-item clrfix">
-                                        <div class="input-box"><input id="mobile1" name="mobile" placeholder="请输入手机号"
-                                                                      autocomplete="off"/></div>
+                                        <div class="input-box">
+                                            <input id="mobile1" name="mobile" placeholder="请输入手机号"
+                                                                      autocomplete="off" onblur="checkMobile()"/></div>
                                     </div>
                                 </div>
                                 <div class="jyts-box">
@@ -70,13 +84,7 @@
                                     <span class="jyts jyts-password">请输入正确的密码</span>
                                 </div>
                                 <%--验证码--%>
-                                <%--<div class="pad10B pad30RL clrfix">
-                                    <div class="input-item fl clrfix w-180">
-                                        <div class="input-box"><input id="ImgValidateCode1" name="imgValidateCode" type="text" maxlength="4" class="inputNumber AppCheck nocheck data w-120 border1" autocomplete="off" placeholder="请输入右侧验证码" autocomplete="off" /></div>
-                                    </div>
-                                    <div id="GetImgValidateCode1" class="GetImgValidateCode fr"><img src=""></div>
-                                </div>
-                                <div class="jyts-box"><span class="jyts jyts-imgValidateCode">请输入正确的验证码</span></div>--%>
+
                                 <%--自动登录--%>
                                 <div class="clrfix tools-box">
                                     <div class="fl">
@@ -92,7 +100,7 @@
                         </blockquote>
 
                         <!-- 动态密码登录 -->
-                        <blockquote id="tab2">
+                        <blockquote id="tab2" class="hide">
                             <form id="signInForm2" action="/userController/signIn" method="post">
                                 <div class="pad10B pad30RL">
                                     <div class="input-item clrfix">
@@ -109,15 +117,7 @@
                                     <span class="jyts jyts-mobile">请输入正确的手机号</span>
                                 </div>
                                 <%--短信验证--%>
-                                <%--<div class="pad10B pad30RL clrfix border1">
-                                    <div class="input-item fl clrfix w-180">
-                                        <div class="input-box"><input id="ValidateCode" autocomplete="off" name="mobileValidateCode" maxlength="4" type="text" class="inputNumber AppCheck data w-120" placeholder="请输入验证码" autocomplete="off" /></div>
-                                    </div>
-                                    <div id="GetValidateCode" class="fr btn code-btn disable">获取验证码</div>
-                                </div>
-                                <div class="jyts-box">
-                                    <span class="jyts jyts-mobileValidateCode">请输入正确的验证码</span>
-                                </div>--%>
+
                                 <%--自动登录--%>
                                 <div class="clrfix tools-box">
                                     <div class="fl">
@@ -125,7 +125,7 @@
                                                type="checkbox" value="false"> 自动登录
                                     </div>
                                 </div>
-                                <div id="user-btn2" class="btn user-btn">立即登录</div>
+                                <div id="user-btn2" class="btn user-btn ">立即登录</div>
                             </form>
                         </blockquote>
 

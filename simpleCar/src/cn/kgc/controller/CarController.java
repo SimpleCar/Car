@@ -19,7 +19,7 @@ public class CarController {
     //去新车页面
     @RequestMapping("newCar")
     public String NewCar() {
-        return "NewCar";
+        return "newCar";
     }
 
     //去20-30页面跑车

@@ -11,6 +11,7 @@
     <title>我是商家</title>
 </head>
 <body>
-<a href="bLogin">denglu</a>
+<jsp:include page="top.jsp"/>
+<h3>商家信息展示</h3>
 </body>
 </html>

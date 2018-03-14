@@ -30,8 +30,7 @@
         <ul class="clearfix shortcut_info float-r">
             <li>
                 <span>欢迎来到淘车</span>
-                <a href="javascript:;" class="active" id="tc_top_myNickName"
-                   onclick="location.href=&#39;https://home.taoche.com/login/?returnurl=&#39;+encodeURIComponent(location.href)">登录</a>
+                <a href="/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
@@ -45,13 +44,13 @@
                 </div>
             </li>
             <li id="tc_top_liMyDealer" class="my-sj">
-                <a href="javascript:;" class="info-link" id="tc_top_myDealer">我是商家
+                <a href="/goTo/businessLogin" class="info-link" id="tc_top_myDealer">我是商家
                     <i></i>
                 </a>
                 <div class="my-seller-menu" id="tc_top_myDealerList">
-                    <a href="#" target="_blank" logwt="navigation_header_login_B">商家登录</a>
-                    <a href="#" target="_blank"
-                       logwt="navigation_header_login_Brelease">商家发车</a>
+                    <a href="/goTo/businessLogin
+" target="_blank" logwt="navigation_header_login_B">商家登录</a>
+
                 </div>
             </li>
             <li id="tc_top_liAppDownload" class="app-down">
@@ -131,38 +130,34 @@
 <div class="nav_menu">
     <ul id="ul_menu" class="area clearfix">
         <li data-menu="home" class="home">
-            <a logwt="navigation_home" class="link" href="#" _islog="1">
+            <a logwt="navigation_home" class="link" href="/goTo/indexPage" _islog="1">
                 <span>首页</span>
             </a>
             <em class="spacer"></em>
         </li>
-        <li data-menu="xinche" class="current">
-            <a logwt="navigation_newcar" class="link" href="#" _islog="1">
+        <li data-menu="xinche">
+            <a logwt="navigation_newcar" class="link" href="/goTo/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
         </li>
-        <li data-menu="ershouche" id="tc_top_liMenuErshouche">
-            <a id="tc_top_menuErshouche" href="#" class="link sub"
-               logwt="navigation_usedcar" _islog="1">
-                <span>二手车</span>
-            </a>
-            <em class="spacer"></em>
-        </li>
+
         <li data-menu="fenqi">
-            <a logwt="navigation_installment" class="link" href="#" _islog="1">
-                <span>分期</span>
-            </a>
-            <em class="spacer"></em>
-        </li>
-        <li data-menu="chexian">
-            <a logwt="navigation_insurance" class="link" href="#" _islog="1">
+            <a logwt="navigation_insurance" class="link" href="/goTo/carInsurance" _islog="1">
                 <span>车险</span>
             </a>
             <em class="spacer"></em>
         </li>
+
+        <li data-menu="fenqi">
+            <a logwt="navigation_installment" class="link" href="/goTo/stages" _islog="1">
+                <span>分期</span>
+            </a>
+            <em class="spacer"></em>
+        </li>
+
         <li data-menu="tiyandian">
-            <a logwt="navigation_store" class="link" href="#" _islog="1">
+            <a logwt="navigation_store" class="link" href="/goTo/try" _islog="1">
                 <span>体验店</span>
             </a>
         </li>
