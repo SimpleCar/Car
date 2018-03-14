@@ -89,7 +89,7 @@
     </div>
 
     <div style="display: inline-block;position: absolute;margin-left: 650px;margin-top: 30px;">
-        <a href="#" style="text-decoration: none;font-size: 18px;color: dodgerblue;">首页</a>&nbsp;&nbsp;&nbsp;
+        <a href="/goTo/indexPage" style="text-decoration: none;font-size: 18px;color: dodgerblue;">首页</a>&nbsp;&nbsp;&nbsp;
         <a href="#" style="text-decoration: none;font-size: 18px;color: black;">商家申请</a>&nbsp;&nbsp;&nbsp;
         <a href="#" style="text-decoration: none;font-size: 18px;color: black;">合作产商</a>&nbsp;&nbsp;&nbsp;
         <a href="#" style="text-decoration: none;font-size: 18px;color: black;">帮助中心</a>&nbsp;&nbsp;&nbsp;
@@ -104,7 +104,7 @@
 </div>
 
 <div style="background-color: white;width: 350px;height: 430px;display: inline-block;position: relative;margin-left: 925px;margin-top: 110px">
-    <form method="post" action="test.html">
+    <form method="post" action="/userController/indexPage">
         <div style="display: inline-block;position: relative;margin-left: 100px">
             <h1>商家登录</h1>
         </div>

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("userController")
@@ -29,6 +30,13 @@ public class UserController {
     @RequestMapping("goSignIn")
     public String goSignIn(){
         return "signIn";
+    }
+
+    @RequestMapping("signIn")
+    public String signIn(Model model,HttpServletRequest request){
+String phone = request.getParameter("mobile");
+model.addAttribute("phone",phone);
+        return "indexPage";
     }
 
     @RequestMapping("goSignUp")
