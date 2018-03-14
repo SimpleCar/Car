@@ -11,6 +11,6 @@
     <title>我是商家</title>
 </head>
 <body>
-
+<a href="bLogin">denglu</a>
 </body>
 </html>
