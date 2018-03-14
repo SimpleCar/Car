@@ -7,7 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html><head><script type="text/javascript" src="../../statics/indexPage/irt"></script><script type="text/javascript" async="" src="../../statics/indexPage/bc.js"></script><script src="../../statics/indexPage/hm.js"></script><script src="../../statics/indexPage/push.js"></script><script type="text/javascript" async="" src="../../statics/indexPage/dc.js"></script>
+<html>
+<head>
+    <script type="text/javascript" src="../../statics/indexPage/irt"></script><script type="text/javascript" async="" src="../../statics/indexPage/bc.js"></script><script src="../../statics/indexPage/hm.js"></script><script src="../../statics/indexPage/push.js"></script><script type="text/javascript" async="" src="../../statics/indexPage/dc.js"></script>
     <meta charset="utf-8">
     <meta name="360-site-verification" content="fa0f5c6423c64c8f79973cf32d588d56">
     <!--seo 2017 start git-->
@@ -160,19 +162,14 @@
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="http://xin.taoche.com/" _islog="1">
+            <a logwt="navigation_newcar" class="link" href="${pageContext.request.contextPath}/carController/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
         </li>
-        <li data-menu="ershouche" id="tc_top_liMenuErshouche">
-            <a id="tc_top_menuErshouche" href="http://guangzhou.taoche.com/all/" class="link sub" logwt="navigation_usedcar" _islog="1">
-                <span>二手车</span>
-            </a>
-            <em class="spacer"></em>
-        </li>
+
         <li data-menu="fenqi">
-            <a logwt="navigation_installment" class="link" href="http://fenqi.taoche.com/topic/" _islog="1">
+            <a logwt="navigation_installment" class="link" href="/userController/business" _islog="1">
                 <span>分期</span>
             </a>
             <em class="spacer"></em>
@@ -184,7 +181,7 @@
             <em class="spacer"></em>
         </li>
         <li data-menu="tiyandian">
-            <a logwt="navigation_store" class="link" href="http://tiyandian.taoche.com/" _islog="1">
+            <a href="/userController/trys" >
                 <span>体验店</span>
             </a>
         </li>
