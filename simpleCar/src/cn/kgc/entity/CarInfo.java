@@ -12,19 +12,19 @@ public class CarInfo {
     //车的品牌
     private String carBrand;
     //车的价格
-    private String carPrice;
+    private double carPrice;
     //车的级别也就是类型
     private String carLevel;
     //首付金额
-    private String carFirstPay;
+    private double carFirstPay;
     //分几期
-    private String carPayNumber;
+    private int carPayNumber;
     //减去首付还该支付多少钱？
-    private String carLastPay;
+    private double carLastPay;
     //车的描述
     private String carDesc;
     //车的状态
-    private int carState;
+    private String carState;
     //商家
     private String business;
     //车的照片路径
@@ -33,8 +33,9 @@ public class CarInfo {
     //无参构造方法
     public CarInfo() {
     }
+
     //有参数构造方法
-    public CarInfo(int carId, String carName, String carBrand, String carPrice, String carLevel, String carFirstPay, String carPayNumber, String carLastPay, String carDesc, int carState, String business, String imgUrl) {
+    public CarInfo(int carId, String carName, String carBrand, double carPrice, String carLevel, double carFirstPay, int carPayNumber, double carLastPay, String carDesc, String carState, String business, String imgUrl) {
         this.carId = carId;
         this.carName = carName;
         this.carBrand = carBrand;
@@ -48,8 +49,27 @@ public class CarInfo {
         this.business = business;
         this.imgUrl = imgUrl;
     }
-    //set和get
 
+    //toString
+    @Override
+    public String toString() {
+        return "CarInfo{" +
+                "carId=" + carId +
+                ", carName='" + carName + '\'' +
+                ", carBrand='" + carBrand + '\'' +
+                ", carPrice=" + carPrice +
+                ", carLevel='" + carLevel + '\'' +
+                ", carFirstPay=" + carFirstPay +
+                ", carPayNumber=" + carPayNumber +
+                ", carLastPay=" + carLastPay +
+                ", carDesc='" + carDesc + '\'' +
+                ", carState='" + carState + '\'' +
+                ", business='" + business + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
+    }
+
+    //set get
     public int getCarId() {
         return carId;
     }
@@ -74,11 +94,11 @@ public class CarInfo {
         this.carBrand = carBrand;
     }
 
-    public String getCarPrice() {
+    public double getCarPrice() {
         return carPrice;
     }
 
-    public void setCarPrice(String carPrice) {
+    public void setCarPrice(double carPrice) {
         this.carPrice = carPrice;
     }
 
@@ -90,27 +110,27 @@ public class CarInfo {
         this.carLevel = carLevel;
     }
 
-    public String getCarFirstPay() {
+    public double getCarFirstPay() {
         return carFirstPay;
     }
 
-    public void setCarFirstPay(String carFirstPay) {
+    public void setCarFirstPay(double carFirstPay) {
         this.carFirstPay = carFirstPay;
     }
 
-    public String getCarPayNumber() {
+    public int getCarPayNumber() {
         return carPayNumber;
     }
 
-    public void setCarPayNumber(String carPayNumber) {
+    public void setCarPayNumber(int carPayNumber) {
         this.carPayNumber = carPayNumber;
     }
 
-    public String getCarLastPay() {
+    public double getCarLastPay() {
         return carLastPay;
     }
 
-    public void setCarLastPay(String carLastPay) {
+    public void setCarLastPay(double carLastPay) {
         this.carLastPay = carLastPay;
     }
 
@@ -122,11 +142,11 @@ public class CarInfo {
         this.carDesc = carDesc;
     }
 
-    public int getCarState() {
+    public String getCarState() {
         return carState;
     }
 
-    public void setCarState(int carState) {
+    public void setCarState(String carState) {
         this.carState = carState;
     }
 
@@ -145,7 +165,8 @@ public class CarInfo {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
-//    CREATE TABLE CarInfo(
+
+    //    CREATE TABLE CarInfo(
 //            carId INT(24) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 //    carName VARCHAR(24) COMMENT"车的名字",
 //    carBrand VARCHAR(24) COMMENT"车的品牌",
