@@ -13,31 +13,27 @@ public class Business {
     private String bPwd;
     //商家手机号码
     private String bPhone;
+    //商家证件照
+    private String bAdd;
+    //商家类别
+    private String bType;
 
     //无参构造方法
     public Business() {
     }
-
     //有参构造方法
-    public Business(int bId, String bName, String bPwd, String bPhone) {
+
+    public Business(int bId, String bName, String bPwd, String bPhone, String bAdd, String bType) {
         this.bId = bId;
         this.bName = bName;
         this.bPwd = bPwd;
         this.bPhone = bPhone;
+        this.bAdd = bAdd;
+        this.bType = bType;
     }
 
-    //toString
-    @Override
-    public String toString() {
-        return "Business{" +
-                "bId=" + bId +
-                ", bName='" + bName + '\'' +
-                ", bPwd='" + bPwd + '\'' +
-                ", bPhone='" + bPhone + '\'' +
-                '}';
-    }
+    //set 和 get
 
-    //set和get方法
     public int getbId() {
         return bId;
     }
@@ -70,10 +66,27 @@ public class Business {
         this.bPhone = bPhone;
     }
 
+    public String getbAdd() {
+        return bAdd;
+    }
+
+    public void setbAdd(String bAdd) {
+        this.bAdd = bAdd;
+    }
+
+    public String getbType() {
+        return bType;
+    }
+
+    public void setbType(String bType) {
+        this.bType = bType;
+    }
 //    CREATE TABLE Business(
 //            bId INT(24) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 //    bName VARCHAR(24) COMMENT "商家名字",
 //    bPwd VARCHAR(24) COMMENT "商家密码",
-//    bPhone VARCHAR(24) COMMENT "商家手机号码"
-//            )CHARSET="utf8" COMMENT "车的信息表";
+//    bPhone VARCHAR(24) COMMENT "商家手机号码",
+//    bAdd VARCHAR(24) COMMENT "商家证件照",
+//    bType VARCHAR(24) COMMENT "商家类别"
+//            )CHARSET="utf8" COMMENT "商家信息表";
 }
