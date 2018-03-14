@@ -13,10 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
     @Resource
     private UserService userService;
-
     @RequestMapping("indexPage")
     public String indexPage(){
         return "indexPage";
+    }
+    @RequestMapping("trys")
+    public String trys(){
+        return "try";
     }
 
     @RequestMapping("business")

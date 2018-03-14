@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 0011 2018年03月11日
-  Time: 下午 18:11:33
+  Date: 2018/3/12
+  Time: 10:18
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +15,6 @@
     <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.taoche.com/">
     <link rel="canonical" href="http://www.taoche.com/"> 
     <!--seo 2017 end-->
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>淘车-腾讯京东百度易车共同投资的新车二手车交易平台</title>
