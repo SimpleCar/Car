@@ -41,4 +41,9 @@ model.addAttribute("phone",phone);
 
         return "signUp";
     }
+
+    @RequestMapping("goOrder")
+    public String goOrder(){ return "order"; }
+
+
 }
