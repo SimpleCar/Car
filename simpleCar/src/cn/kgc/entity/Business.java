@@ -13,8 +13,10 @@ public class Business {
     private String bPwd;
     //商家手机号码
     private String bPhone;
-    //商家证件照
+    //商家地址
     private String bAdd;
+    //商家证件照
+    private String imgUrl;
     //商家类别
     private String bType;
 
@@ -22,18 +24,16 @@ public class Business {
     public Business() {
     }
     //有参构造方法
-
-    public Business(int bId, String bName, String bPwd, String bPhone, String bAdd, String bType) {
+    public Business(int bId, String bName, String bPwd, String bPhone, String bAdd, String imgUrl, String bType) {
         this.bId = bId;
         this.bName = bName;
         this.bPwd = bPwd;
         this.bPhone = bPhone;
         this.bAdd = bAdd;
+        this.imgUrl = imgUrl;
         this.bType = bType;
     }
-
-    //set 和 get
-
+    //set get
     public int getbId() {
         return bId;
     }
@@ -74,6 +74,14 @@ public class Business {
         this.bAdd = bAdd;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public String getbType() {
         return bType;
     }
@@ -86,7 +94,8 @@ public class Business {
 //    bName VARCHAR(24) COMMENT "商家名字",
 //    bPwd VARCHAR(24) COMMENT "商家密码",
 //    bPhone VARCHAR(24) COMMENT "商家手机号码",
-//    bAdd VARCHAR(24) COMMENT "商家证件照",
+//    bAdd VARCHAR(24) COMMENT "商家地址",
+//    imgUrl VARCHAR(24) COMMENT "商家证件照",
 //    bType VARCHAR(24) COMMENT "商家类别"
 //            )CHARSET="utf8" COMMENT "商家信息表";
 }
