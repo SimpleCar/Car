@@ -69,4 +69,11 @@ public class Business {
     public void setbPhone(String bPhone) {
         this.bPhone = bPhone;
     }
+
+//    CREATE TABLE Business(
+//            bId INT(24) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+//    bName VARCHAR(24) COMMENT "商家名字",
+//    bPwd VARCHAR(24) COMMENT "商家密码",
+//    bPhone VARCHAR(24) COMMENT "商家手机号码"
+//            )CHARSET="utf8" COMMENT "车的信息表";
 }
