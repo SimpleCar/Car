@@ -8,6 +8,6 @@ import java.util.List;
 public interface UserService {
     List<User> selectAll();
 
-    User selectUser(@Param("uname")String uname, @Param("upwd")String upwd);
+    User selectUser(@Param("uphone")String uname, @Param("upwd")String upwd);
 
 }
