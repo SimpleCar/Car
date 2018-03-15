@@ -12,15 +12,15 @@ public class CarInfo {
     //车的品牌
     private String carBrand;
     //车的价格
-    private double carPrice;
+    private String carPrice;
     //车的级别也就是类型
     private String carLevel;
     //首付金额
-    private double carFirstPay;
+    private String carFirstPay;
     //分几期
-    private int carPayNumber;
+    private String carPayNumber;
     //减去首付还该支付多少钱？
-    private double carLastPay;
+    private String carLastPay;
     //车的描述
     private String carDesc;
     //车的状态
@@ -35,7 +35,7 @@ public class CarInfo {
     }
 
     //有参数构造方法
-    public CarInfo(int carId, String carName, String carBrand, double carPrice, String carLevel, double carFirstPay, int carPayNumber, double carLastPay, String carDesc, String carState, String business, String imgUrl) {
+  /*  public CarInfo(int carId, String carName, String carBrand, String carPrice, String carLevel, String carFirstPay, String carPayNumber, String carLastPay, String carDesc, String carState, String business, String imgUrl) {
         this.carId = carId;
         this.carName = carName;
         this.carBrand = carBrand;
@@ -48,7 +48,7 @@ public class CarInfo {
         this.carState = carState;
         this.business = business;
         this.imgUrl = imgUrl;
-    }
+    }*/
 
     //toString
     @Override
@@ -57,11 +57,11 @@ public class CarInfo {
                 "carId=" + carId +
                 ", carName='" + carName + '\'' +
                 ", carBrand='" + carBrand + '\'' +
-                ", carPrice=" + carPrice +
+                ", carPrice='" + carPrice + '\'' +
                 ", carLevel='" + carLevel + '\'' +
-                ", carFirstPay=" + carFirstPay +
-                ", carPayNumber=" + carPayNumber +
-                ", carLastPay=" + carLastPay +
+                ", carFirstPay='" + carFirstPay + '\'' +
+                ", carPayNumber='" + carPayNumber + '\'' +
+                ", carLastPay='" + carLastPay + '\'' +
                 ", carDesc='" + carDesc + '\'' +
                 ", carState='" + carState + '\'' +
                 ", business='" + business + '\'' +
@@ -70,6 +70,7 @@ public class CarInfo {
     }
 
     //set get
+
     public int getCarId() {
         return carId;
     }
@@ -94,11 +95,11 @@ public class CarInfo {
         this.carBrand = carBrand;
     }
 
-    public double getCarPrice() {
+    public String getCarPrice() {
         return carPrice;
     }
 
-    public void setCarPrice(double carPrice) {
+    public void setCarPrice(String carPrice) {
         this.carPrice = carPrice;
     }
 
@@ -110,27 +111,27 @@ public class CarInfo {
         this.carLevel = carLevel;
     }
 
-    public double getCarFirstPay() {
+    public String getCarFirstPay() {
         return carFirstPay;
     }
 
-    public void setCarFirstPay(double carFirstPay) {
+    public void setCarFirstPay(String carFirstPay) {
         this.carFirstPay = carFirstPay;
     }
 
-    public int getCarPayNumber() {
+    public String getCarPayNumber() {
         return carPayNumber;
     }
 
-    public void setCarPayNumber(int carPayNumber) {
+    public void setCarPayNumber(String carPayNumber) {
         this.carPayNumber = carPayNumber;
     }
 
-    public double getCarLastPay() {
+    public String getCarLastPay() {
         return carLastPay;
     }
 
-    public void setCarLastPay(double carLastPay) {
+    public void setCarLastPay(String carLastPay) {
         this.carLastPay = carLastPay;
     }
 
