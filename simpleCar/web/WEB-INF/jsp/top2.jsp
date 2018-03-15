@@ -130,34 +130,34 @@
 <div class="nav_menu">
     <ul id="ul_menu" class="area clearfix">
         <li data-menu="home" class="home">
-            <a logwt="navigation_home" class="link" href="/goTo/indexPage" _islog="1">
+            <a logwt="navigation_home" class="link" href="${pageContext.request.contextPath}/goTo/indexPage" _islog="1">
                 <span>首页</span>
             </a>
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="/goTo/newCar" _islog="1">
+            <a logwt="navigation_newcar" class="link" href="${pageContext.request.contextPath}/goTo/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_insurance" class="link" href="/goTo/carInsurance" _islog="1">
+            <a logwt="navigation_insurance" class="link" href="${pageContext.request.contextPath}/goTo/carInsurance" _islog="1">
                 <span>车险</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_installment" class="link" href="/goTo/stages" _islog="1">
+            <a logwt="navigation_installment" class="link" href="${pageContext.request.contextPath}/goTo/stages" _islog="1">
                 <span>分期</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="tiyandian">
-            <a logwt="navigation_store" class="link" href="/goTo/try" _islog="1">
+            <a logwt="navigation_store" class="link" href="${pageContext.request.contextPath}/goTo/try" _islog="1">
                 <span>体验店</span>
             </a>
         </li>

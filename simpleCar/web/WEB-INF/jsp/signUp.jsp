@@ -85,7 +85,7 @@
 </head>
 <body>
 <!-- -----------------------头开始--------------------------- -->
-<jsp:include page="top.jsp"/>
+<jsp:include page="top2.jsp"/>
 
 <!-- header -->
 <input type="hidden" name="__RequestVerificationToken" id="__RequestVerificationToken"
