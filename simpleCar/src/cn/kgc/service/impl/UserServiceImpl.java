@@ -24,4 +24,9 @@ public class UserServiceImpl implements UserService {
     public User selectUser(String uphone, String upwd) {
         return userMapper.selectUser(uphone,upwd);
     }
+
+    @Override
+    public int insertUser(String uphone, String upwd) {
+        return userMapper.insertUser(uphone,upwd);
+    }
 }
