@@ -1072,7 +1072,7 @@
                             <dl>
                                 <dt>
                                     <span class="name"><a
-                                            href="#">${car.cname}</a></span>
+                                            href="${pageContext.request.contextPath}/carController/goCarInformation?cname=${car.cname}">${car.cname}</a></span>
                                     <span class="parameter">排量 2.3T 5.0L | 油耗 8.6-12.3L</span>
                                 </dt>
                                 <dd>${car.cmin}-${car.cmax}</dd>

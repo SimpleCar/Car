@@ -1006,8 +1006,10 @@
             <div class="condition-wrap special">
                 <dl>
                     <dt>车价：</dt>
-                    <dd><a href="${pageContext.request.contextPath}/carController/superCar20" data-key="c6">20-30万</a></dd>
-                    <dd><a href="${pageContext.request.contextPath}/carController/superCar30" data-key="c7">30-45万</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/superCar20" data-key="c6">20-30万</a>
+                    </dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/superCar30" data-key="c7">30-45万</a>
+                    </dd>
                     <dd><a href="#" data-key="c8" class="active">45万以上</a>
                     </dd>
 
@@ -1030,7 +1032,7 @@
                     <dd><a href="#/guangzhou/budget-c8l2/" data-key="l2">紧凑型车</a></dd>
                     <dd><a href="#/guangzhou/budget-c8l3/" data-key="l3">中型车</a></dd>
                     <dd><a href="#/guangzhou/budget-c8l4/" data-key="l4">中大型车</a></dd>
-                    <dd><a href="#/guangzhou/budget-c8l5/" data-key="l5">豪华车</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/thanLuxuryCar" data-key="l5">豪华车</a></dd>
                     <dd><a href="#/guangzhou/budget-c8l6/" data-key="l6">MPV</a></dd>
                     <dd><a href="#/guangzhou/budget-c8l7/" data-key="l7">SUV</a></dd>
                     <dd><a href="#/guangzhou/budget-c8l13/" data-key="l13" class="active">跑车</a>
@@ -1097,7 +1099,7 @@
 
 
             <div class="count">
-                为您筛选出<em>42条</em>车源
+                为您筛选出 <em>${count}条</em>车源车源
             </div>
         </div>
         <!-- end of sort-wrap -->
@@ -1105,25 +1107,27 @@
 
 
             <ul>
-                <li>
-                    <div class="car-card">
-                        <div class="photos">
-                            <a href="#/guangzhou/baoshijie718/">
-                                <img src="./【淘车新车】广州新车贷款-淘车super45_files/1044399460_6.jpg" alt="保时捷718">
-                            </a>
-                        </div>
-                        <div class="text">
-                            <dl>
-                                <dt>
+                <c:forEach var="car" items="${list}">
+                    <li>
+                        <div class="car-card">
+                            <div class="photos">
+                                <a href="#/guangzhou/baoshijie718/">
+                                    <img src="${car.cimage}" alt="${car.cname}">
+                                </a>
+                            </div>
+                            <div class="text">
+                                <dl>
+                                    <dt>
                                     <span class="name"><a
-                                            href="#/guangzhou/baoshijie718/">保时捷718</a></span>
-                                    <span class="parameter">排量 2.0T 2.5T | 油耗 7.2-7.7L</span>
-                                </dt>
-                                <dd>52.92-85.8万</dd>
-                            </dl>
+                                            href="${pageContext.request.contextPath}/carController/goCarInformation?cname=${car.cname}">${car.cname}</a></span>
+                                        <span class="parameter">排量 2.0T 2.5T | 油耗 7.2-7.7L</span>
+                                    </dt>
+                                    <dd>${car.cmin}-${car.cmax}</dd>
+                                </dl>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                </c:forEach>
                 <%--<li>
                     <div class="car-card">
                         <div class="photos">
@@ -1889,8 +1893,8 @@
             <div class="loading-icon"></div>
             正在努力加载中...
         </div>
-        <div id="listPagination" class="list_pagination"><a href="javascript:void(0);" class="prev unclick">上一页</a><a
-                href="javascript:void(0);" class="num active">1</a><a href="javascript:void(0);" class="next unclick">下一页</a>
+        <div id="listPagination" class="list_pagination"><a href="#" class="prev unclick">上一页</a><a
+                href="#" class="num active">1</a>
         </div>
     </div>
 

@@ -48,5 +48,10 @@ public class CarServiceImpl implements CarService {
         return carMapper.selectGreaterThanLuxuryCarCount();
     }
 
+    @Override
+    public List<Car> selectCarName(Car car) {
+        return carMapper.selectCarName(car);
+    }
+
 
 }

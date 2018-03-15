@@ -291,13 +291,13 @@
                         <div class="car-card">
                             <div class="photos">
                                 <a href="#guangzhou/fengtiangt86/">
-                                    <img src="${car.cimage}" alt="丰田86">
+                                    <img src="${car.cimage}" alt="${car.cname}">
                                 </a>
                             </div>
                             <div class="text">
                                 <dl>
                                     <dt>
-                                        <span class="name"><a href="#guangzhou/fengtiangt86/">${car.cname}</a></span>
+                                        <span class="name"><a href="${pageContext.request.contextPath}/carController/goCarInformation?cname=${car.cname}">${car.cname}</a></span>
                                         <span class="parameter">排量 2.0L | 油耗 7.5-8.2L</span>
                                     </dt>
                                     <dd>${car.cmin}-${car.cmax}</dd>

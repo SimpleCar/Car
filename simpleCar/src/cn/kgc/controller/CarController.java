@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Controller
@@ -87,6 +89,16 @@ public class CarController {
         model.addAttribute("count", count);
         model.addAttribute("list", list);
         return "thanLuxuryCar";
+    }
+
+    //根据名字查车
+    @RequestMapping("goCarInformation")
+    public String goCarInformation(Model model, HttpServletRequest request){
+        String cname = request.getParameter("cname");
+        car.setCname(cname);
+       List<Car>list=carService.selectCarName(car);
+       model.addAttribute("list",list);
+        return "goCarInformation";
     }
 }
 

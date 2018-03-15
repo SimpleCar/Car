@@ -1054,7 +1054,7 @@
                     <dd><a href="#guangzhou/budget-c8l2/" data-key="l2">紧凑型车</a></dd>
                     <dd><a href="#guangzhou/budget-c8l3/" data-key="l3">中型车</a></dd>
                     <dd><a href="#guangzhou/budget-c8l4/" data-key="l4">中大型车</a></dd>
-                    <dd><a href="#guangzhou/budget-c8l5/" data-key="l5">豪华车</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/thanLuxuryCar" data-key="l5">豪华车</a></dd>
                     <dd><a href="#guangzhou/budget-c8l6/" data-key="l6">MPV</a></dd>
                     <dd><a href="#guangzhou/budget-c8l7/" data-key="l7">SUV</a></dd>
                     <dd><a href="${pageContext.request.contextPath}/carController/superCar45" data-key="l13">跑车</a></dd>

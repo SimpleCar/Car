@@ -19,6 +19,8 @@ public interface CarService {
     int selectGreaterThanSuperCarCount();
     //查豪车条数
     int selectGreaterThanLuxuryCarCount();
+    //根据名字查车
+    List<Car> selectCarName(Car car);
 
 
 }

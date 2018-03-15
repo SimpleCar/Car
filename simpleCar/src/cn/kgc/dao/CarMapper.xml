@@ -34,6 +34,11 @@
 
     </select>
 
+    <!--根据名字查车-->
+    <select id="selectCarName" resultType="Car">
+        select * from car where cname=#{cname}
+    </select>
+
 
 
 
