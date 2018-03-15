@@ -3,14 +3,23 @@ package cn.kgc.entity;
 import java.io.Serializable;
 
 public class Car implements Serializable {
+    //车的ID
     private int cid;
+    //车的名字
     private String cname;
+    //车的价格
     private float cprice;
+    //车的级别
     private int cleavel;
+    //车的牌子
     private String cvariety;
+    //车的库存
     private int cstock;
+    //车的最小值
     private float cmin;
+    //车的最大值
     private float cmax;
+    //车的图片存放路径
     private String cimage;
 
     public String getCimage() {
