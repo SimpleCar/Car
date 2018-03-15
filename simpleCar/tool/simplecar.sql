@@ -106,11 +106,11 @@ CREATE TABLE `user` (
   `creditId` int(10) DEFAULT '0' COMMENT '信用信息ID',
   `orderId` int(10) DEFAULT '0' COMMENT '订单ID',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`uid`,`uname`,`upwd`,`uphone`,`gender`,`city`,`address`,`creditId`,`orderId`) values (1,'用户1','123','13668925834',1,'广州','富力盈隆',0,0),(2,'用户2','123','13668925835',2,'广州','富力盈隆',0,0);
+insert  into `user`(`uid`,`uname`,`upwd`,`uphone`,`gender`,`city`,`address`,`creditId`,`orderId`) values (1,'用户1','123','13668925834',1,'广州','富力盈隆',0,0),(2,'用户2','123','13668925835',2,'广州','富力盈隆',0,0),(3,'110','123','110',NULL,NULL,NULL,0,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
