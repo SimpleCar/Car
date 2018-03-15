@@ -130,7 +130,7 @@
 
         <div style="position: relative;margin-top: 10px;margin-left: 170px">
             <a href="#">忘记密码</a>&nbsp;|&nbsp;
-            <a href="#">商家申请</a>
+            <a href="${pageContext.request.contextPath}/businessController/businessRegister">商家申请</a>
         </div>
     </form>
 </div>

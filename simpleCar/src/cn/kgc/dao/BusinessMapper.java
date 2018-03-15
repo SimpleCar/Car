@@ -10,9 +10,10 @@ import java.util.List;
  * 商家接口
  */
 public interface BusinessMapper {
-    //数据库密码Mysql_001
+    //数据库密码Mysql_001+
+
     //查找某个商家的车
-    List<CarInfo> findAllCarInfoByBusiness(@Param("bId") Integer bId);
+    List<CarInfo> findAllCarInfoByBusiness(int bId);
     //插入车信息
     int addCarInfos(CarInfo carInfo);
     //删除车信息

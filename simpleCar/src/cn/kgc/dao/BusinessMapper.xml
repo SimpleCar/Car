@@ -4,17 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.kgc.dao.BusinessMapper">
     <select id="findAllCarInfoByBusiness" resultType="CarInfo">
-        SELECT * FROM CarInfo WHERE business=#{bId};
+        SELECT * FROM car;
     </select>
 
-   <!-- <insert id="addCarInfos" parameterType="CarInfo" >
-        INSERT INTO carinfo(carId,carName,carBrand,carPrice,carLevel,carFirstPay,carLastPay,carDesc,business,imgUrl) VALUE(#{carId},#{carName},#{carBrand},#{carPrice},#{carLevel},#{carFirstPay},#{carLastPay},#{carDesc},#{business},#{imgUrl});
-        /*INSERT INTO  carinfo(carBrand) VALUE (#{carBrand})*/
-    </insert>-->
+   <insert id="addCarInfos" parameterType="CarInfo" >
+      INSERT INTO carinfo(carName,carBrand) VALUES(#{carName},#{carBrand})
+    </insert>
 
-     <insert id="addCarInfos" parameterType="CarInfo">
-         INSERT INTO carinfo(carName,carBrand) VALUES(#{carName},#{carBrand});
-     </insert>
+     <!--<insert id="addCarInfos" parameterType="CarInfo">
+
+     INSERT INTO carinfo(carId,carName,carBrand,carPrice,carLevel,carFirstPay,carLastPay,carDesc,business,imgUrl) VALUE(#{carId},#{carName},#{carBrand},#{carPrice},#{carLevel},#{carFirstPay},#{carLastPay},#{carDesc},#{business},#{imgUrl})
+     </insert>-->
 
     <delete id="deleteCarInfo" parameterType="int">
         DELETE FROM carinfo WHERE carId=#{carId}
