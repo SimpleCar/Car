@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -13,5 +14,8 @@
 <body>
 <jsp:include page="top.jsp"/>
 <h3>商家信息展示</h3>
+<c:forEach items="${carInfoList}" var="CarInfo" varStatus="cishu">
+    <h1>${CarInfo}+${cishu.count}</h1>
+</c:forEach>
 </body>
 </html>
