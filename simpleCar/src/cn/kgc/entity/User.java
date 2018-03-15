@@ -4,10 +4,16 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private int uid;
-    private String uname;
+    private String uname;//昵称
     private String upwd;
-    private String uphone;
-    private String uemail;
+    private String uphone;//手机
+    private int gender;//性别:1,0:男，女
+    private String city;//所在城市
+    private String address;//详细地址
+    private int creditId;//信用信息id
+    private int orderId;//订单id
+    private String IdNum;//身份证号码
+
 
     public int getUid() {
         return uid;
@@ -41,12 +47,52 @@ public class User implements Serializable {
         this.uphone = uphone;
     }
 
-    public String getUemail() {
-        return uemail;
+    public int getGender() {
+        return gender;
     }
 
-    public void setUemail(String uemail) {
-        this.uemail = uemail;
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getCreditId() {
+        return creditId;
+    }
+
+    public void setCreditId(int creditId) {
+        this.creditId = creditId;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getIdNum() {
+        return IdNum;
+    }
+
+    public void setIdNum(String idNum) {
+        IdNum = idNum;
     }
 
     @Override
@@ -56,7 +102,12 @@ public class User implements Serializable {
                 ", uname='" + uname + '\'' +
                 ", upwd='" + upwd + '\'' +
                 ", uphone='" + uphone + '\'' +
-                ", uemail='" + uemail + '\'' +
+                ", gender='" + gender + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", creditId=" + creditId +
+                ", orderId=" + orderId +
+                ", IdNum='" + IdNum + '\'' +
                 '}';
     }
 }

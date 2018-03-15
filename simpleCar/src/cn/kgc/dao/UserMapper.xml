@@ -13,4 +13,8 @@
             and u.upwd=#{upwd}
         </if>
     </select>
+
+    <insert id="insertUser">
+        insert into user(uname,upwd,uphone) values (#{uphone},#{upwd},#{uphone});
+    </insert>
 </mapper>
