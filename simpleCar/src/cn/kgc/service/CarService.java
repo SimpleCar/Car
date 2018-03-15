@@ -14,11 +14,11 @@ public interface CarService {
     //查豪车
     List<Car> selectGreaterThanLuxuryCar();
     //查跑车条数
-    List<Car> selectCarCount(Car car);
+    int selectCarCount(Car car);
     //查大于45万以上跑车的条数
-    List<Car> selectGreaterThanSuperCarCount(Car car);
+    int selectGreaterThanSuperCarCount();
     //查豪车条数
-    List<Car>selectGreaterThanLuxuryCarCount(Car car);
+    int selectGreaterThanLuxuryCarCount();
 
 
 }

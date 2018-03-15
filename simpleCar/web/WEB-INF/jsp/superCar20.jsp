@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Schoki
@@ -12,9 +11,10 @@
 <html>
 <head>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <style>
-        .carlist ul li{
-            display:inline-block ;
+        .carlist ul li {
+            display: inline-block;
         }
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -184,8 +184,10 @@
                     <dt>车价：</dt>
                     <dd><a href="#" data-key="c6" class="active">20-30万</a>
                     </dd>
-                    <dd><a href="${pageContext.request.contextPath}" data-key="c7">30-45万</a></dd>
-                    <dd><a href="${pageContext.request.contextPath}" data-key="c8">45万以上</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/superCar30" data-key="c7">30-45万</a>
+                    </dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/superCar45" data-key="c8">45万以上</a>
+                    </dd>
 
                     <dd class="custom-wrapper">
                         <span class="tit">自定义<i class="icon_down"></i></span>
@@ -272,16 +274,19 @@
 
 
             <div class="count">
-                为您筛选出<em>2条</em>车源
+                为您筛选出
+
+                <em>${count}条</em>车源
+
             </div>
         </div>
         <!-- end of sort-wrap -->
 
 
-            <div class="carlist">
+        <div class="carlist">
 
-                <ul>
-                    <c:forEach var="car" items="${list}">
+            <ul>
+                <c:forEach var="car" items="${list}">
                     <li>
                         <div class="car-card">
                             <div class="photos">
@@ -300,30 +305,30 @@
                             </div>
                         </div>
                     </li>
-                    </c:forEach>
-                        <%-- <li>
-                             <div class="car-card">
-                                 <div class="photos">
-                                     <a href="#guangzhou/sibalubrz/">
-                                         <img src="./【淘车新车】广州新车贷款-淘车_files/1005247693_6.jpg" alt="斯巴鲁BRZ">
-                                     </a>
-                                 </div>
-                                 <div class="text">
-                                     <dl>
-                                         <dt>
-                                         <span class="name"><a
-                                                 href="#guangzhou/sibalubrz/">斯巴鲁BRZ</a></span>
-                                             <span class="parameter">排量 2.0L | 油耗 7.5-8.2L</span>
-                                         </dt>
-                                         <dd>24.98-28.78万</dd>
-                                     </dl>
-                                 </div>
-                             </div>
-                         </li>--%>
-                </ul>
+                </c:forEach>
+                <%-- <li>
+                     <div class="car-card">
+                         <div class="photos">
+                             <a href="#guangzhou/sibalubrz/">
+                                 <img src="./【淘车新车】广州新车贷款-淘车_files/1005247693_6.jpg" alt="斯巴鲁BRZ">
+                             </a>
+                         </div>
+                         <div class="text">
+                             <dl>
+                                 <dt>
+                                 <span class="name"><a
+                                         href="#guangzhou/sibalubrz/">斯巴鲁BRZ</a></span>
+                                     <span class="parameter">排量 2.0L | 油耗 7.5-8.2L</span>
+                                 </dt>
+                                 <dd>24.98-28.78万</dd>
+                             </dl>
+                         </div>
+                     </div>
+                 </li>--%>
+            </ul>
 
 
-            </div>
+        </div>
 
         <div class="list-loading" id="list-loading" style="display: none;">
             <div class="loading-icon"></div>

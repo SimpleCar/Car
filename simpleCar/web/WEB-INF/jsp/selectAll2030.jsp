@@ -267,7 +267,7 @@
                     <dd><a href="#guangzhou/budget-c4/" data-key="c4">10-15万</a></dd>
                     <dd><a href="#guangzhou/budget-c5/" data-key="c5">15-20万</a></dd>
                     <dd><a href="#guangzhou/budget-c6/" data-key="c6" class="active">20-30万</a></dd>
-                    <dd><a href="#guangzhou/budget-c7/" data-key="c7">30-45万</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/carController/goSelectAll3045" data-key="c7">30-45万</a></dd>
                     <dd><a href="#guangzhou/budget-c8/" data-key="c8">45万以上</a></dd>
 
                     <dd class="custom-wrapper">
