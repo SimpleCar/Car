@@ -1,6 +1,6 @@
 /*
-SQLyog 企业版 - MySQL GUI v8.14 
-MySQL - 5.7.20 : Database - simplecar
+SQLyog Professional v12.09 (64 bit)
+MySQL - 5.7.16 : Database - simplecar
 *********************************************************************
 */
 
@@ -28,12 +28,13 @@ CREATE TABLE `business` (
   `bAdd` varchar(24) DEFAULT NULL COMMENT '商家地址',
   `imgUrl` varchar(24) DEFAULT NULL COMMENT '商家证件照',
   `bType` varchar(24) DEFAULT NULL COMMENT '商家类别',
+  `isUse` int(4) DEFAULT '0' COMMENT '是否运行使用',
   PRIMARY KEY (`bId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='商家信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='商家信息表';
 
 /*Data for the table `business` */
 
-insert  into `business`(`bId`,`bName`,`bPwd`,`bPhone`,`bAdd`,`imgUrl`,`bType`) values (1,'长江4S店','123','13344445555','贵州省贵阳市','changjiang.jpg','4S店'),(2,'贵车','123','14455556666','云南省云安市','guiche.jpg','个人'),(3,'黄河4S店','123','15566665555','福建省福田区','huanghe.jpg','4S店');
+insert  into `business`(`bId`,`bName`,`bPwd`,`bPhone`,`bAdd`,`imgUrl`,`bType`,`isUse`) values (1,'长江4S店','123','13344445555','贵州省贵阳市','changjiang.jpg','4S店',1),(2,'贵车','123','14455556666','云南省云安市','guiche.jpg','个人',1),(3,'黄河4S店','123','15566665555','福建省福田区','huanghe.jpg','4S店',1),(4,'教授店',NULL,'12343243243','jkljkljk;lk',NULL,'个人',0);
 
 /*Table structure for table `car` */
 
