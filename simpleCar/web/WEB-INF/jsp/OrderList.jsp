@@ -85,48 +85,7 @@
           '//img2.yixinfinance.com/taoche/common/images/car-008.png?v=201801301002'];    
 </script>
 
-
-<article class="user_nav_box" id="userLeft">
-    <div class="user_photo_box">
-        <div class="user_photo">
-            <img src="../../statics/orderList/user_photo_bg.png" class="user_photo_bg">
-            <span class="bg_txt">点我换一个</span>
-                <img src="../../statics/orderList/car-008.png" class="photo">
-        </div>
-        <div class="user_name">132****6334</div>
-    </div>
-    <nav class="user_nav">
-        <ul class="user_ul">
-            <li class="cur"><a href="https://home.taoche.com/">分期订单<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/ErShouChe/Order">二手车订单<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/ErShouChe">二手车服务<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/MyCouponCard">我的卡券<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/User/ViewUserProfile">个人资料<i class="tip_r"></i></a></li>            
-            <li class=""><a href="https://home.taoche.com/User/ViewQualification">信用信息<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/User/ViewCertificateInfo">实名认证<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/MyComment/ServedAdviserList">我的顾问<i class="tip_r"></i></a></li>
-            <li class=""><a href="https://home.taoche.com/User/ViewChangePwd">修改密码<i class="tip_r"></i></a></li>         
-        </ul>
-    </nav>
-
-    <!-- 二维码弹层 -->
-    <div class="QRCode_box clrfix box-sizing hide">
-        <aside class="fl QRCode">
-            <img src="../../statics/orderList/qrcode.png">
-        </aside>
-        <aside class="fl share_r">
-            <div class="close closeEvent"></div>
-            <div class="QRCode_title">手机扫码来晒单 赢取缤纷好礼</div>
-            <div class="clrfix">
-                <div class="fl scanning"></div>
-                <div class="fl share_txt">
-                    <div>开启扫描工具</div>
-                    <div>扫一扫立即秀车</div>
-                </div>
-            </div>
-        </aside>
-    </div>   
-</article>
+    <jsp:include page="orderLeft.jsp"/>
 
 
     <section class="maincont fl" id="userRight">
