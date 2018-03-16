@@ -1,5 +1,6 @@
 package cn.kgc.controller;
 
+import cn.kgc.entity.Business;
 import cn.kgc.entity.CarInfo;
 import cn.kgc.entity.User;
 import cn.kgc.service.BusinessService;
@@ -49,6 +50,18 @@ public class businessController {
     @RequestMapping("dobusinessRegister")
     public String dobunessRegister(HttpServletRequest request, @RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("suozaiquyu") String suozaiquyu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
         System.out.println("你的申请提交我们已收到,审核后将会由我们的工作人员与您联系请保持手机畅通."+shangjiamingzi+suozaiquyu+shangjialeixing+shangjiashouji);
+        Business business=new Business();
+        business.setbName(shangjiamingzi);
+        business.setbPhone(shangjiashouji);
+        business.setbType(shangjialeixing);
+        business.setbAdd(suozaiquyu);
+        int num=0;
+        num=businessService.addBusiness(business);
+        if (num>0){
+            System.out.println("11111111111111111111111111111111111111111111111111");
+        }else {
+            System.out.println("00000000000000000000000000000000000000000000000000000");
+        }
         //判断文件 不为空就进去
 //        if(!mFile.isEmpty()){
 //
@@ -87,6 +100,6 @@ public class businessController {
 //                }
 //            }
 //        }
-        return "indexPage";
+        return "businessRegisterle";
     }
 }

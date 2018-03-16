@@ -1,6 +1,7 @@
 package cn.kgc.service.impl;
 
 import cn.kgc.dao.BusinessMapper;
+import cn.kgc.entity.Business;
 import cn.kgc.entity.CarInfo;
 import cn.kgc.service.BusinessService;
 import org.apache.ibatis.annotations.Param;
@@ -44,10 +45,17 @@ public class BusinessServiceImpl implements BusinessService {
         return businessMapper.deleteCarInfod(carInfo);
     }
 
+
     @Override
     //修改车信息
     public int updateCarInfo(Integer carId) {
         return businessMapper.updateCarInfo(carId);
     }
 
+
+    @Override
+    //插入一个商家
+    public int addBusiness(Business business) {
+        return businessMapper.addBusiness(business);
+    }
 }

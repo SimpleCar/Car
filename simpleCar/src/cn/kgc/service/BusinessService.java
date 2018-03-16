@@ -1,5 +1,6 @@
 package cn.kgc.service;
 
+import cn.kgc.entity.Business;
 import cn.kgc.entity.CarInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,7 @@ public interface BusinessService {
     int updateCarInfo(@Param("carId") Integer carId);
 
     int deleteCarInfod(@Param("carInfo") CarInfo carInfo);
+
+    //插入一个商家
+    int addBusiness(Business business);
 }

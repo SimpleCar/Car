@@ -23,4 +23,8 @@
     <delete id="deleteCarInfod" parameterType="CarInfo">
         DELETE FROM carinfo WHERE carId=#{carInfo.carId}
     </delete>
+
+    <insert id="addBusiness" parameterType="Business">
+        INSERT INTO business(bName,bPhone,bAdd,bType) VALUE (#{bName},#{bPhone},#{bAdd},#{bType})
+    </insert>
 </mapper>

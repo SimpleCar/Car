@@ -1,5 +1,6 @@
 package cn.kgc.dao;
 
+import cn.kgc.entity.Business;
 import cn.kgc.entity.CarInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -22,4 +23,7 @@ public interface BusinessMapper {
     int updateCarInfo(@Param("carId") Integer carId);
 
     int deleteCarInfod(@Param("carInfo") CarInfo carInfo);
+
+    //插入一个商家
+    int addBusiness(Business business);
 }
