@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 0011 2018年03月11日
-  Time: 下午 18:11:33
+  Date: 2018/3/10
+  Time: 13:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -30,11 +30,11 @@
 
     <link href="../../statics/css/common.css" rel="stylesheet" type="text/css">
 
-    <script src="../../statics/js/push.js"></script>
-    <script type="text/javascript" async="" src="./快速注册_files/bc.js.下载"></script>
-    <script src="./快速注册_files/hm.js.下载"></script>
-    <script type="text/javascript" async="" src="./快速注册_files/dc.js.下载"></script>
-    <script src="./快速注册_files/hm.js(1).下载"></script>
+    <script src="./免费注册_files/push.js.下载"></script>
+    <script type="text/javascript" async="" src="./免费注册_files/bc.js.下载"></script>
+    <script src="./免费注册_files/hm.js.下载"></script>
+    <script type="text/javascript" async="" src="./免费注册_files/dc.js.下载"></script>
+    <script src="./免费注册_files/hm.js(1).下载"></script>
     <script>
         var locationCityId = 501;
         var xinche = 'http://kaizouba.taoche.com';
@@ -60,14 +60,14 @@
     </script>
 
     <!--[if lt IE 9]>
-    <script src="//img2.yixinfinance.com/taoche/dll/shim.dll.js?v=201706081140?v=201801301002"></script>
+    <script src="../../statics/js/shim.dll.js></script>
     <![endif lt IE 9]-->
 
     <link rel="stylesheet" type="text/css" href="../../statics/css/index.css">
     <script type="text/javascript">
         // var regSign = true;
         var loadsign = 'reg';
-        var returnurl = "https://xin.taoche.com/guangzhou/";
+        var returnurl = "http://www.taoche.com";
         CODE_GETTING_URL = '/Register/CheckAccountII';
         var businessid = 1003;
         var isShowCaptcha = true;
@@ -86,158 +86,152 @@
 <body>
 <!-- -----------------------头开始--------------------------- -->
 <jsp:include page="top2.jsp"/>
-
-<!-- header -->
-<input type="hidden" name="__RequestVerificationToken" id="__RequestVerificationToken"
-       data-id="jnPAh2bL3esF8cqd0u6iAfqEpgyheIC3LRqxw7_AuyUDBKCIGKPzThXQa0yXEf3YSpXUzWvu-o70CPUHH6j8of-BIB41"
-       value="jnPAh2bL3esF8cqd0u6iAfqEpgyheIC3LRqxw7_AuyUDBKCIGKPzThXQa0yXEf3YSpXUzWvu-o70CPUHH6j8of-BIB41">
+<!-- -----------------------头结束--------------------------- -->
 
 <!--Content-->
 
-
-<div class="login"
-     style="background-image: url(&#39;//img1.yixinfinance.com/chedai/a82583d3-bd93-4eef-a35c-4692515ea748.jpg&#39;);">
-
+<div class="login" style="background-image: url('../../statics/image/sign.jpg');">
     <article class="content clrfix">
-        <blockquote class="login-form">
-            <div class="form clrfix">
-                <header class="tab-box">
-                    <aside class="reg-tab">快速注册</aside>
-                    <div>已注册可直接<a href="/userController/goSignIn">登录</a></div>
-                </header>
-                <article id="form" class="login-con">
-                    <blockquote id="regForm" class="reg-box">
-                        <div class="pad10B pad30RL">
-                            <div class="input-item clrfix">
-                                <div class="input-box"><input id="mobile" name="mobile" type="text" maxlength="11"
-                                                              class="inputNumber AppCheck nocheck data border1"
-                                                              placeholder="请输入手机号" autocomplete="off"></div>
+        <form id="signUp" method="post" action="/userController/signUp">
+            <blockquote class="login-form">
+                <div class="form clrfix">
+                    <header class="tab-box">
+                        <aside class="reg-tab">快速注册</aside>
+                        <div>已注册可直接<a href="${pageContext.request.contextPath}/goTo/signIn">登录</a></div>
+                    </header>
+                    <article id="form" class="login-con">
+                        <blockquote id="regForm" class="reg-box">
+                            <%--手机号码输入--%>
+                            <div class="pad10B pad30RL">
+                                <div class="input-item clrfix">
+                                    <div class="input-box">
+                                        <input id="mobile" name="mobile" type="text" maxlength="11" class="border1"
+                                               placeholder="请输入手机号" autocomplete="off">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="jyts-box"><span class="jyts jyts-mobile">请输入正确的手机号</span></div>
-
-
-                        <div class="pad10B pad30RL clrfix border1">
-                            <div class="input-item fl clrfix w-180">
-                                <div class="input-box"><input id="RegValidateCode" name="validateCode" maxlength="4"
-                                                              type="text" class="inputNumber AppCheck data w-120"
-                                                              placeholder="请输入验证码" autocomplete="off"></div>
+                            <%--手机号码错误提示--%>
+                            <div class="jyts-box">
+                                <span class="jyts jyts-mobile" id="mobileFalse">请输入正确的手机号</span>
                             </div>
-                            <div id="GetRegValidateCode" class="fr btn code-btn disable">获取验证码</div>
-                        </div>
-                        <div class="jyts-box"><span class="jyts jyts-validateCode">请输入正确的手机验证码</span></div>
-                        <div class="pad10B pad30RL">
-                            <div class="input-item clrfix">
-                                <div class="input-box"><input id="password" name="password" type="password"
-                                                              minlength="6" maxlength="20"
-                                                              class="AppCheck nocheck data border1" placeholder="请输入密码"
-                                                              autocomplete="off"></div>
+                            <%--发送验证码--%>
+                            <div class="pad10B pad30RL clrfix border1">
+                                <div class="input-item fl clrfix w-180">
+                                    <div class="input-box">
+                                        <input id="RegValidateCode" name="validateCode"
+                                                                  type="text" class="inputNumber AppCheck data w-120"
+                                                                  placeholder="请输入验证码" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div id="GetRegValidateCode" class="fr btn code-btn disable">获取验证码</div>
                             </div>
-                        </div>
-                        <div class="jyts-box"><span class="jyts jyts-password">请输入正确的密码</span></div>
-                        <div class="checked-num">
-                            密码至少包含两种字母、数字、符号，6-20位
-                        </div>
-
-                        <div class="tools-box terms-service">
-                            <div><input id="rule" type="checkbox" checked="checked" value=""> 我已经看过并同意<a target="_blank"
-                                                                                                         href="https://sq.taoche.com/home/serviceterms"
-                                                                                                         class="reg-rule">《网络服务条款》</a>
+                            <%--验证码错误提示--%>
+                            <div class="jyts-box">
+                                <span class="jyts jyts-validateCode">请输入正确的手机验证码</span>
                             </div>
-                        </div>
-                        <div id="reg-btn" class="btn reg-btn disabled">立即注册</div>
-                    </blockquote>
-                </article>
-            </div>
-        </blockquote>
+                            <%--密码设置--%>
+                            <div class="pad10B pad30RL">
+                                <div class="input-item clrfix">
+                                    <div class="input-box">
+                                        <input id="password" name="password" type="text"
+                                                                  minlength="6" maxlength="20"
+                                                                  class="border1"
+                                                                  placeholder="请输入密码"
+                                                                  autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <%--密码格式错误提示--%>
+                            <div class="jyts-box">
+                                <span class="jyts jyts-password" id="pwdFalse">密码至少包含两种字母、数字、符号，6-20位</span>
+                            </div>
+                            <%--用户条款--%>
+                            <div class="tools-box terms-service">
+                                <div>
+                                    <input id="rule" type="checkbox" checked="checked" value="">
+                                    我已经看过并同意
+                                    <a target="_blank" href="https://sq.taoche.com/home/serviceterms" class="reg-rule">《网络服务条款》
+                                    </a>
+                                </div>
+                            </div>
+                            <%--立即注册--%>
+                            <div id="reg-btn" class="btn reg-btn disabled">立即注册</div>
+                        </blockquote>
+                    </article>
+                </div>
+            </blockquote>
+        </form>
     </article>
     <aside class="banner_btm"></aside>
 </div>
 
-
 <!--Content-->
-<!--整屏蒙层start-->
-<div id="maskLayer"></div>
-<!--整屏蒙层end-->
+
+<script src="../../statics/js/common.js"></script>
+<script src="../../statics/js/index.js"></script>
+<script src="../../statics/js/header_common.js"></script>
+<script src="../../statics/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    function isPoneAvailable(pone) {
+        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!myreg.test(pone)) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
+    function isPwd(pwd) {
+        var myreg2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/;
+        if (myreg2.test(pwd)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $(document).ready(function () {
+        $("#reg-btn").on("click", function () {
+            $("#signUp").submit();
+        });
+
+        $("#mobile").blur(function () {
+            var phone = $("#mobile").val();
+            if (!isPoneAvailable(phone)) {
+                $("#mobileFalse").removeClass("jyts");
+            }
+        });
+        $("#mobile").focus(function () {
+                $("#mobileFalse").addClass("jyts");
+        });
+
+        $("#GetRegValidateCode").on("click",function () {
+            window.location="userController/sendCode";
+        });
+        $("#RegValidateCode").blur(function () {
+            if($("#RegValidateCode")==${code}){
+                alert(${code});
+                $("#reg-btn").removeClass("disabled");
+            }
+        });
+
+        $("#password").blur(function () {
+            var pwd = $("#password").val();
+            if(!isPwd(pwd)){
+                $("#pwdFalse").removeClass("jyts");
+            }else{
+                $("#GetRegValidateCode").removeClass("disable");
+            }
+        });
+    })
 
 
-<%--<script src="../../statics/js/common.js"></script>
-
-
-<script src="../../statics/js/index.js"></script>--%>
+</script>
+n
 
 <!-- -----------------------尾开始--------------------------- -->
-<p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img
-        class="ft-rc3" src="" alt="广告"></p>
-
+<jsp:include page="bottom.jsp"/>
 <!-- -----------------------尾结束--------------------------- -->
-<!-- 2018 Taoche PC改版新车和二手车公共头部所需JS引用 -->
-<script src="./快速注册_files/taoche_pc_header_common.js.下载"></script>
-<!-- 广告代码 -->
-<script src="./快速注册_files/senseNew.js.下载"></script>
-
-<!--百度统计PC-->
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b43ce35f868b496d8c3af5108a539019";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<!--webtrendsPC-->
-<script type="text/javascript" src="../../statics/js/dcs_ucar.js"></script>
-<!--大数据-->
-<script type="text/javascript">
-    (function () {
-        var dc = document.createElement("script");
-        dc.type = "text/javascript";
-        dc.async = true;
-        dc.src = ("https:" == document.location.protocol ? "https://" : "http://") + "js.ctags.cn/dc.js?163"; //此ID为系统生成的网站唯一标识
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(dc, s);
-    })();
-</script>
-<!-- 百度统计pc端 -->
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = window.location.host.indexOf("etaoche.cn") >= 0 ? "https://hm.baidu.com/hm.js?f68148618e51c0e86681df69a3d0d08d" : "https://hm.baidu.com/hm.js?db7dedc48a653d8087cb460082e491b4";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
-<!-- 易鑫统计基础代码 -->
-<script>
-    (function () {
-        var bc = document.createElement('script');
-        bc.type = 'text/javascript';
-        bc.async = true;
-        bc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dt.taoche.com/bc.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(bc, s);
-    })();
-</script>
-
-<!--seo,自动推送代码-->
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-
 
 </body>
 </html>
