@@ -19,12 +19,14 @@ public class Business {
     private String imgUrl;
     //商家类别
     private String bType;
+    //商家是否允许使用
+    private int isUse;
 
     //无参构造方法
     public Business() {
     }
     //有参构造方法
-    public Business(int bId, String bName, String bPwd, String bPhone, String bAdd, String imgUrl, String bType) {
+    public Business(int bId, String bName, String bPwd, String bPhone, String bAdd, String imgUrl, String bType, int isUse) {
         this.bId = bId;
         this.bName = bName;
         this.bPwd = bPwd;
@@ -32,7 +34,24 @@ public class Business {
         this.bAdd = bAdd;
         this.imgUrl = imgUrl;
         this.bType = bType;
+        this.isUse = isUse;
     }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Business{" +
+                "bId=" + bId +
+                ", bName='" + bName + '\'' +
+                ", bPwd='" + bPwd + '\'' +
+                ", bPhone='" + bPhone + '\'' +
+                ", bAdd='" + bAdd + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", bType='" + bType + '\'' +
+                ", isUse=" + isUse +
+                '}';
+    }
+
     //set get
     public int getbId() {
         return bId;
@@ -89,6 +108,15 @@ public class Business {
     public void setbType(String bType) {
         this.bType = bType;
     }
+
+    public int getIsUse() {
+        return isUse;
+    }
+
+    public void setIsUse(int isUse) {
+        this.isUse = isUse;
+    }
+
 //    CREATE TABLE Business(
 //            bId INT(24) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 //    bName VARCHAR(24) COMMENT "商家名字",

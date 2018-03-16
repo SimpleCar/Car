@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Controller
@@ -18,59 +20,87 @@ public class CarController {
 
     //去新车页面
     @RequestMapping("newCar")
-    public String NewCar() {
-        return "NewCar";
+    public String newCar() {
+        return "newCar";
+    }
+
+    //去20到30万所有车界面
+    @RequestMapping("goSelectAll2030")
+    public String goSelectAll2030() {
+        return "selectAll2030";
     }
 
     //去20-30页面跑车
     @RequestMapping("superCar20")
     public String superCar20(Model model) {
-        car.setCmax(30);
-        car.setCmin(20);
+        //传最大值
+//        car.setCmax(30);
+//        //传最小值
+//        car.setCmin(20);
+        //获取车辆
         List<Car> list = carService.selectCar(car);
-
+        //获取一共有多少条数据
+        int count=carService.selectCarCount(car);
         model.addAttribute("list", list);
+        model.addAttribute("count", count);
         return "superCar20";
 
     }
-
-    @RequestMapping("goSelectALL2030")
-    public String goSelectALL2030() {
-        return "selectAll2030";
+    //去30到45万所有车界面
+    @RequestMapping("goSelectAll3045")
+    public String goSelectAll3045(){
+        return "selectAll3045";
     }
 
-   /* @RequestMapping("superCar20")
-    public String superCar20(Model model) {
-        List<Car> list = carService.selectAll();
 
-        model.addAttribute("list", list);
-        return "SuperCar20";
-
-        //去30-45页面跑车
+    //去30-45页面跑车
     @RequestMapping("superCar30")
-    public String superCar30(Model model){
-        car.setCmax(45);
-        car.setCmin(30);
-        List<Car> list=carService.selectCar(car);
-
-        model.addAttribute("list",list);
+    public String superCar30(Model model) {
+//        car.setCmax(45);
+//        car.setCmin(30);
+        List<Car> list = carService.selectCar(car);
+        int count=carService.selectCarCount(car);
+        model.addAttribute("count", count);
+        model.addAttribute("list", list);
         return "superCar30";
     }
-        //去45以上跑车
-        @RequestMapping("superCar45")
-        public String superCar45(Model model){
-            List<Car> list=carService.selectGreaterThanSuperCar();
-            model.addAttribute("list",list);
-            return "superCar45";
-        }
 
-        //去45以上豪车
+    //去所有45万车的界面
+    @RequestMapping("goSelectAll45")
+    public String goSelectAll45(){
+        return "selectAll45";
+    }
+
+    //去45以上跑车
+    @RequestMapping("superCar45")
+    public String superCar45(Model model) {
+        List<Car> list = carService.selectGreaterThanSuperCar();
+        int count=carService.selectGreaterThanSuperCarCount();
+        model.addAttribute("count", count);
+        model.addAttribute("list", list);
+        return "superCar45";
+    }
+
+    //去45以上豪车
     @RequestMapping("thanLuxuryCar")
-    public String thanLuxuryCar(Model model){
-        List<Car> list=carService.selectGreaterThanLuxuryCar();
-        model.addAttribute("list",list);
+    public String thanLuxuryCar(Model model) {
+        List<Car> list = carService.selectGreaterThanLuxuryCar();
+        int count=carService.selectGreaterThanLuxuryCarCount();
+        model.addAttribute("count", count);
+        model.addAttribute("list", list);
         return "thanLuxuryCar";
-    }*/
+    }
 
-
+    //根据名字查车
+    @RequestMapping("goCarInformation")
+    public String goCarInformation(Model model, HttpServletRequest request){
+        String cname = request.getParameter("cname");
+//        car.setCname(cname);
+       List<Car>list=carService.selectCarName(car);
+       model.addAttribute("list",list);
+        return "goCarInformation";
+    }
 }
+
+
+

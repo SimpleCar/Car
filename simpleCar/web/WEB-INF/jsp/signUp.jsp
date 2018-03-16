@@ -161,10 +161,10 @@
 <!--整屏蒙层end-->
 
 
-<script src="../../statics/js/common.js"></script>
+<%--<script src="../../statics/js/common.js"></script>
 
 
-<script src="../../statics/js/index.js"></script>
+<script src="../../statics/js/index.js"></script>--%>
 
 <!-- -----------------------尾开始--------------------------- -->
 <p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img

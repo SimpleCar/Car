@@ -106,7 +106,7 @@
 <div style="background-color: white;width: 350px;height: 430px;display: inline-block;position: relative;margin-left: 925px;margin-top: 110px">
     <form method="post" action="/userController/indexPage">
         <div style="display: inline-block;position: relative;margin-left: 100px">
-            <h1>商家登录</h1>
+            <h1>商家登录</h1><a href="${pageContext.request.contextPath}/businessController/business">进入</a>
         </div>
         <div style="display: inline-block;position: relative;margin-top: 20px;margin-left: 20px">
             <span style="font-size: 20px;color: dodgerblue;font-family: 新宋体 "><strong>用户名</strong></span>
@@ -130,7 +130,7 @@
 
         <div style="position: relative;margin-top: 10px;margin-left: 170px">
             <a href="#">忘记密码</a>&nbsp;|&nbsp;
-            <a href="#">商家申请</a>
+            <a href="${pageContext.request.contextPath}/businessController/businessRegister">商家申请</a>
         </div>
     </form>
 </div>

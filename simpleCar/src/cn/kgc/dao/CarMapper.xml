@@ -19,19 +19,24 @@
 
     </select>
     <!--查跑车条数-->
-    <select id="selectCarCount" resultType="Car">
+    <select id="selectCarCount" resultType="int" >
         SELECT count(*) FROM car WHERE cstock!=0 AND  cmax &lt;#{cmax} AND cmin &gt;#{cmin} ;
 
     </select>
     <!--查找大于45以上的跑车条数-->
-    <select id="selectGreaterThanSuperCarCount" resultType="Car">
-        SELECT count(*) FROM car WHERE cstock!=0 AND cmin &gt; 45 AND cleavel=0;
+    <select id="selectGreaterThanSuperCarCount" resultType="int">
+        SELECT count(1) FROM car WHERE cstock!=0 AND cmin &gt; 45 AND cleavel=0;
 
     </select>
     <!--查豪车条数-->
-    <select id="selectGreaterThanLuxuryCarCount" resultType="Car">
-          SELECT count(*) FROM car WHERE cstock!=0  AND cmin &gt; 45 AND cleavel=1;
+    <select id="selectGreaterThanLuxuryCarCount" resultType="int">
+          SELECT count(1) FROM car WHERE cstock!=0  AND cmin &gt; 45 AND cleavel=1;
 
+    </select>
+
+    <!--根据名字查车-->
+    <select id="selectCarName" resultType="Car">
+        select * from car where cname=#{cname}
     </select>
 
 

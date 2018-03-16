@@ -34,18 +34,23 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> selectCarCount(Car car) {
+    public int selectCarCount(Car car) {
         return carMapper.selectCarCount(car);
     }
 
     @Override
-    public List<Car> selectGreaterThanSuperCarCount(Car car) {
-        return carMapper.selectGreaterThanSuperCarCount(car);
+    public int selectGreaterThanSuperCarCount() {
+        return carMapper.selectGreaterThanSuperCarCount();
     }
 
     @Override
-    public List<Car> selectGreaterThanLuxuryCarCount(Car car) {
-        return carMapper.selectGreaterThanSuperCarCount(car);
+    public int selectGreaterThanLuxuryCarCount() {
+        return carMapper.selectGreaterThanLuxuryCarCount();
+    }
+
+    @Override
+    public List<Car> selectCarName(Car car) {
+        return carMapper.selectCarName(car);
     }
 
 
