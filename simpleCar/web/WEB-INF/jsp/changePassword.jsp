@@ -90,48 +90,7 @@
           '../../statics/changePassword//images/car-008.png?v=201801301002'];
 </script>
 
-
-<article class="user_nav_box" id="userLeft">
-    <div class="user_photo_box">
-        <div class="user_photo">
-            <img src="../../statics/changePassword/images/user_photo_bg.html.png?v=201801301002" class="user_photo_bg" />
-            <span class="bg_txt">点我换一个</span>
-                <img src="../../statics/changePassword/car-008.png" class="photo" />
-        </div>
-        <div class="user_name">132****6334</div>
-    </div>
-    <nav class="user_nav">
-        <ul class="user_ul">
-            <li class=""><a href="/">分期订单<i class="tip_r"></i></a></li>
-            <li class=""><a href="/ErShouChe/Order">二手车订单<i class="tip_r"></i></a></li>
-            <li class=""><a href="/ErShouChe">二手车服务<i class="tip_r"></i></a></li>
-            <li class=""><a href="/MyCouponCard">我的卡券<i class="tip_r"></i></a></li>
-            <li class=""><a href="/User/ViewUserProfile">个人资料<i class="tip_r"></i></a></li>            
-            <li class=""><a href="/User/ViewQualification">信用信息<i class="tip_r"></i></a></li>
-            <li class=""><a href="/User/ViewCertificateInfo">实名认证<i class="tip_r"></i></a></li>
-            <li class=""><a href="/MyComment/ServedAdviserList">我的顾问<i class="tip_r"></i></a></li>
-            <li class="cur"><a href="/User/ViewChangePwd">修改密码<i class="tip_r"></i></a></li>         
-        </ul>
-    </nav>
-
-    <!-- 二维码弹层 -->
-    <div class="QRCode_box clrfix box-sizing hide">
-        <aside class="fl QRCode">
-            <img src="../../statics/changePassword/qrcode.png?v=201801301002">
-        </aside>
-        <aside class="fl share_r">
-            <div class="close closeEvent"></div>
-            <div class="QRCode_title">手机扫码来晒单 赢取缤纷好礼</div>
-            <div class="clrfix">
-                <div class="fl scanning"></div>
-                <div class="fl share_txt">
-                    <div>开启扫描工具</div>
-                    <div>扫一扫立即秀车</div>
-                </div>
-            </div>
-        </aside>
-    </div>   
-</article>
+        <jsp:include page="orderLeft.jsp"/>
 
         <article class="user_con" id="userRight">
             <div class="title_box">

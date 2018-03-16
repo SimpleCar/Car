@@ -16,7 +16,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("goSignIn")
-    public String goSignIn() {
+    public String goSignIn(){
         return "signIn";
     }
 
@@ -28,7 +28,8 @@ public class UserController {
     }
 
     @RequestMapping("goSignUp")
-    public String goSignUp() {
+    public String goSignUp(){
+
         return "signUp";
     }
 
