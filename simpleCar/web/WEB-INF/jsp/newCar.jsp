@@ -536,9 +536,16 @@
 
         <ul>
 
-            <li><a href="${pageContext.request.contextPath}/carController/goSelectALL2030" target="_blank">20-30万</a></li>
-            <li><a href="#" target="_blank">30-45万</a></li>
-            <li><a href="#" target="_blank">45万以上</a></li>
+
+            <li><a href="#" target="_blank">3万以下</a></li>
+            <li><a href="#" target="_blank">3-5万</a></li>
+            <li><a href="#" target="_blank">5-8万</a></li>
+            <li><a href="#" target="_blank">8-10万</a></li>
+            <li><a href="#" target="_blank">10-15万</a></li>
+            <li><a href="#" target="_blank">15-20万</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/goSelectAll2030" target="_blank">20-30万</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/goSelectAll3045" target="_blank">30-45万</a></li>
+            <li><a href="${pageContext.request.contextPath}/carController/goSelectAll45" target="_blank">45万以上</a></li>
         </ul>
 
     </div>

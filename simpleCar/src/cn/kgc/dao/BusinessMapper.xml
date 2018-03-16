@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kgc.dao.BusinessMapper">
+    <select id="findAllCarInfoByBusiness" resultType="CarInfo">
+        SELECT * FROM car;
+    </select>
+
+   <insert id="addCarInfos" parameterType="CarInfo" >
+      INSERT INTO carinfo(carName,carBrand) VALUES(#{carName},#{carBrand})
+    </insert>
+
+     <!--<insert id="addCarInfos" parameterType="CarInfo">
+
+     INSERT INTO carinfo(carId,carName,carBrand,carPrice,carLevel,carFirstPay,carLastPay,carDesc,business,imgUrl) VALUE(#{carId},#{carName},#{carBrand},#{carPrice},#{carLevel},#{carFirstPay},#{carLastPay},#{carDesc},#{business},#{imgUrl})
+     </insert>-->
+
+    <delete id="deleteCarInfo" parameterType="int">
+        DELETE FROM carinfo WHERE carId=#{carId}
+    </delete>
+
+    <delete id="deleteCarInfod" parameterType="CarInfo">
+        DELETE FROM carinfo WHERE carId=#{carInfo.carId}
+    </delete>
+
+    <insert id="addBusiness" parameterType="Business">
+        INSERT INTO business(bName,bPhone,bAdd,bType) VALUE (#{bName},#{bPhone},#{bAdd},#{bType})
+    </insert>
+    <select id="findBusinessbIdByPhone" resultType="Business">
+        SELECT * FROM business WHERE bPhone=#{bPhone}
+    </select>
+
+
+
+    <select id="fineCarListByBusiness" resultType="Car">
+        SELECT * FROM car WHERE cBusiness=#{i}
+    </select>
+</mapper>

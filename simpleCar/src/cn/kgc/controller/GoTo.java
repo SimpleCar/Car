@@ -52,5 +52,8 @@ public class GoTo {
         return "SuperCar20";
     }
 
-
+@RequestMapping("order")
+    public  String order(){
+        return "OrderList";
+}
 }
