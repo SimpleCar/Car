@@ -27,4 +27,13 @@
     <insert id="addBusiness" parameterType="Business">
         INSERT INTO business(bName,bPhone,bAdd,bType) VALUE (#{bName},#{bPhone},#{bAdd},#{bType})
     </insert>
+    <select id="findBusinessbIdByPhone" resultType="Business">
+        SELECT * FROM business WHERE bPhone=#{bPhone}
+    </select>
+
+
+
+    <select id="fineCarListByBusiness" resultType="Car">
+        SELECT * FROM car WHERE cBusiness=#{i}
+    </select>
 </mapper>

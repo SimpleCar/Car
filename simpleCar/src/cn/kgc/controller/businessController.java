@@ -1,6 +1,7 @@
 package cn.kgc.controller;
 
 import cn.kgc.entity.Business;
+import cn.kgc.entity.Car;
 import cn.kgc.entity.CarInfo;
 import cn.kgc.entity.User;
 import cn.kgc.service.BusinessService;
@@ -29,25 +30,35 @@ public class businessController {
     //进入我是商家页面
     public String business(Model model, HttpServletRequest request){
         //测试进入控制器
-        System.out.print("测试"+"。进入控制器。999999999999999999999999999999999999999999999999999999999");
-
-//        Object object=request.getSession().getAttribute("yonghu");
-//        if (object==null||object==""){
-//            return "businessLogin";
-//        }else if (
-//                .
-//                ){
-//
-//        }
-        return  "business";
+        System.out.println("测试"+"进入控制器。。。。。。。。。。。。。。。。。。。。。。");
+        User user=new User();
+        user.setUphone("15566665555");
+        request.getSession().setAttribute("yonghu",user);
+        Object object=request.getSession().getAttribute("yonghu");
+        if (object==null||object==""){
+            System.out.println("object是空的");
+            return "businessLogin";
+        }else {
+            System.out.println("obj不是空的。。。。。。。。。。。。。。。。。");
+            User user1 = (User) object;
+            System.out.println(user1.getUphone() + "。。。。。。。。。。。。。。。。。。。。。");
+            List<Car> list = businessService.fineCarListByBusiness(1);
+            Business business = businessService.findBusinessbIdByPhone(user1.getUphone());
+            System.out.println(business.toString());
+            model.addAttribute("business", business);
+            model.addAttribute("carListByBusiness", list);
+            return "business";
+        }
     }
 
     @RequestMapping("businessRegister")
+    //去到商家注册页面
     public String businessRegister(){
         return  "businessRegister";
     }
 
     @RequestMapping("dobusinessRegister")
+    //处理商家注册信息 把注册信息插入到数据库里
     public String dobunessRegister(HttpServletRequest request, @RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("suozaiquyu") String suozaiquyu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
         System.out.println("你的申请提交我们已收到,审核后将会由我们的工作人员与您联系请保持手机畅通."+shangjiamingzi+suozaiquyu+shangjialeixing+shangjiashouji);
         Business business=new Business();
@@ -101,5 +112,10 @@ public class businessController {
 //            }
 //        }
         return "businessRegisterle";
+    }
+
+    @RequestMapping("gotoAddCar")
+    public String addCar(){
+        return "addCar";
     }
 }

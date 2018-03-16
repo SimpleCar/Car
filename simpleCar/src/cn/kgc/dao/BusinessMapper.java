@@ -1,6 +1,7 @@
 package cn.kgc.dao;
 
 import cn.kgc.entity.Business;
+import cn.kgc.entity.Car;
 import cn.kgc.entity.CarInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -26,4 +27,9 @@ public interface BusinessMapper {
 
     //插入一个商家
     int addBusiness(Business business);
+    //根据商家的手机号码查询到该商家
+    Business findBusinessbIdByPhone(String phone);
+
+    //查询该商家所发布的车
+    List<Car> fineCarListByBusiness(int i);
 }

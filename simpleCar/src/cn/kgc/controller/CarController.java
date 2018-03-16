@@ -34,9 +34,9 @@ public class CarController {
     @RequestMapping("superCar20")
     public String superCar20(Model model) {
         //传最大值
-        car.setCmax(30);
-        //传最小值
-        car.setCmin(20);
+//        car.setCmax(30);
+//        //传最小值
+//        car.setCmin(20);
         //获取车辆
         List<Car> list = carService.selectCar(car);
         //获取一共有多少条数据
@@ -56,8 +56,8 @@ public class CarController {
     //去30-45页面跑车
     @RequestMapping("superCar30")
     public String superCar30(Model model) {
-        car.setCmax(45);
-        car.setCmin(30);
+//        car.setCmax(45);
+//        car.setCmin(30);
         List<Car> list = carService.selectCar(car);
         int count=carService.selectCarCount(car);
         model.addAttribute("count", count);
@@ -95,7 +95,7 @@ public class CarController {
     @RequestMapping("goCarInformation")
     public String goCarInformation(Model model, HttpServletRequest request){
         String cname = request.getParameter("cname");
-        car.setCname(cname);
+//        car.setCname(cname);
        List<Car>list=carService.selectCarName(car);
        model.addAttribute("list",list);
         return "goCarInformation";
