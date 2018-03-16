@@ -118,4 +118,10 @@ public class businessController {
     public String addCar(){
         return "addCar";
     }
+
+    @RequestMapping("doAddCar")
+    public String doAddCar(@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
+        System.out.println(cname+cleavel+cprice+cvariety);
+        return "business";
+    }
 }
