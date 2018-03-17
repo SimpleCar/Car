@@ -37,6 +37,7 @@ public class businessController {
         }else {
             System.out.println("有这个用户***"+business.toString()+"****************************************");
             model.addAttribute("business",business);
+            request.getSession().setAttribute("bb",business);
             int bId=business.getbId();
             System.out.println("商家在数据库的id是"+bId+"********************************");
             List<Car> carListByBusiness=businessService.fineCarListByBusiness(bId);
@@ -131,8 +132,20 @@ public class businessController {
     }
 
     @RequestMapping("doAddCar")
-    public String doAddCar(@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
-        System.out.println(cname+cleavel+cprice+cvariety);
+    public String doAddCar(HttpServletRequest request,@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
+        System.out.println("车名字："+cname);
+        System.out.println("车的价格："+cprice);
+        System.out.println("车的品牌："+cvariety);
+        System.out.println("车的级别："+cleavel);
+        Object object=request.getSession().getAttribute("bb");
+        if (object==null){
+            System.out.println("为空的+++++++++++++++++++");
+        }else {
+            Business business= (Business) object;
+            if (business!=null){
+                System.out.println(business.getbPhone()+"******************************************");
+            }
+        }
         return "business";
     }
 }

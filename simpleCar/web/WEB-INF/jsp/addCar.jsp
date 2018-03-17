@@ -35,6 +35,55 @@
             font-size: 20px;
         }
     </style>
+    <script>
+
+        // 创建一个二维数组 第一个位置的元素值必须和当前第一个下拉框的可选项的value值一致
+        var arr = new Array(3);
+        arr[0] = ["奔驰","GLA","GLC级","C级","E级"];
+        arr[1] = ["宝马","X5","X6","Z4"];
+        arr[2] = ["保时捷","卡宴","718"];
+
+        function choose(val){
+            // 获取
+            var city = document.getElementById("city");
+            // 获取option
+            var cityOp = city.getElementsByTagName("option");
+            // 设置可操作
+            city.disabled = false;
+            // 先删除，后添加
+            for (var i = 0; i < cityOp.length; i++) {
+                var op = cityOp[i];
+                // 删除option
+                city.removeChild(op);
+                //数组长度发生变化，需处理
+                i--;
+            }
+
+            // 遍历
+            for (var i = 0; i < arr.length; i++) {
+                //取一维数组
+                var arr1 = arr[i];
+                //取一维数组的第一个值
+                var firstVal = arr1[0];
+                //判断
+                if(firstVal == val){
+                    //遍历
+                    for (var j = 1; j < arr1.length; j++) {
+                        // 获取
+                        var value = arr1[j];
+                        // 创建option
+                        var optionl = document.createElement("option");
+                        // 创建文本
+                        var textl = document.createTextNode(value);
+                        // 把文本添加到标签
+                        optionl.appendChild(textl);
+                        //添加
+                        city.appendChild(optionl);
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body style="background-color:lightgray">
 <div style="width: 700px;height: 800px;border: 5px limegreen solid;
@@ -44,26 +93,24 @@
             <h1 style="color: limegreen;font-size: 40px;text-align: center">填写车辆信息</h1>
         </div>
 
-        <div class="mesg">
-            <span>车型</span>&nbsp;&nbsp;&nbsp;
-            <select name="cname" style="width: 500px;height: 50px;border: 1px limegreen solid">
-                <option value="ft86">丰田86</option>
-                <option value="madMX-5">马自达MX-5</option>
-                <option value="bsj718">保时捷718</option>
-                <option value="bmZ4">宝马Z4</option>
-                <option value="adTT">奥迪TT</option>
+        <div class="mesg" >
+
+            <span>品牌</span>&nbsp;&nbsp;&nbsp;
+
+            <select name="cvariety" id="province" onchange="choose(this.value)"  style="width: 500px;height: 50px;border: 1px limegreen solid">
+                <option value="0">--请选择品牌--</option>
+                <option value="奔驰">奔驰</option>
+                <option value="宝马">宝马</option>
+                <option value="保时捷">保时捷</option>
             </select>
         </div>
 
         <div class="mesg">
-            <span>品种</span>&nbsp;&nbsp;&nbsp;
-            <select name="cvariety" style="width: 500px;height: 50px;border: 1px limegreen solid">
-                <option value="ft">丰田</option>
-                <option value="mad">马自达</option>
-                <option value="bsj">保时捷</option>
-                <option value="bm">宝马</option>
-                <option value="ad">奥迪</option>
+            <span>车型</span>&nbsp;&nbsp;&nbsp;
+            <select name="cname" id="city" disabled="disabled" style="width: 500px;height: 50px;border: 1px limegreen solid ;">
+                <option value="0">--请选择车型--</option>
             </select>
+
         </div>
 
         <div class="mesg">
@@ -87,5 +134,7 @@
         </div>
     </form>
 </div>
+
+
 </body>
 </html>
