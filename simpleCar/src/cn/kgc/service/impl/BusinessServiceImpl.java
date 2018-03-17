@@ -61,8 +61,9 @@ public class BusinessServiceImpl implements BusinessService {
     }
 
     @Override
-    public Business findBusinessbIdByPhone(String phone) {
-        return businessMapper.findBusinessbIdByPhone(phone);
+    //根据商家的手机号码和密码查询到该商家
+    public Business findBusinessbIdByPhoneAndPwd(String phone,String pwd) {
+        return businessMapper.findBusinessbIdByPhoneAndPwd(phone,pwd);
     }
 
 

@@ -29,29 +29,40 @@ public class BusinessController {
     //自动填充 Service层的接口
     private BusinessService businessService;
 
-    @RequestMapping("/business")
+    @RequestMapping("/doBusinessLogin")
     //进入我是商家页面
-    public String business(Model model, HttpServletRequest request){
-        //测试进入控制器
-        System.out.println("测试"+"进入控制器。。。。。。。。。。。。。。。。。。。。。。");
-        User user=new User();
-        user.setUphone("15566665555");
-        request.getSession().setAttribute("yonghu",user);
-        Object object=request.getSession().getAttribute("yonghu");
-        if (object==null||object==""){
-            System.out.println("object是空的");
+    public String business(HttpServletRequest request,Model model,@RequestParam("businessPhone")String businessPhone,@RequestParam("businessPwd")String businessPwd){
+        System.out.println("测试"+"进入控制器。。。。。。。。。。。。。。。。。。。。。。"+businessPhone+businessPwd);
+        Business business = businessService.findBusinessbIdByPhoneAndPwd(businessPhone,businessPwd);
+        if (business==null){
+            System.out.println("没有这个用户*************************************");
             return "businessLogin";
         }else {
-            System.out.println("obj不是空的。。。。。。。。。。。。。。。。。");
-            User user1 = (User) object;
-            System.out.println(user1.getUphone() + "。。。。。。。。。。。。。。。。。。。。。");
-            List<Car> list = businessService.fineCarListByBusiness(1);
-            Business business = businessService.findBusinessbIdByPhone(user1.getUphone());
-            System.out.println(business.toString());
-            model.addAttribute("business", business);
-            model.addAttribute("carListByBusiness", list);
+            System.out.println("有这个用户***"+business.toString()+"****************************************");
+            model.addAttribute("business",business);
+            int bId=business.getbId();
+            System.out.println("商家在数据库的id是"+bId+"********************************");
+            List<Car> carListByBusiness=businessService.fineCarListByBusiness(bId);
+            System.out.println("查到该商家所发布的车待下单的有条？"+carListByBusiness.size()+"******************************");
+            model.addAttribute("carListByBusiness",carListByBusiness);
             return "business";
         }
+//        request.getSession().setAttribute("phone",15566665555);
+//        Object object=request.getSession().getAttribute("phone");
+//        if (object==null||object==""){
+//            System.out.println("object是空的*****************************************************");
+//            return "businessLogin";
+//        }else {
+//            System.out.println("obj不是空的。。。。。。。。。。。。。。。。。");
+//            User user1 = (User) object;
+//            System.out.println(user1.getUphone() + "。。。。。。。。。。。。。。。。。。。。。");
+//            List<Car> list = businessService.fineCarListByBusiness(1);
+//
+//            System.out.println(business.toString());
+//            model.addAttribute("business", business);
+//            model.addAttribute("carListByBusiness", list);
+//            return "business";
+//        }
     }
 
     @RequestMapping("businessRegister")
@@ -120,5 +131,11 @@ public class BusinessController {
     @RequestMapping("gotoAddCar")
     public String addCar(){
         return "addCar";
+    }
+
+    @RequestMapping("doAddCar")
+    public String doAddCar(@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
+        System.out.println(cname+cleavel+cprice+cvariety);
+        return "business";
     }
 }

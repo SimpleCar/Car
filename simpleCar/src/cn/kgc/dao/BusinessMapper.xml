@@ -3,6 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.kgc.dao.BusinessMapper">
+    <select id="findBusinessbIdByPhoneAndPwd" resultType="Business">
+        SELECT * FROM business WHERE bPhone=#{phone} and bPwd=#{pwd}
+    </select>
+
     <select id="findAllCarInfoByBusiness" resultType="CarInfo">
         SELECT * FROM car;
     </select>
@@ -34,6 +38,6 @@
 
 
     <select id="fineCarListByBusiness" resultType="Car">
-        SELECT * FROM car WHERE cBusiness=#{i}
+        SELECT * FROM car WHERE cBusiness=#{i} and cState="待下单"
     </select>
 </mapper>
