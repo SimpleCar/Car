@@ -1,5 +1,7 @@
 package cn.kgc.dao;
 
+import cn.kgc.entity.Business;
+import cn.kgc.entity.Car;
 import cn.kgc.entity.CarInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,9 +12,10 @@ import java.util.List;
  * 商家接口
  */
 public interface BusinessMapper {
-    //数据库密码Mysql_001
+    //数据库密码Mysql_001+
+
     //查找某个商家的车
-    List<CarInfo> findAllCarInfoByBusiness(@Param("bId") Integer bId);
+    List<CarInfo> findAllCarInfoByBusiness(int bId);
     //插入车信息
     int addCarInfos(CarInfo carInfo);
     //删除车信息
@@ -21,4 +24,11 @@ public interface BusinessMapper {
     int updateCarInfo(@Param("carId") Integer carId);
 
     int deleteCarInfod(@Param("carInfo") CarInfo carInfo);
+
+    //插入一个商家
+    int addBusiness(Business business);
+    //根据商家的手机号码和密码查询到该商家
+    Business findBusinessbIdByPhoneAndPwd(@Param("phone") String phone,@Param("pwd") String pwd);
+    //查询该商家发布的所有车
+    List<Car> fineCarListByBusiness(int i);
 }

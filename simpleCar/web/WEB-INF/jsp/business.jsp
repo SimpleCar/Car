@@ -14,8 +14,13 @@
 <body>
 <jsp:include page="top.jsp"/>
 <h3>商家信息展示</h3>
-<c:forEach items="${carInfoList}" var="CarInfo" varStatus="cishu">
-    <h1>${CarInfo}+${cishu.count}</h1>
+
+<h1>欢迎+${business.bName}+商家</h1>
+
+<a href="gotoAddCar">去发布新车信息</a>
+
+<c:forEach items="${carListByBusiness}" var="carInfos" varStatus="cishu">
+    <h5><span>该商家的第${cishu.count}条：+</span>${carInfos}</h5>
 </c:forEach>
 </body>
 </html>

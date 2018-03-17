@@ -82,7 +82,7 @@
                     success: function (data) {
 
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -107,7 +107,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -131,7 +131,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -155,7 +155,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -179,7 +179,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -203,7 +203,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -227,7 +227,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -251,7 +251,7 @@
                     data: {"carname": carname, "end": agio},
                     success: function (data) {
                         var ones = document.getElementById("one");
-                        ones.innerHTML = data.price;
+                        ones.innerHTML = data.end;
                         var twos = document.getElementById("two");
                         twos.innerHTML = data.discount;
 
@@ -273,7 +273,7 @@
 <input type="hidden" id="hidMenuFocus" value="xinche">
 <jsp:include page="top.jsp"></jsp:include>
 <%--
-<!-- 页头 start-->
+<!-- 页头 start-->S
 
 <link rel="stylesheet" type="text/css"
       href="../../statics/css/headfoot_style.css" media="all">

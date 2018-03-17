@@ -8,6 +8,9 @@ import java.util.List;
 public interface UserService {
     List<User> selectAll();
 
+    //手机快捷登录
+    User selectByPhone(@Param("uphone")String uphone);
+
     User selectUser(@Param("uphone")String uname, @Param("upwd")String upwd);
 
     //注册

@@ -23,14 +23,14 @@
     <div class="w1200 clearfix">
         <!-- left -->
         <div class="back-home float-l">
-            <a href="#" title="淘车-腾讯京东百度易车共同投资的互联网汽车交易平台" class="back-link"
+            <a href="${pageContext.request.contextPath}/goTo/indexPage" title="淘车-腾讯京东百度易车共同投资的互联网汽车交易平台" class="back-link"
                logwt="navigation_header_taoche">淘车首页</a>
         </div>
         <!-- right -->
         <ul class="clearfix shortcut_info float-r">
             <li>
                 <span>欢迎来到淘车</span>
-                <a href="/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
+                <a href="${pageContext.request.contextPath}/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
@@ -44,11 +44,11 @@
                 </div>
             </li>
             <li id="tc_top_liMyDealer" class="my-sj">
-                <a href="/goTo/businessLogin" class="info-link" id="tc_top_myDealer">我是商家
+                <a href="${pageContext.request.contextPath}/goTo/businessLogin" class="info-link" id="tc_top_myDealer">我是商家
                     <i></i>
                 </a>
                 <div class="my-seller-menu" id="tc_top_myDealerList">
-                    <a href="/goTo/businessLogin
+                    <a href="${pageContext.request.contextPath}/goTo/businessLogin
 " target="_blank" logwt="navigation_header_login_B">商家登录</a>
 
                 </div>
@@ -130,34 +130,34 @@
 <div class="nav_menu">
     <ul id="ul_menu" class="area clearfix">
         <li data-menu="home" class="home">
-            <a logwt="navigation_home" class="link" href="${pageContext.request.contextPath}/goTo/indexPage" _islog="1">
+            <a logwt="navigation_home" class="link" href="/goTo/indexPage" _islog="1">
                 <span>首页</span>
             </a>
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="${pageContext.request.contextPath}/goTo/newCar" _islog="1">
+            <a logwt="navigation_newcar" class="link" href="/goTo/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_insurance" class="link" href="${pageContext.request.contextPath}/goTo/carInsurance" _islog="1">
+            <a logwt="navigation_insurance" class="link" href="/goTo/carInsurance" _islog="1">
                 <span>车险</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_installment" class="link" href="${pageContext.request.contextPath}/goTo/stages" _islog="1">
+            <a logwt="navigation_installment" class="link" href="/goTo/stages" _islog="1">
                 <span>分期</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="tiyandian">
-            <a logwt="navigation_store" class="link" href="${pageContext.request.contextPath}/goTo/try" _islog="1">
+            <a logwt="navigation_store" class="link" href="/goTo/try" _islog="1">
                 <span>体验店</span>
             </a>
         </li>

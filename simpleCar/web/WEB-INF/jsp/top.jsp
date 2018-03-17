@@ -33,7 +33,7 @@
                 <a href="/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
             </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
-                <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
+                <a href="/goTo/order" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
                     <i></i>
                 </a>
                 <div class="my-tc-menu" id="tc_top_myTaocheList">
