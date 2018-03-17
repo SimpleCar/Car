@@ -113,14 +113,15 @@
                             <%--手机号码错误提示--%>
                             <div class="jyts-box">
                                 <span class="jyts jyts-mobile" id="mobileFalse">请输入正确的手机号</span>
+                                <span class="jyts jyts-mobile" id="mobileExist">用户已存在</span>
                             </div>
                             <%--发送验证码--%>
                             <div class="pad10B pad30RL clrfix border1">
                                 <div class="input-item fl clrfix w-180">
                                     <div class="input-box">
-                                        <input id="RegValidateCode" name="validateCode"
-                                                                  type="text" class="inputNumber AppCheck data w-120"
-                                                                  placeholder="请输入验证码" autocomplete="off">
+                                        <input id="RegValidateCode" name="validateCode" maxlength="4"
+                                               type="text" class="inputNumber AppCheck data w-120"
+                                               placeholder="请输入验证码" autocomplete="off">
                                     </div>
                                 </div>
                                 <div id="GetRegValidateCode" class="fr btn code-btn disable">获取验证码</div>
@@ -133,11 +134,13 @@
                             <div class="pad10B pad30RL">
                                 <div class="input-item clrfix">
                                     <div class="input-box">
-                                        <input id="password" name="password" type="text"
-                                                                  minlength="6" maxlength="20"
-                                                                  class="border1"
-                                                                  placeholder="请输入密码"
-                                                                  autocomplete="off">
+                                        <input id="password" name="password"
+                                               disabled
+                                               type="text"
+                                               minlength="6" maxlength="20"
+                                               class="border1"
+                                               placeholder="请输入密码"
+                                               autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -172,57 +175,113 @@
 <script src="../../statics/js/header_common.js"></script>
 <script src="../../statics/js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-    function isPoneAvailable(pone) {
-        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
-        if (!myreg.test(pone)) {
-            return false;
-        } else {
-            return true;
-        }
-    };
-
-    function isPwd(pwd) {
-        var myreg2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/;
-        if (myreg2.test(pwd)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     $(document).ready(function () {
+        /*判断手机号*/
+        function isPoneAvailable(pone) {
+            var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(pone)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+        /*判断密码*/
+        function isPwd(pwd) {
+            var myreg2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/;
+            if (myreg2.test(pwd)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        /*60s重新发送验证码*/
+        var countdown=60;
+        function countDown60(val) {
+            if (countdown == 0) {
+                val.removeAttribute("disabled");
+                val.value="获取验证码";
+                countdown = 60;
+                return false;
+            } else {
+                val.setAttribute("disabled", true);
+                val.value="重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function() {
+                countDown60(val);
+            },1000);
+        }
+        /*表单提交*/
         $("#reg-btn").on("click", function () {
             $("#signUp").submit();
         });
-
-        $("#mobile").blur(function () {
-            var phone = $("#mobile").val();
+        /*判断是否是手机号码*/
+        var phone;
+        $("#mobile").on("blur", function () {
+            phone = $("#mobile").val();
             if (!isPoneAvailable(phone)) {
                 $("#mobileFalse").removeClass("jyts");
+                $("#GetRegValidateCode").addClass("disable")
+
+            } else {
+                /*判断手机号码是否已存在*/
+                $.ajax({
+                    url: "/userController/checkPhoneNum",
+                    async: true,
+                    data: {"phoneInput": phone},
+                    type: "POST",
+                    success: function (data) {
+                        var isExist = data;
+                        if (isExist) {
+                            $("#mobileExist").removeClass("jyts");
+                        } else {
+                            $("#GetRegValidateCode").removeClass("disable");
+                        }
+                    },
+                    dataType: "json"
+                })
             }
         });
         $("#mobile").focus(function () {
-                $("#mobileFalse").addClass("jyts");
+            $("#mobileFalse").addClass("jyts");
+            $("#mobileExist").addClass("jyts")
         });
 
-        $("#GetRegValidateCode").on("click",function () {
-            window.location="userController/sendCode";
+       /!*发送验证码*!/
+        var code;
+        $("#GetRegValidateCode").on("click", function () {
+            $.ajax({
+                url: "/userController/sendCode",
+                async: true,
+                data: {"phone": phone},
+                type: "POST",
+                success:function (data) {
+                    alert(phone);
+                    alert(data);
+                    code = data;
+                },
+                dataType: "json"
+            });
+            /*countDown60($("#GetRegValidateCode"));*/
         });
-        $("#RegValidateCode").blur(function () {
-            if($("#RegValidateCode")==${code}){
-                alert(${code});
-                $("#reg-btn").removeClass("disabled");
+
+        /*判断输入的验证码*/
+        $("#RegValidateCode").keyup(function () {
+            var codeInput = $("#RegValidateCode").val();
+            if (codeInput == code) {
+                $("#password").attr("disabled", false);
             }
         });
 
         $("#password").blur(function () {
             var pwd = $("#password").val();
-            if(!isPwd(pwd)){
+            if (!isPwd(pwd)) {
                 $("#pwdFalse").removeClass("jyts");
-            }else{
+            } else {
                 $("#GetRegValidateCode").removeClass("disable");
             }
-        });
+        })
     })
 
 

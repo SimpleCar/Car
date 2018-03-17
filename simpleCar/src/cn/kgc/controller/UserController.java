@@ -3,12 +3,15 @@ package cn.kgc.controller;
 import cn.kgc.entity.User;
 import cn.kgc.service.UserService;
 import cn.kgc.utils.SendCode;
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Random;
 
 @Controller
@@ -20,7 +23,7 @@ public class UserController {
     private SendCode sendCode;
 
     @RequestMapping("goSignIn")
-    public String goSignIn(){
+    public String goSignIn() {
         return "signIn";
     }
 
@@ -32,7 +35,7 @@ public class UserController {
     }
 
     @RequestMapping("goSignUp")
-    public String goSignUp(){
+    public String goSignUp() {
 
         return "signUp";
     }
@@ -48,19 +51,46 @@ public class UserController {
         }
     }
 
+    @RequestMapping("checkPhoneNum")
+    public void checkPhoneNum(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
+        String phoneNum = servletRequest.getParameter("phoneInput");
+        User user = userService.selectByPhone(phoneNum);
+        boolean isPhoneExist = user!=null?true:false;
+        servletResponse.setContentType("text/html;charset=UTF-8");
+        String data = JSON.toJSONString(isPhoneExist);
+        try {
+            servletResponse.getWriter().write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @RequestMapping("sendCode")
-    public String sendCode(HttpServletRequest servletRequest, Model model){
+    public void sendCode(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
         int max = 10000;
         int min = 1000;
         Random random = new Random();
         int code = random.nextInt(max) % (max - min + 1) + min;
         String code2 = code + "";
-        String phone = servletRequest.getParameter("mobile");
+        String phone = servletRequest.getParameter("phone");
+        sendCode.sendSms(phone,code2);
+        try {
+            servletResponse.getWriter().write(code2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        sendCode.sendSms(phone, code2);
-
-        model.addAttribute("code",code2);
-        return "signUp";
     }
 
+    @RequestMapping("test")
+    public String test(HttpServletResponse servletResponse,Model model){
+      User user =  userService.selectByPhone("13668925835");
+        try {
+            servletResponse.getWriter().write("+user+");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("user",user);
+        return "test";
+    }
 }
