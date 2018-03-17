@@ -28,7 +28,6 @@
             text-align: center;
             border-radius: 7px;
             font-size: 20px;
-            text-decoration: 50px;
         }
         a{
             text-decoration: none;
@@ -39,7 +38,7 @@
 
     <script type="text/javascript">
         function yanzheng(){
-            var n=document.getElementById("businessNameId");
+            var n=document.getElementById("businessPhoneId");
             var nn= n.value;
             var m=document.getElementById("mc");
 
@@ -52,7 +51,7 @@
             var flag2=false;
 
             if(nn==""||nn==null){
-                m.innerHTML="名字不能为空";
+                m.innerHTML="手机号不能为空";
                 return false;
             }else if(nn!=nn.replace(/(^\s*)|(\s*$)/g,"")){
                 m.innerHTML="不能输入空格等非法字符";
@@ -104,14 +103,15 @@
 </div>
 
 <div style="background-color: white;width: 350px;height: 430px;display: inline-block;position: relative;margin-left: 925px;margin-top: 110px">
-    <form method="post" action="/userController/indexPage">
+    <form method="post" action="${pageContext.request.contextPath}/businessController/doBusinessLogin">
         <div style="display: inline-block;position: relative;margin-left: 100px">
-            <h1>商家登录</h1><a href="${pageContext.request.contextPath}/businessController/business">进入</a>
+            <h1>商家登录</h1>
+            <%--<a href="${pageContext.request.contextPath}/businessController/business">进入</a>--%>
         </div>
         <div style="display: inline-block;position: relative;margin-top: 20px;margin-left: 20px">
-            <span style="font-size: 20px;color: dodgerblue;font-family: 新宋体 "><strong>用户名</strong></span>
+            <span style="font-size: 20px;color: dodgerblue;font-family: 新宋体 "><strong>手机号</strong></span>
             &nbsp;&nbsp;
-            <input type="text" name="businessName" id="businessNameId" placeholder="请输入商家名字" onblur="yanzheng()"/>
+            <input type="text" name="businessPhone" id="businessPhoneId" placeholder="请输入手机号" onblur="yanzheng()"/>
         </div>
 
         <div id="mc" style="color: red;font-size:10px;width: 200px;height: 20px;position: relative;margin-left:100px; "></div>
