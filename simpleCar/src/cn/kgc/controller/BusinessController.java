@@ -20,8 +20,11 @@ import java.util.List;
 
 @Controller
 @RequestMapping("businessController")
-public class businessController {
-
+public class BusinessController {
+    @RequestMapping
+    public String doLogin() {
+        return "businessLogin";
+    }
     @Resource
     //自动填充 Service层的接口
     private BusinessService businessService;

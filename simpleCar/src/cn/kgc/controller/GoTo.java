@@ -5,50 +5,50 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("goTo")
-public class goTo {
+public class GoTo {
 
     @RequestMapping("indexPage")
-    public String indexPage(){
+    public String indexPage() {
         return "indexPage";
     }
 
     @RequestMapping("business")
-    public String business(){
+    public String business() {
         return "business";
     }
 
     @RequestMapping("newCar")
-    public String newCar(){
+    public String newCar() {
         return "newCar";
     }
 
     @RequestMapping("signIn")
-    public String signIn(){
+    public String signIn() {
         return "testSignIn";
     }
 
     @RequestMapping("try")
-    public String goTry(){
+    public String goTry() {
         return "try";
     }
 
     @RequestMapping("stages")
-    public String stages(){
+    public String stages() {
         return "stages";
     }
 
     @RequestMapping("businessLogin")
-    public String businessLogin(){
+    public String businessLogin() {
         return "businessLogin";
     }
 
     @RequestMapping("carInsurance")
-    public String carInsurance(){
+    public String carInsurance() {
         return "carInsurance";
     }
 
     @RequestMapping("supercar20")
-    public String supercar20(){
+    public String supercar20() {
         return "SuperCar20";
     }
 
