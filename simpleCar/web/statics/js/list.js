@@ -3645,7 +3645,8 @@
             key: "render", value: function (e) {
                 for (var t = this, n = "", i = 0; i < e.length; i++) {
                     var r = "";
-                    e[i].isDisable && (r += " disable"), e[i].isDefault && (r += " cur"), n += '<a  href="javascript:;" data=\'' + (0, o["default"])(e[i]) + "' class=\"select_a " + r + '">' + e[i].text + t.unit + "</a>"
+                    e[i].isDisable && (r += " disable"), e[i].isDefault && (r += " cur"), n += '' +
+                        '<a  <!--href="javascript:;"--> data=\'' + (0, o["default"])(e[i]) + "' class=\"select_a " + r + '">' + e[i].text + t.unit + "</a>"
                 }
                 $(t.ele).html(n), $(t.ele).off("click").on("click", "a", function (e) {
                     if (!$(this).hasClass("disable")) {

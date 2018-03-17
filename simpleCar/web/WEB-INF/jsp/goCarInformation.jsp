@@ -22,7 +22,6 @@
     <script type="text/javascript" async="" src="../../statics/js/dc.js"></script>
     <script src="../../statics/js/hm(1).js"></script>
     <script type="text/javascript" src="../../statics/js/irt.js"></script>
-
     <title>广州奥迪Q5贷款方案_车贷|首付|分期|月供-淘车</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -43,96 +42,237 @@
     <link rel="dns-prefetch" href="http://img3.yixinfinance.com/">
     <link rel="dns-prefetch" href="http://img4.yixinfinance.com/">
     <link rel="icon" type="image/x-icon" href="http://cache.taoche.com/favicon.ico">
-
-
     <link rel="canonical" href="#guangzhou/aodiq5-2855/">
     <link rel="alternate" media="only screen and(max-width: 640px)"
           href="http://xin.m.taoche.com/guangzhou/aodiq5-2855/">
     <meta name="mobile-agent" content="format=html5; url=//xin.m.taoche.com/guangzhou/aodiq5-2855/">
-
-
     <link href="../../statics/css/common.css" rel="stylesheet" type="text/css">
+ <script src="../../statics/js/index.js"></script>&ndash;%&gt;
+   <link href="../../statics/css/list.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../statics/js/jquery-3.3.1.js"></script>
 
-    <script>
-        //导航url
-        var TAOCHEURL = "#" + "/";//首页
-        var XINCHEURL = "#" + "/";//新车
-        var FENQIURL = "#" + "/";//分期
-        var KAIZOUBAURL = "#" + "/";//开走吧
-        var USERCENTERURL = "#" + "/";//用户中心
-        var SQURL = "//#";//申请
-        var TIYANDIANURL = "#" + "/";//体验店
-        var ZHIHUANURL = "#" + "/";//置换
-        var BANGMAIURL = "#" + "/";//帮买
-        var MAICHEURL = "#" + "/";//卖车
-        var PINGGUURL = "#";//评估
-        var ERSHOUCHEURL = "#";//二手车
-        var RESURL = "//img1.yixinfinance.com/taoche" + "/"; //静态资源
-        var FENQITOPICURL = "#" + "/topic/"; //分期专题页
-
-        //api url
-        var APIURL = "#" + "/";
-        var ADVISERAPIURL = "#" + "/";
-
-        //city
-        var city = {
-            "CityId": 501,
-            "RegionId": 440100,
-            "CityName": "广州",
-            "CitySpell": "guangzhou",
-            "LocateResultType": 0,
-            "ClientIp": null,
-            "ProvinceId": 5,
-            "ProvinceName": "广东",
-            "Longitude": "113.30765",
-            "Latitude": "23.120049"
-        };
-
-        var BusinessLine = 550;
-
-        //广告城市变量
-        window.BitautoCityForAd = "广州";
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="../../statics/js/shim.dll.js?v=201803141733"></script>
-    <![endif lt IE 9]-->
-
-    <script src="../../statics/js/index.js"></script>
-    <link href="../../statics/css/list.css" rel="stylesheet" type="text/css">
-    <script>
-        var total = 2;
-        var pagesize = 48;
-        var city = {
-            "CityId": 501,
-            "RegionId": 440100,
-            "CityName": "广州",
-            "CitySpell": "guangzhou",
-            "LocateResultType": 0,
-            "ClientIp": null,
-            "ProvinceId": 5,
-            "ProvinceName": "广东",
-            "Longitude": "113.30765",
-            "Latitude": "23.120049"
-        };
-        var condition = 'c6l13';
-        var getBudgetListUrl = "/budget/GegBudgetList";//参数：condition,cityId,pageIndex，pageSize
-        var getFlashSaleCar = "/flashsale/getflashsalecar?cityid=501" + "&terminal=0";
-
-        //埋点标识
-        var BEACON_INIT = {
-            data: {
-                pid: 23
-            }
+    <style>
+        .select_a.cur {
+            border: 1px solid #ff6d02 !important;
+            color: #ff6d02 !important;
+            background-position: right -197px !important;
+            background: url(data:image/png;base64,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) no-repeat;
+            background-color: #fff !important
         }
-    </script>
+    </style>
 
+
+    <script type="text/javascript">
+        $(function () {
+
+            //为点击的绑定事件
+            $("#percent10").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.1;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    //路径
+                    url: "/carController/getAJAX",
+                    //是否异步，默认true
+                    async: true,
+                    //类型post
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent0").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 1;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent20").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.2;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent30").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.3;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent40").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.4;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent50").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.5;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent60").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.6;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+            $("#percent70").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.7;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    url: "/carController/getAJAX",
+                    async: true,
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        var ones = document.getElementById("one");
+                        ones.innerHTML = data.price;
+                        var twos = document.getElementById("two");
+                        twos.innerHTML = data.discount;
+
+                    },
+                    /* error:function () {
+                         alert("回调出错")
+                     },*/
+                    dataType: "json"
+                })
+
+            })
+
+        })
+
+    </script>
 </head>
 <body>
 <!--二手车公共头判断tab定位-->
 <input type="hidden" id="hidMenuFocus" value="xinche">
-
-
+<jsp:include page="top.jsp"></jsp:include>
+<%--
 <!-- 页头 start-->
 
 <link rel="stylesheet" type="text/css"
@@ -919,7 +1059,7 @@
     </div>
     <!--头部城市浮层 end -->
 </div>
-<!-- 页头 end-->
+<!-- 页头 end-->--%>
 
 
 <h1 class="hide">广州奥迪Q5贷款</h1>
@@ -988,7 +1128,7 @@
                     <div class="car-top clrfix">
                         <aside id="car_1" class="switching-models car-name fl">
                         <span class="sel-car-wrapper" style="height:28px;display:inline-block;">
-                            <div id="changeCar" class="car-series fl"><font>${car.cname}</font></div>
+                            <div id="changeCar" class="car-series fl">${car.cname}</div>
                             <div class="sel-car-brands drop-layer" style="top: 28px; display: none;">
                                 <div class="sel-car-loading"></div>
                                 <div class="brand_letters" id="master-index_letters"></div>
@@ -1002,7 +1142,7 @@
                             <div class="car-type fl">
                                 <div class="select-ctrl">
                                     <div data-id="124916" data-disabled="" data-category="2015" data-type="">
-                                        ${car.cname}
+                                            ${car.cname}
                                     </div>
                                     <ul class="drop-layer" style="display: none;">
                                         <li class="triangle-icon"></li>
@@ -1084,9 +1224,9 @@
                             <dl>
                                 <dd class="clrfix last">
                                     <div class="fl one"><font>首付</font> <font class="red"><b
-                                            data-bind="text:downPaymentCount">10.47万</b></font></div>
+                                            data-bind="text:downPaymentCount"><span id="one"></span></b></font></div>
                                     <div class="fl two"><font>分期额度</font> <font class="red"><b
-                                            data-bind="text:loanVolumnCount">24.43万</b></font></div>
+                                            data-bind="text:loanVolumnCount"><span id="two"></span></b></font></div>
                                     <!-- <div class="fl three">
                                       <i></i>税费：<font>￥<b data-bind="text:taxes">36,200</b></font>
                                       <div class="shui-tips">税费 = 购置税<span data-bind="text:purchaseTaxText">29,906</span>+上牌费500+交强险950/年</div>
@@ -1095,46 +1235,33 @@
                                 <dd class="clrfix">
                                     <div class="sel-name fl">首付比例</div>
                                     <!-- <div class="yx-silder-wrapper sel-right fl"> -->
-                                    <div class="slider-box" id="downPayment"><a href="javascript:;"
-                                                                                data="{&quot;text&quot;:0,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                                                                class="select_a ">0%</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:10,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                            class="select_a ">10%</a><a href="javascript:;"
-                                                                        data="{&quot;text&quot;:20,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                                                        class="select_a ">20%</a><a href="javascript:;"
-                                                                                                    data="{&quot;text&quot;:30,&quot;isDisable&quot;:false,&quot;isDefault&quot;:true,&quot;unit&quot;:&quot;%&quot;}"
-                                                                                                    class="select_a  cur">30%</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:40,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                            class="select_a ">40%</a><a href="javascript:;"
-                                                                        data="{&quot;text&quot;:50,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                                                        class="select_a ">50%</a><a href="javascript:;"
-                                                                                                    data="{&quot;text&quot;:60,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                                                                                    class="select_a ">60%</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:70,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                            class="select_a ">70%</a></div>
-                                    <!-- </div> -->
-                                </dd>
-                                <dd class="clrfix">
-                                    <div class="sel-name fl">还款期限</div>
-                                    <!-- <div class="yx-silder-wrapper sel-right fl"> -->
-                                    <div class="slider-box" id="term"><a href="javascript:;"
-                                                                         data="{&quot;text&quot;:12,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
-                                                                         class="select_a ">12期</a><a href="javascript:;"
-                                                                                                     data="{&quot;text&quot;:18,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
-                                                                                                     class="select_a ">18期</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:24,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
-                                            data="{&quot;text&quot;:36,&quot;isDisable&quot;:false,&quot;isDefault&quot;:true,&quot;unit&quot;:&quot;期&quot;}"
-                                            class="select_a  cur">36期</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:48,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
-                                            class="select_a ">48期</a><a
-                                            href="javascript:;"
-                                            data="{&quot;text&quot;:60,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
-                                            class="select_a ">60期</a></div>
+                                        <%--0%--%>
+                                    <div class="slider-box" id="downPayment">
+                                        <a
+                                                data="{&quot;text&quot;:0,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a  " id="percent0">100%</a>
+                                        <a
+                                                data="{&quot;text&quot;:10,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent10">10%</a>
+                                        <a
+                                                data="{&quot;text&quot;:20,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent20">20%</a>
+                                        <a
+                                                data="{&quot;text&quot;:30,&quot;isDisable&quot;:false,&quot;isDefault&quot;:true,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent30">30%</a>
+                                        <a
+                                                data="{&quot;text&quot;:40,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent40">40%</a>
+                                        <a
+                                                data="{&quot;text&quot;:50,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent50">50%</a>
+                                        <a
+                                                data="{&quot;text&quot;:60,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent60">60%</a>
+                                        <a
+                                                data="{&quot;text&quot;:70,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
+                                                class="select_a " id="percent70">70%</a>
+                                    </div>
                                     <!-- </div> -->
                                 </dd>
                             </dl>
@@ -2326,11 +2453,12 @@
 <script src="../../statics/js/taoche_pc_header_common.js"></script>
 
 
-<script src="../../statics/js/list.js"></script>
+
 
 
 <!--艾瑞统计-->
 <script src="../../statics/js/iwt-min.js"></script>
+<script src="../../statics/js/list.js"></script>
 <script>
     (function (G, D, s, c, p) {
         c = {

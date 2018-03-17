@@ -38,6 +38,14 @@
     <select id="selectCarName" resultType="Car">
         select * from car where cname=#{cname}
     </select>
+    <!--根据名字和首付比例算分期额度-->
+    <select id="selectInstalmentAmount" resultType="int">
+        select (cprice*#{instalmentAmount}) from car where cname=#{cname}
+    </select>
+    <!--根据名字查询价格-->
+    <select id="selectPrice" resultType="int">
+        select cprice from car where cname=#{cname};
+    </select>
 
 
 
