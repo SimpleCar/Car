@@ -49,10 +49,13 @@
             var flag=false;
             var flag1=false;
             var flag2=false;
+            var zhengze=/^[1][3,4,5,7,8][0-9]{9}$/;
 
             if(nn==""||nn==null){
                 m.innerHTML="手机号不能为空";
                 return false;
+            }else if (!zhengze.test(nn)){
+                m.innerHTML="无效的手机号码";
             }else if(nn!=nn.replace(/(^\s*)|(\s*$)/g,"")){
                 m.innerHTML="不能输入空格等非法字符";
                 return false;
