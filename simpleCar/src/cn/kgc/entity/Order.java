@@ -12,6 +12,15 @@ public class Order {
     private int uid;//用户ID
     private Date date;//下单时间
     private int state;//订单状态
+    private int cid;  //车的ID
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
 
     public int getOid() {
         return oid;
@@ -70,6 +79,7 @@ public class Order {
                 ", uid=" + uid +
                 ", date=" + date +
                 ", state=" + state +
+                ", cid=" + cid +
                 '}';
     }
 }
