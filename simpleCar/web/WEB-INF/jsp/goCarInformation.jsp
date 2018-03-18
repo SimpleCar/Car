@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Schoki
-  Date: 2018/3/15
-  Time: 12:35
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!-- saved from url=(0044)#guangzhou/aodiq5-2855/ -->
@@ -47,21 +40,31 @@
           href="http://xin.m.taoche.com/guangzhou/aodiq5-2855/">
     <meta name="mobile-agent" content="format=html5; url=//xin.m.taoche.com/guangzhou/aodiq5-2855/">
     <link href="../../statics/css/common.css" rel="stylesheet" type="text/css">
- <script src="../../statics/js/index.js"></script>&ndash;%&gt;
-   <link href="../../statics/css/list.css" rel="stylesheet" type="text/css">
+    <script src="../../statics/js/index.js"></script>
+    <link href="../../statics/css/list.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../../statics/js/jquery-3.3.1.js"></script>
-
-    <style>
-        .select_a.cur {
-            border: 1px solid #ff6d02 !important;
-            color: #ff6d02 !important;
-            background-position: right -197px !important;
-            background: url(data:image/png;base64,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) no-repeat;
-            background-color: #fff !important
-        }
-    </style>
-
-
+    //首付
+    <script type="text/javascript">
+        $(function () {
+            $("#myPayment a").click(function () {
+                $("#myPayment a").each(function () {
+                    $(this).removeClass("cur")
+                });
+                $(this).attr("class", "select_a cur")
+            })
+        })
+    </script>
+    //分期
+    <script type="text/javascript">
+        $(function () {
+            $("#myTerm a").click(function () {
+                $("#myTerm a").each(function () {
+                    $(this).removeClass("cur")
+                });
+                $(this).attr("class", "select_a cur")
+            })
+        })
+    </script>
     <script type="text/javascript">
         $(function () {
 
@@ -266,6 +269,28 @@
 
         })
 
+    </script>
+    <script type="text/javascript">
+        $(function () {
+
+            //为点击的绑定事件
+            $("#s1").click(function () {
+                //通过10%拿到车的名字并改变折扣价
+                var agio = 0.1;
+                var carname = $("#changeCar").html();
+                /* alert(carname + intAgio);*/
+                $.ajax({
+                    //路径
+                    url: "/OrderController/goCredit",
+                    //是否异步，默认true
+                    async: true,
+                    //类型post
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                    },
+                    dataType: "json"
+                })
     </script>
 </head>
 <body>
@@ -1073,6 +1098,7 @@
         <c:forEach var="car" items="${list}">
             <a href="#" title="广州一汽-大众奥迪贷款">广州${car.cvariety}贷款</a>
             <i> &gt; </i>
+            <p id="carid" hidden>${car.cid}</p>
             <a href="#" title="广州奥迪Q5贷款">广州${car.cname}贷款</a>
         </c:forEach>
     </div>
@@ -1236,10 +1262,10 @@
                                     <div class="sel-name fl">首付比例</div>
                                     <!-- <div class="yx-silder-wrapper sel-right fl"> -->
                                         <%--0%--%>
-                                    <div class="slider-box" id="downPayment">
+                                    <div class="slider-box" id="myPayment">
                                         <a
                                                 data="{&quot;text&quot;:0,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
-                                                class="select_a  " id="percent0">100%</a>
+                                                class="select_a  " id="percent0">0%</a>
                                         <a
                                                 data="{&quot;text&quot;:10,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
                                                 class="select_a " id="percent10">10%</a>
@@ -1261,6 +1287,25 @@
                                         <a
                                                 data="{&quot;text&quot;:70,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;%&quot;}"
                                                 class="select_a " id="percent70">70%</a>
+                                    </div>
+                                    <!-- </div> -->
+                                </dd>
+                                <dd class="clrfix">
+                                    <div class="sel-name fl">还款期限</div>
+                                    <!-- <div class="yx-silder-wrapper sel-right fl"> -->
+                                    <div class="slider-box" id="myTerm">
+                                        <a data="{&quot;text&quot;:12,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">12期</a>
+                                        <a data="{&quot;text&quot;:18,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">18期</a>
+                                        <a data="{&quot;text&quot;:24,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">24期</a>
+                                        <a data="{&quot;text&quot;:36,&quot;isDisable&quot;:false,&quot;isDefault&quot;:true,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">36期</a>
+                                        <a data="{&quot;text&quot;:48,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">48期</a>
+                                        <a data="{&quot;text&quot;:60,&quot;isDisable&quot;:false,&quot;isDefault&quot;:false,&quot;unit&quot;:&quot;期&quot;}"
+                                           class="select_a ">60期</a>
                                     </div>
                                     <!-- </div> -->
                                 </dd>
@@ -1443,15 +1488,17 @@
                                 <div class="TotalCost-tip" style="opacity: 1; display: none;">分期成本 = 4.14万（手续费2443元 +
                                     利息3.90万）
                                 </div>
-                                <div class="jinrong-box-btn">
+                                <div class="jinrong-box-btn" id="jinrong-box-btn2">
                                     <a target="_blank" class="jinrong-box-btn-xq"
                                        href="#guangzhou/m124916/p152690/">查看详情</a>
-                                    <span data-company-id="821" data-applyurl="/OrderApply/Index"
+
+                                    <span id="s1" data-company-id="821" data-applyurl="/OrderApply/Index"
                                           class="btn-org apply-btn btn-org apply-btn jinrong-box-btn-sq">立即申请</span>
+
                                 </div>
                             </div>
                         </li>
-                        <li class="list-itme pd152744 jinrong" data-href="/guangzhou/m124916/p152744/"
+                        <%--<li class="list-itme pd152744 jinrong" data-href="/guangzhou/m124916/p152744/"
                             data-companyid="837" data-productid="152744" data-applyurl="/OrderApply/Index">
                             <header class="clrfix">
                                 <div data-pa="5059" data-pd="152744" data-pp="0" class="checkbox"><i></i></div>
@@ -2094,14 +2141,14 @@
                                           class="btn-org apply-btn btn-org apply-btn jinrong-box-btn-sq">立即申请</span>
                                 </div>
                             </div>
-                        </li>
+                        </li>--%>
                     </ul>
-                    <div id="listPagination" class="list_pagination"><a href="javascript:void(0);" class="prev unclick">上一页</a><a
-                            href="javascript:void(0);" class="num active">1</a><a href="javascript:void(0);"
-                                                                                  class="num">2</a><a
-                            href="javascript:void(0);" class="num">3</a><a href="javascript:void(0);"
-                                                                           class="num">4</a><a
-                            href="javascript:void(0);" class="next">下一页</a></div>
+                    <%--       <div id="listPagination" class="list_pagination"><a href="javascript:void(0);" class="prev unclick">上一页</a><a
+                                   href="javascript:void(0);" class="num active">1</a><a href="javascript:void(0);"
+                                                                                         class="num">2</a><a
+                                   href="javascript:void(0);" class="num">3</a><a href="javascript:void(0);"
+                                                                                  class="num">4</a><a
+                                   href="javascript:void(0);" class="next">下一页</a></div>--%>
                 </section>
                 <!--列表部分end-->
             </section>
@@ -2441,6 +2488,63 @@
 
 </div>
 
+<%--<script type="text/javascript">
+    var mydiv = document.getElementById("jumploginbox");
+    $("#s1").on("click", function () {
+        var val = mydiv.style.display;
+        if (val == "none") {
+            jumploginbox.style.display = "block";
+        }
+    })
+</script>--%>
+<%--<script type="text/javascript">
+    $("#s1").on("click", function () {
+        var val = mydiv.style.display;
+        if (val == "none") {
+            jumploginbox.style.display = "block";
+        }
+    })
+</script>--%>
+<script type="text/javascript">
+    var closediv = document.getElementById("jumploginbox");
+    $("#jumplogincolse").on("click", function () {
+        closediv.style.display = "none";
+
+
+    })
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#s1").click(function () {
+            var ss = $("a[class='select_a cur']").text();
+            var agio = 0.1;
+            var carname = $("#changeCar").html();
+            //拿到首付
+            var downPayment = ss.substring(0, ss.indexOf("%")) * 0.01;
+            //拿到分多少起期
+            var stage = ss.substring(ss.indexOf("%") + 1, ss.indexOf("期"));
+            //拿到车的ID
+            var carid = $("#carid").html();
+            $.ajax({
+                //路径
+                url: "/carController/getAJAX",
+                //是否异步，默认true
+                async: false,
+                //类型post
+                type: "POST",
+                data: {"carname": carname, "end": agio},
+                success: function (data) {
+                    window.location.href = "/orderController/goto";
+
+
+                },
+                dataType: "json"
+            })
+        })
+
+    })
+</script>
+
 <!-- 页尾 start-->
 <p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img
         class="ft-rc3" src="../../statics/image/adv-group.png" alt="广告"></p>
@@ -2451,9 +2555,6 @@
 
 <!-- 2018 Taoche PC改版新车和二手车公共头部所需JS引用 -->
 <script src="../../statics/js/taoche_pc_header_common.js"></script>
-
-
-
 
 
 <!--艾瑞统计-->
