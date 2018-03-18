@@ -89,6 +89,62 @@
                 }
             }
         }
+        function yanzhengquyu(){
+            var citys=document.getElementById("city");
+            var city=citys.value;
+            var quyu=document.getElementById("quyu");
+            if(city==0){
+                quyu.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请选择所在省份和城市";
+                quyu.style.color="red";
+                return false;
+            }else{
+                quyu.innerHTML="&nbsp;";
+                return true;
+            }
+        }
+        function yanzhengmingzi(){
+            var mingzi=document.getElementById("shangjiamingzi");
+            var mingzizhi=mingzi.value;
+            var mingzicuowu=document.getElementById("mingzicuowu");
+            if(mingzizhi==""||mingzizhi==null){
+                mingzicuowu.innerHTML="商家名字不能为空";
+                mingzicuowu.style.color="red";
+                return false;
+            }else if(mingzizhi!=mingzizhi.replace(/(^\s*)|(\s*$)/g,"")){
+                mingzicuowu.innerHTML="不能输出空格等非法字符";
+                mingzicuowu.style.color="red";
+                return false;
+            }else{
+                mingzicuowu.innerHTML="&nbsp;";
+                return true;
+            }
+        }
+        function yanzhengshouji(){
+            var shouji=document.getElementById("shangjiashouji");
+            var shoujihao=shouji.value;
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            var shoujicuowu=document.getElementById("shoujicuowu");
+            if(shoujihao==""){
+                shoujicuowu.innerHTML="手机号不能为空";
+                shoujicuowu.style.color="red";
+                return false;
+            }else if (!myreg.test(shoujihao)) {
+                shoujicuowu.innerHTML="无效的手机号码";
+                shoujicuowu.style.color="red";
+                return false;
+            } else {
+                shoujicuowu.innerHTML="&nbsp;";
+                shoujicuowu.style.color="green";
+                return true;
+            }
+        }
+        function quanpanduan(){
+            if(yanzhengmingzi()==true&&yanzhengshouji()==true&&yanzhengquyu()){
+                return true;
+            }else{
+                return false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -114,23 +170,27 @@
                     <option value="贵州省">贵州省</option>
                 </select>
                 &nbsp;
-                <select name="bQuYu" id="city" disabled="disabled" style="width: 120px;height: 30px;border: 1px limegreen solid ;">
+                <select name="bQuYu" id="city" onblur="yanzhengquyu()" disabled="disabled" style="width: 120px;height: 30px;border: 1px limegreen solid ;">
                     <option value="0">--请选择区域--</option>
                 </select>
                 <br/>
                 <br/>
+                <span id="quyu">&nbsp;</span>
                 <br/>
-                <span>商家名字</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiamingzi" placeholder="请输入商家名字"/><br/>
+                <br/>
+                <span>商家名字</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input onblur="yanzhengmingzi()" style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiamingzi" id="shangjiamingzi" placeholder="请输入商家名字"/>&nbsp;&nbsp;<span id="mingzicuowu">&nbsp;</span>
                 <br/>
                 <br/>
-                <span>手机号码</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiashouji" placeholder="请输入商家手机号码"/><br/>
+                <br/>
+                <span>手机号码</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input onblur="yanzhengshouji()" style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiashouji" id="shangjiashouji" placeholder="请输入商家手机号码"/>&nbsp;&nbsp;<span id="shoujicuowu">&nbsp;</span>
+                <br/>
                 <br/>
                 <br/>
                 <span>营业执照</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="yingyezhizhao" multiple>
                 <br/>
                 <br/>
                 <br/>
-                <input id="shenqinganniu" type="submit" value="申请审核">
+                <input id="shenqinganniu" type="submit" onclick="return quanpanduan()" value="申请审核">
                 <br/>
                 <br/>
                 <br/>

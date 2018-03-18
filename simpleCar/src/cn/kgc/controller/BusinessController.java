@@ -85,48 +85,50 @@ public class BusinessController {
         int num=0;
         num=businessService.addBusiness(business);
         if (num>0){
-            System.out.println("11111111111111111111111111111111111111111111111111");
+            System.out.println("商家申请信息插入数据库了******************************");
         }else {
-            System.out.println("00000000000000000000000000000000000000000000000000000");
+            System.out.println("商家申请信息没插入数据库*********************************");
         }
         //判断文件 不为空就进去
-//        if(!mFile.isEmpty()){
-//
-//            //通过requst.gets.getsc.getRP设置真正文件夹路径用来存放上传的文件
-//            String filePath=request.getSession().getServletContext().getRealPath("cunFangWenJianJia"+ File.separator);
-//
-//            //通过上传的文件.getOriginalFilename()获取源文件名
-//            String fileName=mFile.getOriginalFilename();
-//
-//            //通过FilenameUtils.getExtension(源文件名)获取后缀
-//            String prxy= FilenameUtils.getExtension(fileName);
-//
-//            int length=500000;
-//            if (mFile.getSize()>length) {
-//                request.setAttribute("error", "文件过大,不允许上传");
-//            }else if(prxy.equalsIgnoreCase("jpg")||prxy.equalsIgnoreCase("peg")||prxy.equalsIgnoreCase("jpeg")){
-//                //毫秒值+后缀作为随机名字 不能忘记加上“.”
-//                String randomName=System.currentTimeMillis()+"."+prxy;
-//                //新new一个文件 把文件夹路径和随机名字拼接
-//                File file=new File(filePath, randomName);
-//                //判断文件如果不存在就进去
-//                if (!file.exists()) {
-//                    //如果不存在就创建目录
-//                    file.mkdirs();
-//                }
-//                try {
-//                    //上传
-//                    mFile.transferTo(file);
-//                    System.out.println("上传到了"+filePath);
-//                } catch (IllegalStateException e) {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
+        if(!mFile.isEmpty()){
+            System.out.println("进入文件上传******************************************************");
+            //通过requst.gets.getsc.getRP设置真正文件夹路径用来存放上传的文件
+            String filePath=request.getSession().getServletContext().getRealPath("cunFangWenJianJia"+ File.separator);
+
+            //通过上传的文件.getOriginalFilename()获取源文件名
+            String fileName=mFile.getOriginalFilename();
+
+            //通过FilenameUtils.getExtension(源文件名)获取后缀
+            String prxy= FilenameUtils.getExtension(fileName);
+
+            int length=500000;
+            if (mFile.getSize()>length) {
+                request.setAttribute("error", "文件过大,不允许上传");
+                System.out.println("文件过大************************************************************");
+            }else if(prxy.equalsIgnoreCase("jpg")||prxy.equalsIgnoreCase("png")||prxy.equalsIgnoreCase("jpeg")){
+                //毫秒值+后缀作为随机名字 不能忘记加上“.”
+//                String randomName=shangjiashouji+System.currentTimeMillis()+"."+prxy;
+                String randomName=shangjiashouji+"."+prxy;
+                //新new一个文件 把文件夹路径和随机名字拼接
+                File file=new File(filePath, randomName);
+                //判断文件如果不存在就进去
+                if (!file.exists()) {
+                    //如果不存在就创建目录
+                    file.mkdirs();
+                }
+                try {
+                    //上传
+                    mFile.transferTo(file);
+                    System.out.println("上传到了"+filePath);
+                } catch (IllegalStateException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
         return "businessRegisterle";
     }
 
