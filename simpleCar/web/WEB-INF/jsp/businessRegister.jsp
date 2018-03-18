@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>商家注册</title>
+    <title>商家注册申请</title>
     <style type="text/css">
         *{margin: 0;padding: 0;}
         body{
@@ -22,7 +22,7 @@
             background-color: azure;
         }
         .xiao{
-            margin-left: 470px;
+            margin-left: 420px;
         }
         .h11{
             text-align: center;;
@@ -103,34 +103,34 @@
         <br/>
         <div class="xiao">
             <form action="dobusinessRegister" method="post" enctype="multipart/form-data">
-                <span>商家类型</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="4S店" name="shangjialeixing">4S店&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="个人" name="shangjialeixing">个人<br/>
+                <span>商家类型</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="4S店" name="shangjialeixing">4S店&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="个人" name="shangjialeixing" checked="checked">个人<br/>
                 <br/>
                 <br/>
                 <span>商家地址</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;
-                <%--<input type="text" name="suozaiquyu" placeholder="请输入省份区域"/>--%>
-                <select name="bShengFen" id="province" onchange="choose(this.value)"  style="width: 500px;height: 50px;border: 1px limegreen solid">
+                <select name="bShengFen" id="province" onchange="choose(this.value)"  style="width: 120px;height: 30px;border: 1px limegreen solid">
                     <option value="0">--请选择省份--</option>
                     <option value="广东省">广东省</option>
                     <option value="福建省">福建省</option>
                     <option value="贵州省">贵州省</option>
                 </select>
-                <select name="bQuYu" id="city" disabled="disabled" style="width: 500px;height: 50px;border: 1px limegreen solid ;">
+                &nbsp;
+                <select name="bQuYu" id="city" disabled="disabled" style="width: 120px;height: 30px;border: 1px limegreen solid ;">
                     <option value="0">--请选择区域--</option>
                 </select>
                 <br/>
                 <br/>
                 <br/>
-                <span>商家名字</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="shangjiamingzi" placeholder="请输入商家名字"/><br/>
+                <span>商家名字</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiamingzi" placeholder="请输入商家名字"/><br/>
                 <br/>
                 <br/>
-                <span>手机号码</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="shangjiashouji" placeholder="请输入商家手机号码"/><br/>
+                <span>手机号码</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input style="height: 30px;border: 1px limegreen solid;" type="text" name="shangjiashouji" placeholder="请输入商家手机号码"/><br/>
                 <br/>
                 <br/>
                 <span>营业执照</span>&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="yingyezhizhao" multiple>
                 <br/>
                 <br/>
                 <br/>
-                <input id="shenqinganniu" type="submit" value="申请">
+                <input id="shenqinganniu" type="submit" value="申请审核">
                 <br/>
                 <br/>
                 <br/>
