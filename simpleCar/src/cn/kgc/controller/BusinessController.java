@@ -74,12 +74,13 @@ public class BusinessController {
 
     @RequestMapping("dobusinessRegister")
     //处理商家注册信息 把注册信息插入到数据库里
-    public String dobunessRegister(HttpServletRequest request, @RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("suozaiquyu") String suozaiquyu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
-        System.out.println("你的申请提交我们已收到,审核后将会由我们的工作人员与您联系请保持手机畅通."+shangjiamingzi+suozaiquyu+shangjialeixing+shangjiashouji);
+    public String dobunessRegister(HttpServletRequest request, @RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("bShengFen") String bShengFen,@RequestParam("bQuYu") String bQuYu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
+        System.out.println("你的申请提交我们已收到,审核后将会由我们的工作人员与您联系请保持手机畅通."+shangjiamingzi+bShengFen+bQuYu+shangjialeixing+shangjiashouji);
         Business business=new Business();
         business.setbName(shangjiamingzi);
         business.setbPhone(shangjiashouji);
         business.setbType(shangjialeixing);
+        String suozaiquyu=bShengFen+bQuYu;
         business.setbAdd(suozaiquyu);
         int num=0;
         num=businessService.addBusiness(business);

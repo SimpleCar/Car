@@ -121,7 +121,7 @@
         <div class="mesg">
             <span>级别</span>&nbsp;&nbsp;&nbsp;
             <input type="radio" name="cleavel" value="0">跑车
-            <input type="radio" name="cleavel" value="1">豪车
+            <input type="radio" name="cleavel" value="1" checked="checked">豪车
         </div>
 
         <div class="mesg">
