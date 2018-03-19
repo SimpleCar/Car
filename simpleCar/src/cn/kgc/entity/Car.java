@@ -27,41 +27,10 @@ public class Car implements Serializable {
     private int cBusiness;
     //车的买卖状态
     private String cState;
+    //商家ID
+    private int bid;
 
     public Car() {
-    }
-
-    public Car(int cid, String cname, float cprice, int cleavel, String cvariety, int cstock, float cmin, float cmax, String cimage, int cUser, int cBusiness, String cState) {
-        this.cid = cid;
-        this.cname = cname;
-        this.cprice = cprice;
-        this.cleavel = cleavel;
-        this.cvariety = cvariety;
-        this.cstock = cstock;
-        this.cmin = cmin;
-        this.cmax = cmax;
-        this.cimage = cimage;
-        this.cUser = cUser;
-        this.cBusiness = cBusiness;
-        this.cState = cState;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "cid=" + cid +
-                ", cname='" + cname + '\'' +
-                ", cprice=" + cprice +
-                ", cleavel=" + cleavel +
-                ", cvariety='" + cvariety + '\'' +
-                ", cstock=" + cstock +
-                ", cmin=" + cmin +
-                ", cmax=" + cmax +
-                ", cimage='" + cimage + '\'' +
-                ", cUser=" + cUser +
-                ", cBusiness=" + cBusiness +
-                ", cState='" + cState + '\'' +
-                '}';
     }
 
     public int getCid() {
@@ -159,7 +128,50 @@ public class Car implements Serializable {
     public void setcState(String cState) {
         this.cState = cState;
     }
-//    ALTER TABLE car ADD cUser INT(4) COMMENT "车的买家"
+
+    public int getBid() {
+        return bid;
+    }
+
+    public void setBid(int bid) {
+        this.bid = bid;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "cid=" + cid +
+                ", cname='" + cname + '\'' +
+                ", cprice=" + cprice +
+                ", cleavel=" + cleavel +
+                ", cvariety='" + cvariety + '\'' +
+                ", cstock=" + cstock +
+                ", cmin=" + cmin +
+                ", cmax=" + cmax +
+                ", cimage='" + cimage + '\'' +
+                ", cUser=" + cUser +
+                ", cBusiness=" + cBusiness +
+                ", cState='" + cState + '\'' +
+                ", bid=" + bid +
+                '}';
+    }
+
+    public Car(int cid, String cname, float cprice, int cleavel, String cvariety, int cstock, float cmin, float cmax, String cimage, int cUser, int cBusiness, String cState, int bid) {
+        this.cid = cid;
+        this.cname = cname;
+        this.cprice = cprice;
+        this.cleavel = cleavel;
+        this.cvariety = cvariety;
+        this.cstock = cstock;
+        this.cmin = cmin;
+        this.cmax = cmax;
+        this.cimage = cimage;
+        this.cUser = cUser;
+        this.cBusiness = cBusiness;
+        this.cState = cState;
+        this.bid = bid;
+    }
+    //    ALTER TABLE car ADD cUser INT(4) COMMENT "车的买家"
 //    ALTER TABLE car ADD cBusiness INT(4) COMMENT "车的买家"
 //    ALTER TABLE car ADD cState VARCHAR(24) DEFAULT "暂无" COMMENT "车的买卖状态"
 }

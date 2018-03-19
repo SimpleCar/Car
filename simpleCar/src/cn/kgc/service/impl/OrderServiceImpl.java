@@ -23,4 +23,9 @@ public class OrderServiceImpl implements OrderService {
     public int insertOrders(Order order) {
         return orderMapper.insertOrders(order);
     }
+
+    @Override
+    public List<Order> selectOrder(Order order) {
+        return orderMapper.selectOrder(order);
+    }
 }

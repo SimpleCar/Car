@@ -43,7 +43,7 @@
     <script src="../../statics/js/index.js"></script>
     <link href="../../statics/css/list.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../../statics/js/jquery-3.3.1.js"></script>
-    //首付
+    <%--//首付--%>
     <script type="text/javascript">
         $(function () {
             $("#myPayment a").click(function () {
@@ -54,7 +54,7 @@
             })
         })
     </script>
-    //分期
+  <%--  //分期--%>
     <script type="text/javascript">
         $(function () {
             $("#myTerm a").click(function () {
@@ -1099,6 +1099,10 @@
             <a href="#" title="广州一汽-大众奥迪贷款">广州${car.cvariety}贷款</a>
             <i> &gt; </i>
             <p id="carid" hidden>${car.cid}</p>
+            <p id="bid" hidden>${car.bid}</p>
+            <p id="uid" hidden>1</p>
+
+
             <a href="#" title="广州奥迪Q5贷款">广州${car.cname}贷款</a>
         </c:forEach>
     </div>
@@ -2517,7 +2521,6 @@
     $(function () {
         $("#s1").click(function () {
             var ss = $("a[class='select_a cur']").text();
-            var agio = 0.1;
             var carname = $("#changeCar").html();
             //拿到首付
             var downPayment = ss.substring(0, ss.indexOf("%")) * 0.01;
@@ -2525,14 +2528,18 @@
             var stage = ss.substring(ss.indexOf("%") + 1, ss.indexOf("期"));
             //拿到车的ID
             var carid = $("#carid").html();
+            //拿到卖家的ID
+            var bid = $("#bid").html();
+            //拿到买家ID
+            var uid=$("#uid").html();
             $.ajax({
                 //路径
-                url: "/carController/getAJAX",
+                url: "/orderController/createOrder",
                 //是否异步，默认true
                 async: false,
                 //类型post
                 type: "POST",
-                data: {"carname": carname, "end": agio},
+                data: {"carname": carname, "downPayment": downPayment,"stage":stage,"carid":carid,"bid":bid,"uid":uid},
                 success: function (data) {
                     window.location.href = "/orderController/goto";
 

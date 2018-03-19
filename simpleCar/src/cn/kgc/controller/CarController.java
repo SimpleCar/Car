@@ -109,7 +109,7 @@ public class CarController {
 
     //异步刷新
     @RequestMapping("getAJAX")
-    public void getAJAX(Model model, HttpServletRequest request, Car car, HttpServletResponse response) throws IOException {
+    public void getAJAX(HttpServletRequest request, Car car, HttpServletResponse response) throws IOException {
         //拿到车名
         String cname = request.getParameter("carname");
         //设置车名
