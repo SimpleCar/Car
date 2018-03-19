@@ -53,5 +53,15 @@ public class CarServiceImpl implements CarService {
         return carMapper.selectCarName(car);
     }
 
+    @Override
+    public int selectInstalmentAmount(double instalmentAmount, String cname) {
+        return carMapper.selectInstalmentAmount(instalmentAmount,cname);
+    }
+
+    @Override
+    public int selectPrice(Car car) {
+        return carMapper.selectPrice(car);
+    }
+
 
 }

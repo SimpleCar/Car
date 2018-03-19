@@ -1893,9 +1893,9 @@
             <div class="loading-icon"></div>
             正在努力加载中...
         </div>
-        <div id="listPagination" class="list_pagination"><a href="#" class="prev unclick">上一页</a><a
+       <%-- <div id="listPagination" class="list_pagination"><a href="#" class="prev unclick">上一页</a><a
                 href="#" class="num active">1</a>
-        </div>
+        </div>--%>
     </div>
 
     <div class="new-car-li-right">

@@ -2,13 +2,18 @@ package cn.kgc.controller;
 
 import cn.kgc.entity.Car;
 import cn.kgc.service.CarService;
+import com.alibaba.fastjson.JSON;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.UnsupportedEncodingException;
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @Controller
@@ -16,7 +21,7 @@ import java.util.List;
 public class CarController {
     @Resource
     private CarService carService;
-    Car car = new Car();
+
 
     //去新车页面
     @RequestMapping("newCar")
@@ -32,11 +37,11 @@ public class CarController {
 
     //去20-30页面跑车
     @RequestMapping("superCar20")
-    public String superCar20(Model model) {
+    public String superCar20(Model model, Car car) {
         //传最大值
-//        car.setCmax(30);
-//        //传最小值
-//        car.setCmin(20);
+        car.setCmax(30);
+        //传最小值
+        car.setCmin(20);
         //获取车辆
         List<Car> list = carService.selectCar(car);
         //获取一共有多少条数据
@@ -55,9 +60,9 @@ public class CarController {
 
     //去30-45页面跑车
     @RequestMapping("superCar30")
-    public String superCar30(Model model) {
-//        car.setCmax(45);
-//        car.setCmin(30);
+    public String superCar30(Model model, Car car) {
+        car.setCmax(45);
+        car.setCmin(30);
         List<Car> list = carService.selectCar(car);
         int count=carService.selectCarCount(car);
         model.addAttribute("count", count);
@@ -93,12 +98,33 @@ public class CarController {
 
     //根据名字查车
     @RequestMapping("goCarInformation")
-    public String goCarInformation(Model model, HttpServletRequest request){
+    public String goCarInformation(Model model, HttpServletRequest request, Car car) {
         String cname = request.getParameter("cname");
-//        car.setCname(cname);
+        car.setCname(cname);
        List<Car>list=carService.selectCarName(car);
        model.addAttribute("list",list);
         return "goCarInformation";
+       /* return "goCarInformationTest";*/
+    }
+
+    //异步刷新
+    @RequestMapping("getAJAX")
+    public void getAJAX(Model model, HttpServletRequest request, Car car, HttpServletResponse response) throws IOException {
+        //拿到车名
+        String cname = request.getParameter("carname");
+        //设置车名
+        car.setCname(cname);
+        //通过车名查到车的全价
+        int price = carService.selectPrice(car);
+        //拿到选择的是哪个首付
+        //拿到车的价格
+        double instalmentAmount = Double.parseDouble(request.getParameter("end"));
+        //车的折扣价
+        int end = carService.selectInstalmentAmount(instalmentAmount, cname);
+        //分期额度
+        int discount = price - end;
+        response.getWriter().write("  {\"end\":" + end + ",\"discount\":" + discount + "}");
+
     }
 }
 
