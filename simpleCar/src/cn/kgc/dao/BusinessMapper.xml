@@ -38,6 +38,6 @@
 
 
     <select id="fineCarListByBusiness" resultType="Car">
-        SELECT * FROM car WHERE cBusiness=#{i} and cState="待下单"
+        SELECT * FROM car WHERE cBusiness=#{i}
     </select>
 </mapper>

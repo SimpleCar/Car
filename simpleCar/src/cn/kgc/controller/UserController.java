@@ -45,7 +45,7 @@ public class UserController {
         int result = userService.insertUser(user.getUphone(), user.getUpwd());
         if (result > 0) {
             model.addAttribute("phone", user.getUphone());
-            return "redirect:indexPage";
+            return "indexPage";
         } else {
             return "signUp";
         }

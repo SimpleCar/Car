@@ -173,5 +173,5 @@ public class Car implements Serializable {
     }
     //    ALTER TABLE car ADD cUser INT(4) COMMENT "车的买家"
 //    ALTER TABLE car ADD cBusiness INT(4) COMMENT "车的买家"
-//    ALTER TABLE car ADD cState VARCHAR(24) DEFAULT "暂无" COMMENT "车的买卖状态"
+//    ALTER TABLE car ADD cState VARCHAR(24) DEFAULT "待下单" COMMENT "车的买卖状态"
 }
