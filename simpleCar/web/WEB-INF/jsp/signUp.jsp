@@ -101,42 +101,48 @@
                     </header>
                     <article id="form" class="login-con">
                         <blockquote id="regForm" class="reg-box">
-                            <%--手机号码输入--%>
-                            <div class="pad10B pad30RL">
-                                <div class="input-item clrfix">
-                                    <div class="input-box">
-                                        <input id="mobile" name="mobile" type="text" maxlength="11" class="border1"
-                                               placeholder="请输入手机号" autocomplete="off">
+                            <div id="inputPhone">
+                                <%--手机号码输入--%>
+                                <div class="pad10B pad30RL">
+                                    <div class="input-item clrfix">
+                                        <div class="input-box">
+                                            <input id="mobile" name="uphone" type="text" maxlength="11" class="border1"
+                                                   placeholder="请输入手机号" autocomplete="off">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <%--手机号码错误提示--%>
-                            <div class="jyts-box">
-                                <span class="jyts jyts-mobile" id="mobileFalse">请输入正确的手机号</span>
-                                <span class="jyts jyts-mobile" id="mobileExist">用户已存在</span>
+                                <%--手机号码错误提示--%>
+                                <div class="jyts-box">
+                                    <span class="jyts jyts-mobile" id="mobileFalse">请输入正确的手机号</span>
+                                    <span class="jyts jyts-mobile" id="mobileExist">用户已存在</span>
+                                </div>
                             </div>
                             <%--发送验证码--%>
-                            <div class="pad10B pad30RL clrfix border1">
-                                <div class="input-item fl clrfix w-180">
-                                    <div class="input-box">
-                                        <input id="RegValidateCode" name="validateCode" maxlength="4"
-                                               type="text" class="inputNumber AppCheck data w-120"
-                                               placeholder="请输入验证码" autocomplete="off">
+                            <div id="getCode">
+                                <div class="pad10B pad30RL clrfix border1">
+                                    <div class="input-item fl clrfix w-180">
+                                        <div class="input-box">
+                                            <input id="RegValidateCode" name="validateCode" maxlength="4"
+                                                   type="text" class="inputNumber AppCheck data w-120"
+                                                   placeholder="请输入验证码" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div id="GetRegValidateCode" class="fr btn code-btn disable">
+                                        获取验证码
                                     </div>
                                 </div>
-                                <div id="GetRegValidateCode" class="fr btn code-btn disable">获取验证码</div>
-                            </div>
-                            <%--验证码错误提示--%>
-                            <div class="jyts-box">
-                                <span class="jyts jyts-validateCode">请输入正确的手机验证码</span>
+                                <%--验证码错误提示--%>
+                                <div class="jyts-box">
+                                    <span class="jyts jyts-validateCode" id="codeFalse">请输入正确的手机验证码</span>
+                                </div>
                             </div>
                             <%--密码设置--%>
                             <div class="pad10B pad30RL">
                                 <div class="input-item clrfix">
                                     <div class="input-box">
-                                        <input id="password" name="password"
+                                        <input id="password" name="upwd"
                                                disabled
-                                               type="text"
+                                               type="password"
                                                minlength="6" maxlength="20"
                                                class="border1"
                                                placeholder="请输入密码"
@@ -186,6 +192,7 @@
                 return true;
             }
         };
+
         /*判断密码*/
         function isPwd(pwd) {
             var myreg2 = /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/;
@@ -195,35 +202,32 @@
                 return false;
             }
         }
+
         /*60s重新发送验证码*/
-        var countdown=60;
+        var countdown = 8;
         function countDown60(val) {
             if (countdown == 0) {
-                val.removeAttribute("disabled");
-                val.value="获取验证码";
-                countdown = 60;
-                return false;
+                $(val).removeClass("disable");
+                $(val).text("获取验证码");
+                countdown = 8;
+                return;
             } else {
-                val.setAttribute("disabled", true);
-                val.value="重新发送(" + countdown + ")";
+                $(val).addClass("disable");
+                $(val).text( "重新发送("+countdown+")" );
                 countdown--;
+                setTimeout(function () {
+                    countDown60(val);
+                }, 1000);
             }
-            setTimeout(function() {
-                countDown60(val);
-            },1000);
         }
-        /*表单提交*/
-        $("#reg-btn").on("click", function () {
-            $("#signUp").submit();
-        });
+
         /*判断是否是手机号码*/
         var phone;
-        $("#mobile").on("blur", function () {
+        $("#mobile").blur(function () {
             phone = $("#mobile").val();
             if (!isPoneAvailable(phone)) {
                 $("#mobileFalse").removeClass("jyts");
                 $("#GetRegValidateCode").addClass("disable")
-
             } else {
                 /*判断手机号码是否已存在*/
                 $.ajax({
@@ -248,42 +252,56 @@
             $("#mobileExist").addClass("jyts")
         });
 
-       /!*发送验证码*!/
+        /!*发送验证码*!/
         var code;
-        $("#GetRegValidateCode").on("click", function () {
-            $.ajax({
-                url: "/userController/sendCode",
-                async: true,
-                data: {"phone": phone},
-                type: "POST",
-                success:function (data) {
-                    alert(phone);
-                    alert(data);
-                    code = data;
-                },
-                dataType: "json"
-            });
-            /*countDown60($("#GetRegValidateCode"));*/
-        });
-
+        $("#GetRegValidateCode").click(function(){
+            if(isPoneAvailable(phone) && !$(this).hasClass("disable")) {
+                    $.ajax({
+                        url: "/userController/sendCode",
+                        async: true,
+                        data: {"phone": phone},
+                        type: "POST",
+                        success: function (data) {
+                            code = data;
+                            alert(code);
+                        },
+                        dataType: "json"
+                    });
+                $("#codeFalse").addClass("jyts");
+                    countDown60(this);
+            }
+        })
         /*判断输入的验证码*/
-        $("#RegValidateCode").keyup(function () {
-            var codeInput = $("#RegValidateCode").val();
+        $("#RegValidateCode").blur(function () {
+            var codeInput = $(this).val();
             if (codeInput == code) {
                 $("#password").attr("disabled", false);
+                $("#codeFalse").addClass("jyts");
+                $("#GetRegValidateCode").addClass("disable");
+            }else{
+                $("#codeFalse").removeClass("jyts");
             }
         });
-
+        $("#RegValidateCode").focus(function () {
+            $("#codeFalse").addClass("jyts");
+        });
         $("#password").blur(function () {
-            var pwd = $("#password").val();
+            var pwd = $(this).val();
             if (!isPwd(pwd)) {
                 $("#pwdFalse").removeClass("jyts");
             } else {
-                $("#GetRegValidateCode").removeClass("disable");
+                $("#pwdFalse").addClass("jyts");
+                $("#reg-btn").removeClass("disabled");
             }
-        })
-    })
+        });
+        /*表单提交*/
+        $("#reg-btn").click(function () {
+            if(!$(this).hasClass("diabled")) {
+                $("#signUp").submit();
+            }
+        });
 
+    })
 
 </script>
 n
