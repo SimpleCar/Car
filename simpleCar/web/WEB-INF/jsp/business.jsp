@@ -142,14 +142,27 @@
     </ul>
 </div>
 <!--首页-->
-<h3>商家信息展示</h3>
 
-<h1>欢迎+${business.bName}+商家</h1>
+<!--中部-->
+<div class="zhongbu">
+    <br/>
+    <h1>欢迎&nbsp;&nbsp;${business.bName}&nbsp;&nbsp;商家,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="gotoAddCar" style="color: #0C88E8">去发布新车信息</a>
+    </h1>
+    <br/>
+    <table>
+        <c:forEach items="${carListByBusiness}" var="carInfos" varStatus="cishu">
+            <tr class="r1">
+                <td class="d1">第&nbsp;&nbsp;<span>${cishu.count}</span>&nbsp;&nbsp;条&nbsp;记&nbsp;录:</td>
+                <td class="d2">品&nbsp;牌:&nbsp;&nbsp;<span>${carInfos.cvariety}</span></td>
+                <td class="d3">型号名字:&nbsp;&nbsp;<span>${carInfos.cname}</span></td>
+                <td class="d4">价格:&nbsp;&nbsp;<span>${carInfos.cprice}</span>&nbsp;&nbsp;元</td>
+                <td class="d5">卖车状态:&nbsp;&nbsp;<span>${carInfos.cState}</span></td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
+<!--中部-->
 
-<a href="gotoAddCar">去发布新车信息</a>
-
-<c:forEach items="${carListByBusiness}" var="carInfos" varStatus="cishu">
-    <h5><span>该商家的第${cishu.count}条：+</span>${carInfos}</h5>
-</c:forEach>
 </body>
 </html>

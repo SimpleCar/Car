@@ -584,3 +584,93 @@ input, textarea, select, button {
 
 
 
+.zhongbu{
+    position: relative;
+    margin: auto;
+    width: 1200px;
+    height:500px;
+    background-color:#e5e5e5;
+}
+.r1{
+    width: 100%;
+    height: 50px;
+
+}
+td{
+    padding-left:20px;
+    color: #1d1d1d;
+    font-size: 16px;
+}
+.d1{
+    width: 160px;
+    background-color: palegoldenrod;
+}
+.d2{
+    width: 240px;
+    background-color: darksalmon;
+}
+.d3{
+     width: 240px;
+     background-color: palegoldenrod;
+ }
+.d4{
+    width: 240px;
+    background-color: darksalmon;
+}
+.d5{
+    width: 240px;
+    background-color: palegoldenrod;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
