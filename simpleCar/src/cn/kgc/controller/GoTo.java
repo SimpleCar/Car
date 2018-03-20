@@ -24,7 +24,7 @@ public class GoTo {
 
     @RequestMapping("signIn")
     public String signIn() {
-        return "testSignIn";
+        return "signIn";
     }
 
     @RequestMapping("try")

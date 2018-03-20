@@ -65,6 +65,21 @@ public class UserController {
         }
     }
 
+    @RequestMapping("checkPwd")
+    public void checkPwd(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
+        String phoneNum = servletRequest.getParameter("phoneInput");
+        String pwd = servletRequest.getParameter("pwd");
+        User user = userService.selectUser(phoneNum,pwd);
+        boolean isUserExist = user!=null?true:false;
+        servletResponse.setContentType("text/html;charset=UTF-8");
+        String data = JSON.toJSONString(isUserExist);
+        try {
+            servletResponse.getWriter().write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @RequestMapping("sendCode")
     public void sendCode(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
         int max = 10000;
