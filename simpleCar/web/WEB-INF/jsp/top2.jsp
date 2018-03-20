@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>top</title>
@@ -28,6 +29,7 @@
         </div>
         <!-- right -->
         <ul class="clearfix shortcut_info float-r">
+
             <li>
                 <span>欢迎来到淘车</span>
                 <a href="${pageContext.request.contextPath}/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>

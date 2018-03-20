@@ -58,7 +58,7 @@
 
 <link rel="stylesheet" type="text/css" href="../../statics/indexPage/2018_pc_headfoot_style-20180305102257-1506.css" media="all">
 
-<jsp:include page="top.jsp"/>
+<jsp:include page="top2.jsp"/>
 
     <!--广告位-顶通 s-->
     <!--<div class="adv-box" id="adv-box">
@@ -2138,6 +2138,10 @@
     Taoche.SideBar.init({hideModules:['shop'],taocheApp:true});
 </script><!--侧边栏 start--><div class="right-nav-fixed" id="rightBannerDiv"><div class="right-nav-top"><ul id="but_close" style="display: none;"><li class="right-nav-close gohover"><a href="javascript:void(0);" id="but_close_a">&nbsp;&nbsp;</a><span>收起</span></li></ul></div><div class="right-nav"><ul class="right-nav-dow" id="rightBannerUl"><li class="right-nav-personal gohover"><a href="javascript:void(0);"></a><span id="gotoHome" logwt="sidebar_grzx" _islog="1">个人中心</span></li><li class="right-nav-service gohover"><a class="right-nav-service-hover" href="javascript:void(0);"><div class="right-nav-service-main"><div class="right-nav-service-ewm"><img src="../../statics/indexPage/tc-service-sidebar.png" alt="App二维码"></div></div></a><span id="btn_im" logwt="sidebar_service" _islog="1">客服电话</span></li><li class="right-nav-app gohover"><a class="right-nav-app-hover" id="emaDiv" href="javascript:;"><div class="right-nav-app-main defult-show"><div class="right-nav-app-ewm" id="ewmMain"><img src="../../statics/indexPage/tc-app-down-sidebar.png" alt="App二维码"></div><i></i></div></a><span>App下载</span></li><li class="right-nav-wx gohover"><a class="right-nav-wx-hover" href="javascript:;"><div class="right-nav-wx-main"><div class="right-nav-wx-ewm "><img src="../../statics/indexPage/tc-wx-sidebar.png" alt="App二维码"></div></div></a> <span>关注微信</span></li><li class="right-nav-business gohover mab35"><a href="javascript:void(0);"></a><span id="btn_feedback" logwt="sidebar_shop" _islog="1">意见反馈</span></li><li class="right-nav-up gohover"><a href="javascript:void(0);"></a><span id="gotoTop" logwt="sidebar_back" _islog="1">返回顶部</span></li></ul></div><div class="right-nav-line"></div></div><!--侧边栏 end-->
 
+
+<script src="../../statics/js/common.js"></script>
+<script src="../../statics/js/index.js"></script>
+<script src="../../statics/js/header_common.js"></script>
 <!--WebTrends统计-->
 <script src="../../statics/indexPage/dcs_ucar_homepage.js"></script>
 <!--�״�ͳ��-->

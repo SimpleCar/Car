@@ -242,12 +242,12 @@
             phone ==$("#inputNumber2").val();
             if (!isPoneAvailable(phone)) {
                 $("#mobileFalse2").removeClass("jyts");
-                $("#GetValidateCode").addClass("disable")
+                $("#GetValidateCode").addClass("disable");
             } else {
                 alert("正在查询号码是否已注册")
                 /*判断手机号码是否注册*/
                 $.ajax({
-                    url: "/userController/checkPhoneNum",
+                    url: "${pageContext.request.contextPath}/userController/checkPhoneNum",
                     async: true,
                     data: {"phoneInput": phone},
                     type: "POST",
@@ -326,7 +326,7 @@
            } else {
                /*判断手机号码是否注册*/
                $.ajax({
-                   url: "/userController/checkPhoneNum",
+                   url: "${pageContext.request.contextPath}/userController/checkPhoneNum",
                    async: true,
                    data: {"phoneInput": phone},
                    type: "POST",

@@ -120,7 +120,7 @@
 <body>
 
 <input type="hidden" id="hidMenuFocus" value="chexian" />
-<jsp:include page="top.jsp"/>
+<jsp:include page="top2.jsp"/>
 <!--Content-->
 
 <div id="indexBox">

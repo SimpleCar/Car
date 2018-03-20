@@ -36,7 +36,6 @@ public class UserController {
 
     @RequestMapping("goSignUp")
     public String goSignUp() {
-
         return "signUp";
     }
 

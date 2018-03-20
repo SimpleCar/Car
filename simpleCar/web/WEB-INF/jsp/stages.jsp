@@ -101,7 +101,7 @@
 <body>
 <%--!--二手车公共头判断tab定位-->--%>
 <input type="hidden" id="hidMenuFocus" value="fenqi" />
-<jsp:include page="top.jsp"/>
+<jsp:include page="top2.jsp"/>
 
 
 
