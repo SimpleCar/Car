@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-CN">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+--%>
     <title>免费注册</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -304,7 +304,6 @@
     })
 
 </script>
-n
 
 <!-- -----------------------尾开始--------------------------- -->
 <jsp:include page="bottom.jsp"/>

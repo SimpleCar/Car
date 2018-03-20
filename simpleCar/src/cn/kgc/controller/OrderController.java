@@ -38,7 +38,7 @@ public class OrderController {
     }
 
     @RequestMapping("goTrueName")
-    public String goTruename() {
+    public String goTrueName() {
         return "trueName";
     }
 

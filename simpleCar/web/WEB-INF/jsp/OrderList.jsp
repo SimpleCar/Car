@@ -80,7 +80,7 @@
 
 <link rel="stylesheet" type="text/css" href="../../statics/orderList/2018_pc_headfoot_style-20180305102257-1506.css"
       media="all">
-<jsp:include page="top.jsp"/>
+<jsp:include page="top2.jsp"/>
 <!-- header -->
 <input name="__RequestVerificationToken" id="__RequestVerificationToken"
        data-id="C-HiqXiK9rRE24d3B4M4pv5v6lY-DgoeQa8r1q8zBaEvC08kHqzt_KUFzF2Am_Y3RLp9V7cjnv6wvqdKGeYW8-ojdXQ1"
@@ -113,11 +113,10 @@
                 <c:forEach var="ordel" items="${ordel}">
                     <li>
                             ${ordel.ordelNum}
-                        1111111111111111111
                     </li>
                 </c:forEach>
                 <li>
-                    11111111111111111111111111111
+
                 </li>
                 <li class="active"><a href="javascript:void(0);">所有订单</a></li>
 

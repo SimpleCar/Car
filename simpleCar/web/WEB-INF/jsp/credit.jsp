@@ -66,7 +66,7 @@
 
 <link rel="stylesheet" type="text/css" href="../../statics/credit/2018_pc_headfoot_style-20180305102257-1506.css" media="all" />
 
-    <jsp:include page="top.jsp"/>
+    <jsp:include page="top2.jsp"/>
     <!-- header -->
     <input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='L-I8UHk5gt4jGwC3o1YH6Iy3g0s7XC5b7DZrwhJ8fZyPd1aii2Ap-NU7pfIN3PKVFDcZv2bPZsGG1t5jUC8wwCjwcns1' value='L-I8UHk5gt4jGwC3o1YH6Iy3g0s7XC5b7DZrwhJ8fZyPd1aii2Ap-NU7pfIN3PKVFDcZv2bPZsGG1t5jUC8wwCjwcns1'>
 
@@ -174,7 +174,6 @@
                                             <option value="-1" selected="selected">请选择社保情况</option>
                                             <option value="1">有社保</option>
                                             <option value="0">无社保</option>
-
                                     </select>
                                 </span>
                             </div>

@@ -67,7 +67,7 @@
     <!-- -----------------------头开始--------------------------- -->
     
 <link rel="stylesheet" type="text/css" href="../../statics/trueName/2018_pc_headfoot_style-20180305102257-1506.css" media="all" />
-    <jsp:include page="top.jsp"/>
+    <jsp:include page="top2.jsp"/>
     <!-- header -->
     <input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='mLWF8f8_LLMXvQjiQ79lgyjZlpYcpYOKnmvKwZpcl8CFScLxptH9T08IkuQMyMa895Sm4bSsol8I79Z233yXEl6aooY1' value='mLWF8f8_LLMXvQjiQ79lgyjZlpYcpYOKnmvKwZpcl8CFScLxptH9T08IkuQMyMa895Sm4bSsol8I79Z233yXEl6aooY1'>
 

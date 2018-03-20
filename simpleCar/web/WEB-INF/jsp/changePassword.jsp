@@ -168,10 +168,12 @@
     <!--整屏蒙层end-->
 
 
-    <script src="../../statics/changePassword//common.js?v=201801301002"></script>
+    <script src="../../statics/changePassword//common.js"></script>
 
     
-    <script src="../../statics/changePassword/changepwd.js?v=201801301002"></script>
+    <script src="../../statics/changePassword/changepwd.js"></script>
+
+
 
     <!-- -----------------------尾开始--------------------------- -->
     <p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img class="ft-rc3" src="//image.bitautoimg.com/taoche/2018_pc_usedcar/adv-group.png" alt="广告" /></p>

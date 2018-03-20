@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>top</title>
@@ -28,6 +29,7 @@
         </div>
         <!-- right -->
         <ul class="clearfix shortcut_info float-r">
+
             <li>
                 <span>欢迎来到淘车</span>
                 <a href="${pageContext.request.contextPath}/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
@@ -37,14 +39,12 @@
                     <i></i>
                 </a>
                 <div class="my-tc-menu" id="tc_top_myTaocheList">
-                    <a href="#" target="_blank">新车订单</a>
-                    <a href="#" target="_blank">二手车订单</a>
-                    <a href="#" target="_blank">二手车服务</a>
-                    <a href="#" target="_blank" logwt="navigation_header_Cadmin">免费发车</a>
+                    <a href="${pageContext.request.contextPath}/goTo/order" target="_blank">新车订单</a>
+                    <%--<a href="${pageContext.request.contextPath}/goTo/order" target="_blank">退出登录</a>--%>
                 </div>
             </li>
             <li id="tc_top_liMyDealer" class="my-sj">
-                <a href="${pageContext.request.contextPath}/goTo/businessLogin" class="info-link" id="tc_top_myDealer">我是商家
+                <a href="javascript:;" class="info-link" id="tc_top_myDealer">我是商家
                     <i></i>
                 </a>
                 <div class="my-seller-menu" id="tc_top_myDealerList">
@@ -53,27 +53,7 @@
 
                 </div>
             </li>
-            <li id="tc_top_liAppDownload" class="app-down">
-                <a href="javascript:;" class="info-link" id="tc_top_appDownload">App
-                    <i></i>
-                </a>
-                <div class="my-app-down" id="tc_top_appDownloadList">
-                    <a href="#" target="_blank" rel="nofollow"
-                       logwt="navigation_header_app_ersc">
-                        淘车
-                        <div class="scan-code">
-                            <img src="../../statics/image/scan-code.png" alt="">
-                        </div>
-                    </a>
-                    <a href="#" target="_blank" rel="nofollow">淘车新车</a>
-                    <a href="#" target="_blank" rel="nofollow"
-                       logwt="navigation_header_app_ersc">淘车二手车</a>
-                    <a href="#" target="_blank" rel="nofollow">易鑫车贷</a>
-                </div>
-            </li>
-            <li class="yx-zp">
-                <a rel="nofollow" target="_blank" href="#" title="易鑫招聘" class="info-link">易鑫招聘</a>
-            </li>
+
         </ul>
     </div>
 </div>
@@ -89,7 +69,7 @@
         <div class="logo">
             <a href="#" title="淘车网">
                 <!--[if IE]>
-                <img src="//image.bitautoimg.cimage/om/taoche/2018_pc_usedcar/taoche-logo.png" width="102" height="76"
+                <img src="../../statics/image/taoche-logo.svg" width="102" height="76"
                      alt="淘车"/>
                 <![endif]-->
                 <!--[if !IE]><!-->
@@ -130,34 +110,34 @@
 <div class="nav_menu">
     <ul id="ul_menu" class="area clearfix">
         <li data-menu="home" class="home">
-            <a logwt="navigation_home" class="link" href="/goTo/indexPage" _islog="1">
+            <a logwt="navigation_home" class="link" href="${pageContext.request.contextPath}/goTo/indexPage" _islog="1">
                 <span>首页</span>
             </a>
             <em class="spacer"></em>
         </li>
         <li data-menu="xinche">
-            <a logwt="navigation_newcar" class="link" href="/goTo/newCar" _islog="1">
+            <a logwt="navigation_newcar" class="link" href="${pageContext.request.contextPath}/goTo/newCar" _islog="1">
                 <span>新车</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_insurance" class="link" href="/goTo/carInsurance" _islog="1">
+            <a logwt="navigation_insurance" class="link" href="${pageContext.request.contextPath}/goTo/carInsurance" _islog="1">
                 <span>车险</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="fenqi">
-            <a logwt="navigation_installment" class="link" href="/goTo/stages" _islog="1">
+            <a logwt="navigation_installment" class="link" href="${pageContext.request.contextPath}/goTo/stages" _islog="1">
                 <span>分期</span>
             </a>
             <em class="spacer"></em>
         </li>
 
         <li data-menu="tiyandian">
-            <a logwt="navigation_store" class="link" href="/goTo/try" _islog="1">
+            <a logwt="navigation_store" class="link" href="${pageContext.request.contextPath}/goTo/try" _islog="1">
                 <span>体验店</span>
             </a>
         </li>

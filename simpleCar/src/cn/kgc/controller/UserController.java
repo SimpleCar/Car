@@ -36,7 +36,6 @@ public class UserController {
 
     @RequestMapping("goSignUp")
     public String goSignUp() {
-
         return "signUp";
     }
 
@@ -58,6 +57,21 @@ public class UserController {
         boolean isPhoneExist = user!=null?true:false;
         servletResponse.setContentType("text/html;charset=UTF-8");
         String data = JSON.toJSONString(isPhoneExist);
+        try {
+            servletResponse.getWriter().write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("checkPwd")
+    public void checkPwd(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
+        String phoneNum = servletRequest.getParameter("phoneInput");
+        String pwd = servletRequest.getParameter("pwd");
+        User user = userService.selectUser(phoneNum,pwd);
+        boolean isUserExist = user!=null?true:false;
+        servletResponse.setContentType("text/html;charset=UTF-8");
+        String data = JSON.toJSONString(isUserExist);
         try {
             servletResponse.getWriter().write(data);
         } catch (IOException e) {
