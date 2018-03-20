@@ -38,6 +38,9 @@
 
 
     <select id="fineCarListByBusiness" resultType="Car">
-        SELECT * FROM car WHERE cBusiness=#{i} and cState="待下单"
+        SELECT * FROM car WHERE cBusiness=#{i}
     </select>
+    <insert id="addCar" parameterType="Car">
+INSERT INTO car (cname,cprice,cvariety,cleavel,cBusiness) VALUE(#{cname},#{cprice},#{cvariety},#{cleavel},#{cBusiness})
+    </insert>
 </mapper>

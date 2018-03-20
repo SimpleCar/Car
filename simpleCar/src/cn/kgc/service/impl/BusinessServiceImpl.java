@@ -73,4 +73,9 @@ public class BusinessServiceImpl implements BusinessService {
         return businessMapper.fineCarListByBusiness(i);
     }
 
+    @Override
+    public int addCar(Car car) {
+        return businessMapper.addCar(car);
+    }
+
 }

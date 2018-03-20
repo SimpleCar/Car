@@ -25,5 +25,7 @@ public interface CarMapper {
     int selectInstalmentAmount(@Param("instalmentAmount")double instalmentAmount,@Param("cname")String cname);
     //根据名字查询价格
     int selectPrice (Car car);
+    //Order表插入用户时,Car表同步更新用户字段
+    int updateUser(Car car);
 
 }

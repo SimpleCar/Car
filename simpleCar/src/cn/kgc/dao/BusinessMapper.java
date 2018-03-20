@@ -31,4 +31,6 @@ public interface BusinessMapper {
     Business findBusinessbIdByPhoneAndPwd(@Param("phone") String phone,@Param("pwd") String pwd);
     //查询该商家发布的所有车
     List<Car> fineCarListByBusiness(int i);
+    //发布新车
+    int addCar(Car car);
 }

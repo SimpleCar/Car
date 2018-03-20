@@ -47,6 +47,12 @@
         select cprice from car where cname=#{cname};
     </select>
 
+    <!--Order表插入用户时，Car表同步更新-->
+    <update id="updateUser">
+        UPDATE car SET cUser=#{cUser} WHERE cid=#{cid}
+    </update>
+
+
 
 
 

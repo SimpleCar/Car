@@ -74,7 +74,7 @@ public class BusinessController {
 
     @RequestMapping("dobusinessRegister")
     //处理商家注册信息 把注册信息插入到数据库里
-    public String dobunessRegister(HttpServletRequest request, @RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("bShengFen") String bShengFen,@RequestParam("bQuYu") String bQuYu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
+    public String dobunessRegister(HttpServletRequest request, Model model,@RequestParam(value = "yingyezhizhao",required = false)MultipartFile mFile,@RequestParam("shangjialeixing") String shangjialeixing,@RequestParam("bShengFen") String bShengFen,@RequestParam("bQuYu") String bQuYu,@RequestParam("shangjiamingzi") String shangjiamingzi,@RequestParam("shangjiashouji") String shangjiashouji){
         System.out.println("你的申请提交我们已收到,审核后将会由我们的工作人员与您联系请保持手机畅通."+shangjiamingzi+bShengFen+bQuYu+shangjialeixing+shangjiashouji);
         Business business=new Business();
         business.setbName(shangjiamingzi);
@@ -138,19 +138,31 @@ public class BusinessController {
     }
 
     @RequestMapping("doAddCar")
-    public String doAddCar(HttpServletRequest request,@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
+    public String doAddCar(HttpServletRequest request,Model model,@RequestParam("cname")String cname,@RequestParam("cvariety")String cvariety,@RequestParam("cprice")String cprice,@RequestParam("cleavel")String cleavel){
         System.out.println("车名字："+cname);
         System.out.println("车的价格："+cprice);
         System.out.println("车的品牌："+cvariety);
         System.out.println("车的级别："+cleavel);
+        Car car=new Car();
+        car.setCname(cname);
+        int cp=Integer.parseInt(cprice);
+        car.setCprice(cp);
+        car.setCvariety(cvariety);
+        int cl=Integer.parseInt(cleavel);
+        car.setCleavel(cl);
         Object object=request.getSession().getAttribute("bb");
         if (object==null){
             System.out.println("为空的+++++++++++++++++++");
         }else {
             Business business= (Business) object;
-            if (business!=null){
-                System.out.println(business.getbPhone()+"******************************************");
-            }
+            model.addAttribute("business",business);
+            int bId=business.getbId();
+            car.setcBusiness(bId);
+            businessService.addCar(car);
+            System.out.println("商家在数据库的id是"+bId+"********************************");
+            List<Car> carListByBusiness=businessService.fineCarListByBusiness(bId);
+            model.addAttribute("carListByBusiness",carListByBusiness);
+            System.out.println("重新查询");
         }
         return "business";
     }

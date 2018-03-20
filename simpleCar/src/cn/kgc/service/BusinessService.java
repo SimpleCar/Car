@@ -29,4 +29,6 @@ public interface BusinessService {
     Business findBusinessbIdByPhoneAndPwd(String phone,String pwd);
     //查询该商家所发布的车
     List<Car> fineCarListByBusiness(int i);
+    //发布新车
+    int addCar(Car car);
 }

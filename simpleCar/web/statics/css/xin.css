@@ -1,0 +1,676 @@
+*{margin: 0;padding: 0;}
+body {
+    font: 12px/1.5 "Hiragino Sans GB","Microsoft Yahei UI","Microsoft Yahei","微软雅黑",'Segoe UI',Tahoma,"宋体b8b\4f53",SimSun,sans-serif;
+    color: #686868;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    outline-style: none;
+}
+ol, ul {
+    list-style: none;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+div {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+.shortcut {
+    background-color: #F8F8F8;
+}
+.shortcut .w1200 {
+    height: 36px;
+    line-height: 36px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.float-l {
+    float: left;
+}
+.shortcut .back-home {
+    width: 70px;
+    height: 100%;
+}
+.shortcut .back-link {
+    color: #686868;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-left: 22px;
+    position: relative;
+}
+.shortcut .back-link {
+    color: #686868;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-left: 22px;
+    position: relative;
+}
+.shortcut .back-link:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    top: 10px;
+    left: 0;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat 0 0;
+}
+.shortcut .back-link:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    top: 10px;
+    left: 0;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat 0 0;
+}
+.shortcut .shortcut_info a.info-link i {
+    position: absolute;
+    top: 17px;
+    right: 7px;
+    width: 8px;
+    height: 4px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat 0 -17px;
+}
+.shortcut .shortcut_info li.my-tc a.info-link:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -16px 0;
+}
+
+.float-r {
+    float: right;
+}
+.shortcut .shortcut_info {
+    margin-right: -20px;
+}
+.shortcut .shortcut_info li {
+    float: left;
+    margin-left: 4px;
+    position: relative;
+}
+.shortcut .shortcut_info li {
+    float: left;
+    margin-left: 4px;
+    position: relative;
+}
+.shortcut .shortcut_info span {
+    float: left;
+    margin-right: 4px;
+}
+.shortcut .shortcut_info a.active {
+    color: #FF6402;
+    margin-right: 8px;
+}
+.shortcut .shortcut_info a {
+    float: left;
+    color: #686868;
+}
+.shortcut .shortcut_info a.info-link {
+    border-left: 1px solid #F8F8F8;
+    border-right: 1px solid #F8F8F8;
+    padding-left: 27px;
+    padding-right: 19px;
+    position: relative;
+}
+.shortcut .shortcut_info .my-tc-menu {
+    display: none;
+    border-bottom: 1px solid #E5E5E5;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    z-index: 1112;
+    width: 100%;
+    background: #fff;
+}
+.shortcut .shortcut_info a.info-link i {
+    position: absolute;
+    top: 17px;
+    right: 7px;
+    width: 8px;
+    height: 4px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat 0 -17px;
+}
+.shortcut .shortcut_info li.my-sj a.info-link:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -30px 0;
+}
+.shortcut .shortcut_info li.app-down a.info-link:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 12px;
+    height: 14px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -44px 0;
+}
+.shortcut .shortcut_info .my-app-down {
+    display: none;
+    position: absolute;
+    border-bottom: 1px solid #E5E5E5;
+    top: 36px;
+    left: 0;
+    z-index: 1112;
+    width: 100%;
+    background: #fff;
+}
+.shortcut .shortcut_info li.yx-zp a.info-link:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 12px;
+    height: 14px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -56px 0;
+}
+.tc-header .w1200 {
+    position: relative;
+    height: 123px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.tc-header .logo {
+    position: absolute;
+    top: 24px;
+    left: 4px;
+    width: 102px;
+    height: 76px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    outline-style: none;
+    color: #394043;
+}
+a img {
+    border: 0;
+    overflow: hidden;
+}
+.tc-header .city-name {
+    width: auto;
+    height: 30px;
+    z-index: 1116;
+    position: absolute;
+    top: 52px !important;
+    left: 134px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+.tc-header .city-name-link {
+    color: #333;
+    position: relative;
+    z-index: 3;
+    width: auto;
+    display: block;
+    line-height: 28px;
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 0 16px 0 16px;
+    background-color: #fff;
+}
+.tc-header .city-name-link em {
+    margin-left: 5px;
+    width: 10px;
+    height: 18px;
+    background: url(//image.bitautoimg.com/taoche/2018_pc_usedcar/pcfold-icon.png) 0 8px no-repeat;
+    display: inline-block;
+}
+.tc-header .search {
+    width: 600px;
+    height: 42px;
+    border: 2px solid #FF6402;
+    position: absolute;
+    top: 44px;
+    left: 336px;
+}
+.tc-header .search .search-tab {
+    width: 600px;
+    height: 20px;
+    position: absolute;
+    top: -22px;
+    left: -2px;
+}
+.tc-header .search .search-tab a {
+    display: block;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #FF6402;
+    padding: 0 13px;
+}
+.tc-header .search .search-tab a.current {
+    background-color: #FF6402;
+    color: #fff;
+}
+.tc-header .search .search-tab a:last-child {
+    margin-left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tc-header .sel-car-wrapper {
+    position: relative;
+    float: left;
+    width: 485px;
+    height: 38px;
+    font-size: 12px;
+    font: 12px "microsoft yahei", san-serif;
+}
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    font: 400 13.3333px Arial;
+    -webkit-writing-mode: horizontal-tb;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    vertical-align: middle;
+    font-family: "Microsoft Yahei",Helvetica,Arial;
+    word-wrap: break-word;
+    word-break: break-all;
+    -webkit-appearance: none;
+
+}
+.tc-header .search input {
+    -webkit-box-sizing: border-box;
+    float: left;
+    border: 0;
+    height: 38px;
+    line-height: 14px;
+    font-size: 12px;
+    width: 496px;
+    padding: 12px 10px;
+    outline: 0;
+}
+.tc-header .sel-car-wrapper{
+    font-size: 12px;
+}
+
+.tc-header .sel-car-brands{
+    height: 420px;
+    position: absolute;
+    width: 270px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bebebe;
+    background-color: #fff;
+    text-align: left;
+    display: none;
+    z-index: 108;
+    margin: 26px 0 0 -2px !important;
+}
+.tc-header .sel-car-loading {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+    /*background: url(//image.bitautoimg.com/taoche/2018_pc_usedcar/loading.gif) no-repeat left top;*/
+}
+.tc-header .sel-car-brands * {
+    box-sizing: content-box;
+}
+
+.tc-header .brand_letters {
+    width: 22px;
+    float: left;
+    font-size: 12px;
+    padding: 4px;
+    padding-top: 12px;
+}
+.tc-header .brand_name_bg {
+    width: 237px;
+    float: left;
+    height: 420px;
+    overflow-y: hidden;
+    border-left: 1px solid #eee;
+}
+.tc-header .brand_name {
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tc-header .sel-car-type {
+    height: 420px;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bebebe;
+    background-color: #fff;
+    text-align: left;
+    display: none;
+    left: 269px;
+    width: 280px;
+    z-index: 108;
+    margin: 26px 0 0 -2px !important;
+}
+.tc-header .sel-car-loading {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+    background: url(../../statics/image/loading.gif) no-repeat left top;
+}
+.tc-header .sel-car-menu {
+    position: absolute;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    text-align: left;
+    margin: 26px 0 0 -2px !important;
+}
+.tc-header .sel-car-wrapper .empty-search {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 11px;
+    height: 11px;
+    background: url(//image.bitautoimg.com/taoche/2018_pc_usedcar/close.png) no-repeat left top;
+    background-size: 11px 11px;
+    cursor: pointer;
+    text-align: center;
+    top: 50%;
+    margin-top: -6px;
+    display: none;
+}
+
+
+.tc-header .search .search-btn {
+    width: 100px;
+    height: 38px;
+    padding-left: 24px;
+    float: right;
+    line-height: 38px;
+    background-color: #FF6402;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+}
+.tc-header .search .search-btn:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 23px;
+    width: 17px;
+    height: 16px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -70px 0;
+}
+.tc-header .search .search-btn:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 23px;
+    width: 17px;
+    height: 16px;
+    background: url(../../statics/image/header-shortcut-ico.png) no-repeat -70px 0;
+}
+.tc-header .search input {
+    float: left;
+    border: 0;
+    height: 38px;
+    line-height: 14px;
+    font-size: 12px;
+    width: 496px;
+    padding: 12px 10px;
+    outline: 0;
+}
+.tc-header .search .search-btn {
+    width: 100px;
+    height: 42px;
+    padding-left: 24px;
+    float: right;
+    line-height: 38px;
+    background-color: #FF6402;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+}
+.tc-header .search-layer {
+    width: 497px;
+    position: absolute;
+    z-index: 1111;
+    left: -2px;
+    top: 40px;
+    display: none;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 2px 3px rgba(66, 132, 217, 0.3);
+    background-color: #fff;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav_menu {
+    position: relative;
+    z-index: 1;
+    height: 40px;
+    background-color: #FF6402;
+}
+.nav_menu .area {
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav_menu li {
+    float: left;
+    position: relative;
+    margin-left: -1px;
+}
+.nav_menu li.home {
+    width: 301px;
+}
+.nav_menu a {
+    color: #fff;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    padding: 0 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.zhongbu{
+    position: relative;
+    margin: auto;
+    width: 1200px;
+    height:500px;
+    background-color:#e5e5e5;
+}
+.r1{
+    width: 100%;
+    height: 50px;
+
+}
+td{
+    padding-left:20px;
+    color: #1d1d1d;
+    font-size: 16px;
+}
+.d1{
+    width: 160px;
+    background-color: palegoldenrod;
+}
+.d2{
+    width: 240px;
+    background-color: darksalmon;
+}
+.d3{
+     width: 240px;
+     background-color: palegoldenrod;
+ }
+.d4{
+    width: 240px;
+    background-color: darksalmon;
+}
+.d5{
+    width: 240px;
+    background-color: palegoldenrod;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

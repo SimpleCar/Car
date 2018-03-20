@@ -63,5 +63,10 @@ public class CarServiceImpl implements CarService {
         return carMapper.selectPrice(car);
     }
 
+    @Override
+    public int updateUser(Car car) {
+        return carMapper.updateUser(car);
+    }
+
 
 }

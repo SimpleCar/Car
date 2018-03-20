@@ -4,7 +4,35 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.kgc.dao.OrderMapper">
 
+    <resultMap id="oderBean" type="Order">
+        <id property="oid" column="oid"/>
+        <result property="uid" column="uid"/>
+        <result property="bid" column="bid"/>
+        <result property="createdate" column="createdate"/>
+        <result property="state" column="state"/>
+        <result property="orderNum" column="orderNum"/>
+        <result property="cid" column="cid"/>
+        <collection property="cars" ofType="Car">
+            <id property="cid" column="hid"/>
+            <result property="cname" column="hname"/>
+            <result property="cprice" column="htype"/>
+            <result property="cleavel" column="hlevel"/>
+            <result property="cvariety" column="hcount"/>
+            <result property="cstock" column="hcount"/>
+            <result property="cmin" column="hcount"/>
+            <result property="cmax" column="hcount"/>
+            <result property="cimage" column="hcount"/>
+            <result property="cUser" column="hcount"/>
+            <result property="cBusiness" column="hcount"/>
+            <result property="cState" column="hcount"/>
+        </collection>
+    </resultMap>
+
     <insert id="insertOrders">
-        insert into order(uid,bid,date,orderNum,cid) VALUES (#{uid},#{bid},#{date},#{orderNum},#{cid});
+        insert into `order`(`uid`,`bid`,`createdate`,`orderNum`,`cid`) VALUES (#{uid},#{bid},#{createdate},#{orderNum},#{cid});
     </insert>
+
+    <select id="selectOrder" resultMap="oderBean">
+        SELECT *FROM `order` o LEFT JOIN `car` c ON o.uid=#{uid} = c.cUser
+    </select>
 </mapper>
