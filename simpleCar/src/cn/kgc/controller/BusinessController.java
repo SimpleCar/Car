@@ -143,6 +143,13 @@ public class BusinessController {
         System.out.println("车的价格："+cprice);
         System.out.println("车的品牌："+cvariety);
         System.out.println("车的级别："+cleavel);
+        Car car=new Car();
+        car.setCname(cname);
+        int cp=Integer.parseInt(cprice);
+        car.setCprice(cp);
+        car.setCvariety(cvariety);
+        int cl=Integer.parseInt(cleavel);
+        car.setCleavel(cl);
         Object object=request.getSession().getAttribute("bb");
         if (object==null){
             System.out.println("为空的+++++++++++++++++++");
@@ -150,6 +157,8 @@ public class BusinessController {
             Business business= (Business) object;
             model.addAttribute("business",business);
             int bId=business.getbId();
+            car.setcBusiness(bId);
+            businessService.addCar(car);
             System.out.println("商家在数据库的id是"+bId+"********************************");
             List<Car> carListByBusiness=businessService.fineCarListByBusiness(bId);
             model.addAttribute("carListByBusiness",carListByBusiness);
