@@ -15,8 +15,6 @@ public class Order {
     private String createdate;//下单时间
     private int state;//订单状态
     private int cid;  //车的ID
-
-
     private List<Car> cars;
 
     public List<Car> getCars() {

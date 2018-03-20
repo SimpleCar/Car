@@ -4,6 +4,8 @@ import cn.kgc.entity.Car;
 import cn.kgc.entity.Order;
 import cn.kgc.service.CarService;
 import cn.kgc.service.OrderService;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -92,14 +94,25 @@ public class OrderController {
         model.addAttribute("ordel",selectOrdel);
         int updateUser=carService.updateUser(car);
         int createOrdel = orderService.insertOrders(order);
-
-        response.getWriter().write("  {\"end\":" + random + ",\"discount\":" + carid + "}");
-
-
+        String s = JSON.toJSONString(selectOrdel);
+        response.getWriter().print(s);
     }
 
     @RequestMapping("goto")
     public String gotos(Order order, Model model, HttpServletRequest request) {
+
+     String str= String.valueOf(request.getSession().getAttribute("er"));
+        System.out.println(str+"1111111111111111111111111111111111111111");
+       int uid= (int) request.getSession().getAttribute("er");
+        System.out.println(uid+"====================================");
+       order.setUid(uid);
+        List<Order> selectOrdel=orderService.selectOrder(order);
+        model.addAttribute("selectOrdel",selectOrdel);
+        return "redirect:/goTo/order";
+    }
+
+    @RequestMapping("goToOrdel")
+    public String goToOrdel(){
         return "redirect:/goTo/order";
     }
 }

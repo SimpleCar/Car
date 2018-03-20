@@ -3,6 +3,8 @@ package cn.kgc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("goTo")
 public class GoTo {
@@ -53,7 +55,8 @@ public class GoTo {
     }
 
 @RequestMapping("order")
-    public  String order(){
+    public  String order(HttpServletRequest request){
+        request.getSession().setAttribute("er","1");
         return "OrderList";
 }
 }

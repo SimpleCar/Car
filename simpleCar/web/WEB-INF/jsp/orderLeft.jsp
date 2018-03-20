@@ -30,9 +30,12 @@
    tag.onclick.addClass("cur");
         })
     </script>
-    <nav class="user_nav">
+
+
+
+            <nav class="user_nav">
         <ul class="user_ul" name="list">
-            <li class=""><a href="/goTo/order">分期订单<i class="tip_r"></i></a></li>
+            <li class=""><a href="javascript:void(0)" id="jvaa">分期订单<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goSingle">个人资料<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goCredit">信用信息<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goTrueName">实名认证<i class="tip_r"></i></a></li>
@@ -58,6 +61,9 @@
         </aside>
     </div>
 </article>
+<script type="text/javascript">
+
+</script>
 
 </body>
 </html>

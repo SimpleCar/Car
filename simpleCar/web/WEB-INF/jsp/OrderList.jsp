@@ -37,6 +37,8 @@
     <script src="../../statics/orderList/hm_002.js"></script>
     <script type="text/javascript" async="" src="../../statics/orderList/dc.js"></script>
     <script src="../../statics/orderList/hm.js"></script>
+   <%-- <script src="../../statics/js/jquery-3.3.1.js"></script>--%>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         var locationCityId = 501;
         var xinche = 'http://kaizouba.taoche.com';
@@ -60,6 +62,7 @@
         var getSlideVerifyApi = '/Login/initialsign'
         var CheckSign = '/Login/checksign'
     </script>
+
 
     <!--[if lt IE 9]>
     <script src="../../statics/orderList/shim.dll.js?v=201706081140?v=201801301002"></script>
@@ -105,7 +108,7 @@
 
     <jsp:include page="orderLeft.jsp"/>
 
-
+    ${er}
     <section class="maincont fl" id="userRight">
         <!-- nav start -->
         <div class="nav_area">
@@ -127,93 +130,93 @@
 
 
         <c:forEach var="ordel" items="${ordel}">
-        <div class="order_area">
+            <div class="order_area">
 
-            <div class="order_thead">
-                <div>商品信息</div>
-                <div>分期信息</div>
-                <div>订单金额</div>
-                <div>交易状态</div>
-                <div>操作</div>
+                <div class="order_thead">
+                    <div>商品信息</div>
+                    <div>分期信息</div>
+                    <div>订单金额</div>
+                    <div>交易状态</div>
+                    <div>操作</div>
+                </div>
+                <div class="order_item" id="order_id_item">
+                    <header class="order_item_head">
+                        <ul>
+                            <li><i class="tag_type">新车贷</i></li>
+                            <li><span>{ordel.createdate}</span></li>
+                            <li>订单号：<span>${ordel.orderNum}</span></li>
+                            <li>下单人：<span>${ordel.uid}</span></li>
+                            <li>购车城市：<span>广州市</span></li>
+                        </ul>
+                    </header>
+                    <section class="order_item_body">
+                        <ul>
+                            <li>
+                                <img src="${ordel.cimage}" class="order_item_img">
+                                <h1 title="雪佛兰 科迈罗 2.0T RS">
+                                        ${ordel.cname}
+                                </h1>
+                                <p title="鑫氧贷"><span>鑫氧贷</span></p>
+                            </li>
+                            <li>
+                                <p>月供&nbsp;<span class="highlight">9010.03元</span></p>
+                                <p>总成本&nbsp;<span class="highlight">4.74万 </span></p>
+                            </li>
+                            <li>
+
+                                <p><span>无需订金</span></p>
+                            </li>
+                            <li stateid="789">
+                                <p><span>提交成功</span></p>
+                                <!--分期礼包start-->
+                                <!--分期礼包end-->
+                            </li>
+                            <li>
+
+                                <a target="_blank"
+                                   href="https://home.taoche.com/myorder/OrderDetail?childOrderId=741521166860123"
+                                   class="btn-link"><span>订单详情</span></a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </div>
-            <div class="order_item">
-                <header class="order_item_head">
-                    <ul>
-                        <li><i class="tag_type">新车贷</i></li>
-                        <li><span>{ordel.createdate}</span></li>
-                        <li>订单号：<span>${ordel.orderNum}</span></li>
-                        <li>下单人：<span>${ordel.uid}</span></li>
-                        <li>购车城市：<span>广州市</span></li>
-                    </ul>
-                </header>
-                <section class="order_item_body">
-                    <ul>
-                        <li>
-                            <img src="${ordel.cimage}" class="order_item_img">
-                            <h1 title="雪佛兰 科迈罗 2.0T RS">
-                                ${ordel.cname}
-                            </h1>
-                            <p title="鑫氧贷"><span>鑫氧贷</span></p>
-                        </li>
-                        <li>
-                            <p>月供&nbsp;<span class="highlight">9010.03元</span></p>
-                            <p>总成本&nbsp;<span class="highlight">4.74万 </span></p>
-                        </li>
-                        <li>
-
-                            <p><span>无需订金</span></p>
-                        </li>
-                        <li stateid="789">
-                            <p><span>提交成功</span></p>
-                            <!--分期礼包start-->
-                            <!--分期礼包end-->
-                        </li>
-                        <li>
-
-                            <a target="_blank"
-                               href="https://home.taoche.com/myorder/OrderDetail?childOrderId=741521166860123"
-                               class="btn-link"><span>订单详情</span></a>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-        </div>
         </c:forEach>
         <!-- order end -->
+        </div>
 
     </section>
 
-</section>
 
-<!-- pop start -->
-<section class="page_pop" id="popRefund">
-    <div class="masklayer"></div>
-    <article class="pop_area pop_refund">
-        <a href="javascript:void(0);" class="pop_x"></a>
-        <header class="pop_header">
-            <img data-bind="attr:{'src': carImageUrl, 'alt': carName}">
-            <div class="detail">
-                <h1 data-bind="text:carName"></h1>
-                <p>参考报价：<span class="highlight" data-bind="text:carPrice"></span></p>
-                <!--<p>订金：<span class="highlight" data-bind="text:orderAmount">¥199.00</span></p>-->
-            </div>
-        </header>
-        <section class="pop_body clrfix">
-            <ul class="form clrfix">
-                <li class="clrfix">
+    <!-- pop start -->
+    <section class="page_pop" id="popRefund">
+        <div class="masklayer"></div>
+        <article class="pop_area pop_refund">
+            <a href="javascript:void(0);" class="pop_x"></a>
+            <header class="pop_header">
+                <img data-bind="attr:{'src': carImageUrl, 'alt': carName}">
+                <div class="detail">
+                    <h1 data-bind="text:carName"></h1>
+                    <p>参考报价：<span class="highlight" data-bind="text:carPrice"></span></p>
+                    <!--<p>订金：<span class="highlight" data-bind="text:orderAmount">¥199.00</span></p>-->
+                </div>
+            </header>
+            <section class="pop_body clrfix">
+                <ul class="form clrfix">
+                    <li class="clrfix">
                     <span class="first-child"><img data-bind="attr:{'src': companyLogoUrl, 'alt': companyName}"
                                                    class="form_img"></span>
-                    <span data-bind="text:packageCompanyName"></span>
-                </li>
-                <li class="clrfix">
-                    <span class="first-child">退款金额</span>
-                    <span><span class="highlight" data-bind="text:orderAmount"></span></span>
-                </li>
-                <li class="clrfix" style="position:relative">
-                    <span class="first-child">退款原因</span>
-                    <span class="first-child" id="refundRemark-lab"
-                          style="position:absolute;left:0;top:48px;display:none;">退款说明</span>
-                    <span class="select">
+                        <span data-bind="text:packageCompanyName"></span>
+                    </li>
+                    <li class="clrfix">
+                        <span class="first-child">退款金额</span>
+                        <span><span class="highlight" data-bind="text:orderAmount"></span></span>
+                    </li>
+                    <li class="clrfix" style="position:relative">
+                        <span class="first-child">退款原因</span>
+                        <span class="first-child" id="refundRemark-lab"
+                              style="position:absolute;left:0;top:48px;display:none;">退款说明</span>
+                        <span class="select">
                         <div class="select-ctrl">
                             <div id="refundReason" data-id="-1" data-link="" data-disabled=""
                                  data-type=""><span>请选择</span></div>
@@ -235,113 +238,137 @@
                        
                         <div class="remind2">请填写退款说明</div>
                     </span>
-                </li>
-            </ul>
-        </section>
-        <footer class="pop_footer">
-            <a href="javascript:void(0);" class="btn_large btn_dark" id="btnRefundOk"><span>确定</span></a>
-            <a href="javascript:void(0);" class="btn_large btn_gray" id="btnRefundCancle"><span>取消</span></a>
-        </footer>
-    </article>
-</section>
-<!-- pop end -->
+                    </li>
+                </ul>
+            </section>
+            <footer class="pop_footer">
+                <a href="javascript:void(0);" class="btn_large btn_dark" id="btnRefundOk"><span>确定</span></a>
+                <a href="javascript:void(0);" class="btn_large btn_gray" id="btnRefundCancle"><span>取消</span></a>
+            </footer>
+        </article>
+    </section>
+    <!-- pop end -->
 
-<!--礼包弹层start-->
-<section id="popGifts" class="pop-up-layer">
-    <header>
-        <div class="close-layer"></div>
-    </header>
-    <dl data-bind="foreach:{data:loanPackageGifts,as:'gift'}"></dl>
-    <a class="confirm-btn" href="javascript:void(0);">完成领取</a><br>
-    稍后会有客服联系您
-</section>
-<!--礼包弹层end-->
-
-
-<!--Content-->
-<!--整屏蒙层start-->
-<div id="maskLayer"></div>
-<!--整屏蒙层end-->
+    <!--礼包弹层start-->
+    <section id="popGifts" class="pop-up-layer">
+        <header>
+            <div class="close-layer"></div>
+        </header>
+        <dl data-bind="foreach:{data:loanPackageGifts,as:'gift'}"></dl>
+        <a class="confirm-btn" href="javascript:void(0);">完成领取</a><br>
+        稍后会有客服联系您
+    </section>
+    <!--礼包弹层end-->
 
 
-<script src="../../statics/orderList/common.js"></script>
+    <!--Content-->
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
 
 
-<script src="../../statics/orderList/index.js"></script>
+    <script src="../../statics/orderList/common.js"></script>
 
-<!-- -----------------------尾开始--------------------------- -->
-<p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：
+
+    <script src="../../statics/orderList/index.js"></script>
+
+    <!-- -----------------------尾开始--------------------------- -->
+    <p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：
 京公网安备&nbsp;11010802020005
 号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018
  taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img class="ft-rc3" src="../../statics/orderList/adv-group.png" alt="广告"></p>
 
-<!-- -----------------------尾结束--------------------------- -->
-<!-- 2018 Taoche PC改版新车和二手车公共头部所需JS引用 -->
-<script src="../../statics/orderList/taoche_pc_header_common.js"></script>
-<!-- 广告代码 -->
-<script src="../../statics/orderList/senseNew.js"></script>
+    <!-- -----------------------尾结束--------------------------- -->
+    <!-- 2018 Taoche PC改版新车和二手车公共头部所需JS引用 -->
+    <script src="../../statics/orderList/taoche_pc_header_common.js"></script>
+    <!-- 广告代码 -->
+    <script src="../../statics/orderList/senseNew.js"></script>
 
-<!--百度统计PC-->
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "../../statics/orderList/hm.js?b43ce35f868b496d8c3af5108a539019";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<!--webtrendsPC-->
-<script type="text/javascript" src="../../statics/orderList/dcs_ucar.js"></script>
-<!--大数据-->
-<script type="text/javascript">
-    (function () {
-        var dc = document.createElement("script");
-        dc.type = "text/javascript";
-        dc.async = true;
-        dc.src = "../../statics/orderList/dc.js?163"; //此ID为系统生成的网站唯一标识
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(dc, s);
-    })();
-</script>
-<!-- 百度统计pc端 -->
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = window.location.host.indexOf("etaoche.cn") >= 0 ? "https://hm.baidu.com/hm.js?f68148618e51c0e86681df69a3d0d08d" : "https://hm.baidu.com/hm.js?db7dedc48a653d8087cb460082e491b4";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
+    <!--百度统计PC-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "../../statics/orderList/hm.js?b43ce35f868b496d8c3af5108a539019";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--webtrendsPC-->
+    <script type="text/javascript" src="../../statics/orderList/dcs_ucar.js"></script>
+    <!--大数据-->
+    <script type="text/javascript">
+        (function () {
+            var dc = document.createElement("script");
+            dc.type = "text/javascript";
+            dc.async = true;
+            dc.src = "../../statics/orderList/dc.js?163"; //此ID为系统生成的网站唯一标识
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dc, s);
+        })();
+    </script>
+    <!-- 百度统计pc端 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = window.location.host.indexOf("etaoche.cn") >= 0 ? "https://hm.baidu.com/hm.js?f68148618e51c0e86681df69a3d0d08d" : "https://hm.baidu.com/hm.js?db7dedc48a653d8087cb460082e491b4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
-<!-- 易鑫统计基础代码 -->
-<script>
-    (function () {
-        var bc = document.createElement('script');
-        bc.type = 'text/javascript';
-        bc.async = true;
-        bc.src = '../../statics/orderListbc.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(bc, s);
-    })();
-</script>
+    <!-- 易鑫统计基础代码 -->
+    <script>
+        (function () {
+            var bc = document.createElement('script');
+            bc.type = 'text/javascript';
+            bc.async = true;
+            bc.src = '../../statics/orderListbc.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(bc, s);
+        })();
+    </script>
 
-<!--seo,自动推送代码-->
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = '../../statics/orderList/push.js';
-        }
-        else {
-            bp.src = '../../statics/orderList/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+    <!--seo,自动推送代码-->
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = '../../statics/orderList/push.js';
+            }
+            else {
+                bp.src = '../../statics/orderList/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+
+
+
+            //为点击的绑定事件
+            $("a").on("click","#jvaa",function () {
+                alert("进入");
+                var agio = 0.1;
+                var carname = $("#changeCar").html();
+                $.ajax({
+
+
+                    //路径
+                    url: "/carController/getAJAX",
+                    //是否异步，默认true
+                    async: true,
+                    //类型post
+                    type: "POST",
+                    data: {"carname": carname, "end": agio},
+                    success: function (data) {
+                        window.location = "/orderController/goto"
+                    },
+                    dataType: "json"
+                });});
+
+    </script>
 
 
 </body>
