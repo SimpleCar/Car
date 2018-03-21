@@ -6,6 +6,7 @@ import cn.kgc.service.CarService;
 import cn.kgc.service.OrderService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -101,14 +102,18 @@ public class OrderController {
     @RequestMapping("goto")
     public String gotos(Order order, Model model, HttpServletRequest request) {
 
-     String str= String.valueOf(request.getSession().getAttribute("er"));
+     /*String str= String.valueOf(request.getSession().getAttribute("er"));
         System.out.println(str+"1111111111111111111111111111111111111111");
        int uid= (int) request.getSession().getAttribute("er");
-        System.out.println(uid+"====================================");
+        System.out.println(uid+"====================================");*/
+     int uid=1;
        order.setUid(uid);
         List<Order> selectOrdel=orderService.selectOrder(order);
         model.addAttribute("selectOrdel",selectOrdel);
-        return "redirect:/goTo/order";
+        for(Order order1:selectOrdel){
+            System.out.println(order1.toString());
+        }
+        return "OrderList";
     }
 
     @RequestMapping("goToOrdel")

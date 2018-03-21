@@ -56,7 +56,6 @@ public class GoTo {
 
 @RequestMapping("order")
     public  String order(HttpServletRequest request){
-        request.getSession().setAttribute("er","1");
         return "OrderList";
 }
 }

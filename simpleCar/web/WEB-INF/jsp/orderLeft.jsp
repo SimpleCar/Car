@@ -15,9 +15,9 @@
 <article class="user_nav_box" id="userLeft">
     <div class="user_photo_box">
         <div class="user_photo">
-            <img src="../../statics/credit/images/user_photo_bg.html.png" class="user_photo_bg" />
+            <img src="../../statics/credit/images/user_photo_bg.html.png" class="user_photo_bg"/>
             <span class="bg_txt">点我换一个</span>
-            <img src="../../statics/credit/car-008.png" class="photo" />
+            <img src="../../statics/credit/car-008.png" class="photo"/>
         </div>
         <div class="user_name">132****6334</div>
     </div>
@@ -26,16 +26,15 @@
     </script>
     <script>
         $(document).ready(function () {
-   var tag= $("list").getElementsByTagName("li");
-   tag.onclick.addClass("cur");
+            var tag = $("list").getElementsByTagName("li");
+            tag.onclick.addClass("cur");
         })
     </script>
 
 
-
-            <nav class="user_nav">
+    <nav class="user_nav">
         <ul class="user_ul" name="list">
-            <li class=""><a href="javascript:void(0)" id="jvaa">分期订单<i class="tip_r"></i></a></li>
+            <li class=""><a href="/orderController/goto">分期订单<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goSingle">个人资料<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goCredit">信用信息<i class="tip_r"></i></a></li>
             <li class=""><a href="/orderController/goTrueName">实名认证<i class="tip_r"></i></a></li>
@@ -61,9 +60,30 @@
         </aside>
     </div>
 </article>
-<script type="text/javascript">
-
-</script>
+<%--<script>
+    $(function () {
+        $("#jvaa").click(function () {
+            alert("Jinru1");
+            //通过10%拿到车的名字并改变折扣价
+            var agio = 0.1;
+            var carname = $("#jvaa").html();
+            $.ajax({
+                //路径
+                url: "/carController/getAJAX",
+                //是否异步，默认true
+                async: true,
+                //类型post
+                type: "POST",
+                data: {"carname": carname, "end": agio},
+                success: function (data) {
+                    alert("回调成功")
+                    window.location = "/orderController/goto"
+                },
+                dataType: "json"
+            })
+        })
+    })
+</script>--%>
 
 </body>
 </html>

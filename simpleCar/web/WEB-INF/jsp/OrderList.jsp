@@ -37,7 +37,7 @@
     <script src="../../statics/orderList/hm_002.js"></script>
     <script type="text/javascript" async="" src="../../statics/orderList/dc.js"></script>
     <script src="../../statics/orderList/hm.js"></script>
-   <%-- <script src="../../statics/js/jquery-3.3.1.js"></script>--%>
+    <%-- <script src="../../statics/js/jquery-3.3.1.js"></script>--%>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         var locationCityId = 501;
@@ -108,18 +108,13 @@
 
     <jsp:include page="orderLeft.jsp"/>
 
-    ${er}
     <section class="maincont fl" id="userRight">
         <!-- nav start -->
         <div class="nav_area">
             <ul class="nav_list clrfix">
-                <c:forEach var="ordel" items="${ordel}">
-                    <li>
-                            ${ordel.ordelNum}
-                    </li>
-                </c:forEach>
+                <c:forEach var="ordel" items="${selectOrdel}">
+                <c:forEach var="car" items="${ordel.cars}">
                 <li>
-
                 </li>
                 <li class="active"><a href="javascript:void(0);">所有订单</a></li>
 
@@ -127,60 +122,58 @@
         </div>
         <!-- nav end -->
         <!-- order start -->
+        <div class="order_area">
 
-
-        <c:forEach var="ordel" items="${ordel}">
-            <div class="order_area">
-
-                <div class="order_thead">
-                    <div>商品信息</div>
-                    <div>分期信息</div>
-                    <div>订单金额</div>
-                    <div>交易状态</div>
-                    <div>操作</div>
-                </div>
-                <div class="order_item" id="order_id_item">
-                    <header class="order_item_head">
-                        <ul>
-                            <li><i class="tag_type">新车贷</i></li>
-                            <li><span>{ordel.createdate}</span></li>
-                            <li>订单号：<span>${ordel.orderNum}</span></li>
-                            <li>下单人：<span>${ordel.uid}</span></li>
-                            <li>购车城市：<span>广州市</span></li>
-                        </ul>
-                    </header>
-                    <section class="order_item_body">
-                        <ul>
-                            <li>
-                                <img src="${ordel.cimage}" class="order_item_img">
-                                <h1 title="雪佛兰 科迈罗 2.0T RS">
-                                        ${ordel.cname}
-                                </h1>
-                                <p title="鑫氧贷"><span>鑫氧贷</span></p>
-                            </li>
-                            <li>
-                                <p>月供&nbsp;<span class="highlight">9010.03元</span></p>
-                                <p>总成本&nbsp;<span class="highlight">4.74万 </span></p>
-                            </li>
-                            <li>
-
-                                <p><span>无需订金</span></p>
-                            </li>
-                            <li stateid="789">
-                                <p><span>提交成功</span></p>
-                                <!--分期礼包start-->
-                                <!--分期礼包end-->
-                            </li>
-                            <li>
-
-                                <a target="_blank"
-                                   href="https://home.taoche.com/myorder/OrderDetail?childOrderId=741521166860123"
-                                   class="btn-link"><span>订单详情</span></a>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
+            <div class="order_thead">
+                <div>商品信息</div>
+                <div>分期信息</div>
+                <div>订单金额</div>
+                <div>交易状态</div>
+                <div>操作</div>
             </div>
+            <div class="order_item" id="order_id_item">
+                <header class="order_item_head">
+                    <ul>
+                        <li><i class="tag_type">新车贷</i></li>
+                        <li><span>${ordel.createdate}</span></li>
+                        <li>订单号：<span>${ordel.orderNum}</span></li>
+                        <li>下单人：<span>${ordel.uid}</span></li>
+                        <li>购车城市：<span>广州市</span></li>
+                    </ul>
+                </header>
+                <section class="order_item_body">
+                    <ul>
+                        <li>
+                            <img src="${car.cimage}" class="order_item_img">
+                            <h1 title="雪佛兰 科迈罗 2.0T RS">
+                                    ${car.cname}
+                            </h1>
+                            <p title="鑫氧贷"><span>鑫氧贷</span></p>
+                        </li>
+                        <li>
+                            <p>月供&nbsp;<span class="highlight">9010.03元</span></p>
+                            <p>总成本&nbsp;<span class="highlight">4.74万 </span></p>
+                        </li>
+                        <li>
+
+                            <p><span>无需订金</span></p>
+                        </li>
+                        <li stateid="789">
+                            <p><span>提交成功</span></p>
+                            <!--分期礼包start-->
+                            <!--分期礼包end-->
+                        </li>
+                        <li>
+
+                            <a target="_blank"
+                               href="https://home.taoche.com/myorder/OrderDetail?childOrderId=741521166860123"
+                               class="btn-link"><span>订单详情</span></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        </c:forEach>
         </c:forEach>
         <!-- order end -->
         </div>
@@ -346,27 +339,27 @@
         })();
 
 
+        //为点击的绑定事件
+        $("a").on("click", "#jvaa", function () {
+            alert("进入");
+            var agio = 0.1;
+            var carname = $("#changeCar").html();
+            $.ajax({
 
-            //为点击的绑定事件
-            $("a").on("click","#jvaa",function () {
-                alert("进入");
-                var agio = 0.1;
-                var carname = $("#changeCar").html();
-                $.ajax({
 
-
-                    //路径
-                    url: "/carController/getAJAX",
-                    //是否异步，默认true
-                    async: true,
-                    //类型post
-                    type: "POST",
-                    data: {"carname": carname, "end": agio},
-                    success: function (data) {
-                        window.location = "/orderController/goto"
-                    },
-                    dataType: "json"
-                });});
+                //路径
+                url: "/carController/getAJAX",
+                //是否异步，默认true
+                async: true,
+                //类型post
+                type: "POST",
+                data: {"carname": carname, "end": agio},
+                success: function (data) {
+                    window.location = "/orderController/goto"
+                },
+                dataType: "json"
+            });
+        });
 
     </script>
 

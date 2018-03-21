@@ -81,4 +81,18 @@ public class Order {
     public void setCreatedate(String createdate) {
         this.createdate = createdate;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "oid=" + oid +
+                ", orderNum=" + orderNum +
+                ", bid=" + bid +
+                ", uid=" + uid +
+                ", createdate='" + createdate + '\'' +
+                ", state=" + state +
+                ", cid=" + cid +
+                ", cars=" + cars +
+                '}';
+    }
 }

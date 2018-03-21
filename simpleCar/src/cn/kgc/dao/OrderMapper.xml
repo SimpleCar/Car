@@ -13,18 +13,18 @@
         <result property="orderNum" column="orderNum"/>
         <result property="cid" column="cid"/>
         <collection property="cars" ofType="Car">
-            <id property="cid" column="hid"/>
-            <result property="cname" column="hname"/>
-            <result property="cprice" column="htype"/>
-            <result property="cleavel" column="hlevel"/>
-            <result property="cvariety" column="hcount"/>
-            <result property="cstock" column="hcount"/>
-            <result property="cmin" column="hcount"/>
-            <result property="cmax" column="hcount"/>
-            <result property="cimage" column="hcount"/>
-            <result property="cUser" column="hcount"/>
-            <result property="cBusiness" column="hcount"/>
-            <result property="cState" column="hcount"/>
+            <id property="cid" column="cid"/>
+            <result property="cname" column="cname"/>
+            <result property="cprice" column="cprice"/>
+            <result property="cleavel" column="cleavel"/>
+            <result property="cvariety" column="cvariety"/>
+            <result property="cstock" column="cstock"/>
+            <result property="cmin" column="cmin"/>
+            <result property="cmax" column="cmax"/>
+            <result property="cimage" column="cimage"/>
+            <result property="cUser" column="cUser"/>
+            <result property="cBusiness" column="cBusiness"/>
+            <result property="cState" column="cState"/>
         </collection>
     </resultMap>
 
@@ -33,6 +33,6 @@
     </insert>
 
     <select id="selectOrder" resultMap="oderBean">
-        SELECT *FROM `order` o LEFT JOIN `car` c ON o.uid=#{uid} = c.cUser
+         SELECT *FROM `order` t1 LEFT JOIN `car` t2 ON t1.uid=#{uid} =t2.cUser
     </select>
 </mapper>
