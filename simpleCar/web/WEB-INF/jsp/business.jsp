@@ -142,7 +142,7 @@
     </ul>
 </div>
 <!--首页-->--%>
-<jsp:include page="top2.jsp"></jsp:include>
+
 
 <!--中部-->
 <div class="zhongbu">
@@ -164,6 +164,10 @@
     </table>
 </div>
 <!--中部-->
+<script src="../../statics/js/common.js"></script>
+<script src="../../statics/js/index.js"></script>
+<script src="../../statics/js/header_common.js"></script>
 <jsp:include page="bottom.jsp"></jsp:include>
+
 </body>
 </html>
