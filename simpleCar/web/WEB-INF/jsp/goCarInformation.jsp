@@ -54,7 +54,7 @@
             })
         })
     </script>
-  <%--  //分期--%>
+    <%--  //分期--%>
     <script type="text/javascript">
         $(function () {
             $("#myTerm a").click(function () {
@@ -294,6 +294,7 @@
     </script>
 </head>
 <body>
+<p>11111111111111111111111111111111111111111111111111</p>
 <!--二手车公共头判断tab定位-->
 <input type="hidden" id="hidMenuFocus" value="xinche">
 <jsp:include page="top2.jsp"></jsp:include>
@@ -2517,37 +2518,55 @@
 
     })
 </script>
+
+<div id="tv_ffff">
+    ffffffffeddd
+
+</div>
 <script type="text/javascript">
     $(function () {
         $("#s1").click(function () {
-            var ss = $("a[class='select_a cur']").text();
-            var carname = $("#changeCar").html();
-            //拿到首付
-            var downPayment = ss.substring(0, ss.indexOf("%")) * 0.01;
-            //拿到分多少起期
-            var stage = ss.substring(ss.indexOf("%") + 1, ss.indexOf("期"));
-            //拿到车的ID
-            var carid = $("#carid").html();
-            //拿到卖家的ID
-            var bid = $("#bid").html();
-            //拿到买家ID
-            var uid=$("#uid").html();
-            $.ajax({
-                //路径
-                url: "/orderController/createOrder",
-                //是否异步，默认true
-                async: false,
-                //类型post
-                type: "POST",
-                data: {"carname": carname, "downPayment": downPayment,"stage":stage,"carid":carid,"bid":bid,"uid":uid},
-                success: function (data) {
-                    window.location.href = "/orderController/goto";
+                var ss = $("a[class='select_a cur']").text();
+                var carname = $("#changeCar").html();
+                //拿到首付
+                var downPayment = ss.substring(0, ss.indexOf("%")) * 0.01;
+                //拿到分多少起期
+                var stage = ss.substring(ss.indexOf("%") + 1, ss.indexOf("期"));
+                //拿到车的ID
+                var carid = $("#carid").html();
+                //拿到卖家的ID
+                var bid = $("#bid").html();
+                //拿到买家ID
+                var uid = $("#uid").html();
+                $.ajax({
+                    //路径
+                    url: "/orderController/createOrder",
+                    //是否异步，默认true
+                    async: false,
+                    //类型post
+                    type: "get",
+                    dataType:"text",
+                    data: {
+                        "carname": carname,
+                        "downPayment": downPayment,
+                        "stage": stage,
+                        "carid": carid,
+                        "bid": bid,
+                        "uid": uid
+                    },
+                    success: function (data) {
+                      /*  data = '[{"bid":0,"cars":[],"cid":1,"createdate":"2018-03-20%2014:42:22.0","oid":1,"orderNum":21729309,"state":0,"uid":1}]';*/
+                         /*var str =  JSON.parse(data);
+                        alert(str);*/
+                        window.location = "/orderController/goToOrdel"
+                        alert("成功")
+                          /*  "?data="+data;*/
+                    },
 
 
-                },
-                dataType: "json"
-            })
-        })
+
+    })
+    })
 
     })
 </script>
@@ -2555,6 +2574,9 @@
 <!-- 页尾 start-->
 <p class="ft-copy"><span>经营许可证编号：京ICP备15006372号-5&nbsp;&nbsp;公安备案号码：京公网安备&nbsp;11010802020005号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight&nbsp;©&nbsp;2015-2018 taoche.com版权所有&nbsp;北京易鑫信息科技有限公司</span><img
         class="ft-rc3" src="../../statics/image/adv-group.png" alt="广告"></p>
+<div id="newtablenewtable">
+   <%-- <tr><th>name</th><th>age</th></tr>--%>
+</div>
 <!-- 页尾 end-->
 
 <script src="../../statics/js/common.js"></script>

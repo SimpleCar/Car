@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../statics/css/xin.css">
 </head>
 <body>
-<!--顶-->
+<%--<!--顶-->
 <div class="shortcut">
     <div class="w1200 clearfix">
         <!-- left -->
@@ -141,7 +141,8 @@
         </li>
     </ul>
 </div>
-<!--首页-->
+<!--首页-->--%>
+<jsp:include page="top2.jsp"></jsp:include>
 
 <!--中部-->
 <div class="zhongbu">
@@ -163,6 +164,6 @@
     </table>
 </div>
 <!--中部-->
-
+<jsp:include page="bottom.jsp"></jsp:include>
 </body>
 </html>
