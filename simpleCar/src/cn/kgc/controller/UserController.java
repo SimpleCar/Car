@@ -28,22 +28,37 @@ public class UserController {
     }
 
     @RequestMapping("signIn")
-    public String signIn(Model model, HttpServletRequest request) {
-        String phone = request.getParameter("mobile");
-        model.addAttribute("phone", phone);
+    public String signIn(HttpServletResponse servletResponse, HttpServletRequest request) {
+        String phone = request.getParameter("uphone");
+        User user = userService.selectByPhone(phone);
+        request.getSession().setAttribute("uname", user.getUname());
         return "indexPage";
+    }
+
+    @RequestMapping("logout")
+    public void logout(HttpServletRequest servletRequest,HttpServletResponse servletResponse) {
+        servletRequest.getSession().removeAttribute("uname");
+        servletRequest.getSession().invalidate();
+        try {
+            servletResponse.getWriter().write("logout");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        /*servletRequest.getSession().setAttribute("uname", null);*/
+
     }
 
     @RequestMapping("goSignUp")
     public String goSignUp() {
+
         return "signUp";
     }
 
     @RequestMapping("signUp")
-    public String signUp(User user, Model model) {
+    public String signUp(User user, HttpServletRequest servletRequest) {
         int result = userService.insertUser(user.getUphone(), user.getUpwd());
         if (result > 0) {
-            model.addAttribute("phone", user.getUphone());
+            servletRequest.getSession().setAttribute("uname",user.getUphone());
             return "indexPage";
         } else {
             return "signUp";
@@ -54,7 +69,7 @@ public class UserController {
     public void checkPhoneNum(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
         String phoneNum = servletRequest.getParameter("phoneInput");
         User user = userService.selectByPhone(phoneNum);
-        boolean isPhoneExist = user!=null?true:false;
+        boolean isPhoneExist = user != null ? true : false;
         servletResponse.setContentType("text/html;charset=UTF-8");
         String data = JSON.toJSONString(isPhoneExist);
         try {
@@ -68,8 +83,8 @@ public class UserController {
     public void checkPwd(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
         String phoneNum = servletRequest.getParameter("phoneInput");
         String pwd = servletRequest.getParameter("pwd");
-        User user = userService.selectUser(phoneNum,pwd);
-        boolean isUserExist = user!=null?true:false;
+        User user = userService.selectUser(phoneNum, pwd);
+        boolean isUserExist = user != null ? true : false;
         servletResponse.setContentType("text/html;charset=UTF-8");
         String data = JSON.toJSONString(isUserExist);
         try {
@@ -87,24 +102,14 @@ public class UserController {
         int code = random.nextInt(max) % (max - min + 1) + min;
         String code2 = code + "";
         String phone = servletRequest.getParameter("phone");
-        sendCode.sendSms(phone,code2);
         try {
+            sendCode.sendSms(phone, code2);
             servletResponse.getWriter().write(code2);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    @RequestMapping("test")
-    public String test(HttpServletResponse servletResponse,Model model){
-      User user =  userService.selectByPhone("13668925835");
-        try {
-            servletResponse.getWriter().write("+user+");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        model.addAttribute("user",user);
-        return "test";
-    }
+
 }

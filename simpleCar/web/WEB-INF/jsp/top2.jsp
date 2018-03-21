@@ -29,20 +29,33 @@
         </div>
         <!-- right -->
         <ul class="clearfix shortcut_info float-r">
+            <c:if test="${uname!=null}">
+                <li>
+                    <span>欢迎来到淘车</span>
+                    <a href="javascript:;" class="active" id="tc_top_myNickName">
+                            ${uname}</a>
+                </li>
+            </c:if>
+            <c:if test="${uname==null}">
+                <li>
+                    <span>欢迎来到淘车</span>
+                    <a href="${pageContext.request.contextPath}/goTo/signIn" class="active" id="tc_top_myNickName">
+                            登录</a>
+                </li>
+            </c:if>
 
-            <li>
-                <span>欢迎来到淘车</span>
-                <a href="${pageContext.request.contextPath}/goTo/signIn" class="active" id="tc_top_myNickName">登录</a>
-            </li>
             <li id="tc_top_liMyTaoche" class="my-tc">
                 <a href="javascript:;" class="info-link" logwt="navigation_header_login_C" id="tc_top_myTaoche">我的淘车
                     <i></i>
                 </a>
                 <div class="my-tc-menu" id="tc_top_myTaocheList">
                     <a href="${pageContext.request.contextPath}/goTo/order" target="_blank">新车订单</a>
-                    <%--<a href="${pageContext.request.contextPath}/goTo/order" target="_blank">退出登录</a>--%>
-                </div>
+                    <c:if test="${uname!=null}">
+                    <a href="javascript:logout()" target="_blank">退出登录</a>
+                    </c:if>
+                        </div>
             </li>
+
             <li id="tc_top_liMyDealer" class="my-sj">
                 <a href="javascript:;" class="info-link" id="tc_top_myDealer">我是商家
                     <i></i>
@@ -757,5 +770,19 @@
     <!--头部城市浮层 end -->
 </div>
 <!-- 页头 end-->
+
+<script src="../../statics/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    function logout() {
+
+        $.ajax({
+            url: "${pageContext.request.contextPath}/userController/logout",
+            async: false,
+            success: function (data) {
+                    window.location.reload();
+            }
+        })
+    }
+</script>
 </body>
 </html>
