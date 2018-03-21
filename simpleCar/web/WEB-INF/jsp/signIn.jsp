@@ -99,57 +99,75 @@
                     <blockquote id="form">
                         <!-- 账号密码登录 -->
                         <blockquote id="tab1" class="hide">
-                            <form id="sigin1" method="post" action="/userController/signIn">
-                            <div class="pad10B pad30RL">
-                                <div class="input-item clrfix">
-                                    <div class="input-box"><input id="inputNumber1" name="uphone" type="text" maxlength="11" class="inputNumber AppCheck nocheck data border1" autocomplete="off" placeholder="请输入手机号"></div>
+                            <form id="login1" method="post" action="/userController/signIn">
+                                <div class="pad10B pad30RL">
+                                    <div class="input-item clrfix">
+                                        <div class="input-box"><input id="inputNumber1" name="uphone" type="text"
+                                                                      maxlength="11"
+                                                                      class="inputNumber AppCheck nocheck data border1"
+                                                                      autocomplete="off" placeholder="请输入手机号"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="jyts-box"><span class="jyts jyts-mobile1"id="mobileFalse1">请输入正确的手机号</span></div>
-                            <div class="jyts-box"><span class="jyts"id="mobileNotExist1">请先注册</span></div>
-                            <div class="pad10B pad30RL">
-                                <div class="input-item clrfix">
-                                    <div class="input-box"><input autocomplete="new-password" id="password" name="password" type="password" minlength="6" maxlength="20" class="AppCheck nocheck data border1" placeholder="请输入密码"></div>
+                                <div class="jyts-box"><span class="jyts jyts-mobile1" id="mobileFalse1">请输入正确的手机号</span>
                                 </div>
-                            </div>
-                            <div class="jyts-box"><span class="jyts jyts-password" id="pwdFalse">请输入正确的密码</span></div>
-                            <%--图片验证码--%>
-                            <%--<div class="pad10B pad30RL clrfix">
-                                <div class="input-item fl clrfix w-180">
-                                    <div class="input-box"><input id="ImgValidateCode1" name="imgValidateCode" type="text" maxlength="4" class="inputNumber AppCheck nocheck data w-120 border1" autocomplete="off" placeholder="请输入右侧验证码"></div>
+                                <div class="jyts-box"><span class="jyts" id="mobileNotExist1">请先注册</span></div>
+                                <div class="pad10B pad30RL">
+                                    <div class="input-item clrfix">
+                                        <div class="input-box"><input autocomplete="new-password" id="password"
+                                                                      name="password" type="password" minlength="6"
+                                                                      maxlength="20"
+                                                                      class="AppCheck nocheck data border1"
+                                                                      placeholder="请输入密码"></div>
+                                    </div>
                                 </div>
-                                <div id="GetImgValidateCode1" class="GetImgValidateCode fr"><img src="./登录_files/GetImageValidateCode"></div>
-                            </div>
-                            <div class="jyts-box">
-                                <span class="jyts jyts-imgValidateCode">请输入正确的验证码</span>
-                            </div>--%>
+                                <div class="jyts-box"><span class="jyts jyts-password" id="pwdFalse">请输入正确的密码</span>
+                                </div>
+                                <%--图片验证码--%>
+                                <%--<div class="pad10B pad30RL clrfix">
+                                    <div class="input-item fl clrfix w-180">
+                                        <div class="input-box"><input id="ImgValidateCode1" name="imgValidateCode" type="text" maxlength="4" class="inputNumber AppCheck nocheck data w-120 border1" autocomplete="off" placeholder="请输入右侧验证码"></div>
+                                    </div>
+                                    <div id="GetImgValidateCode1" class="GetImgValidateCode fr"><img src="./登录_files/GetImageValidateCode"></div>
+                                </div>
+                                <div class="jyts-box">
+                                    <span class="jyts jyts-imgValidateCode">请输入正确的验证码</span>
+                                </div>--%>
                                 <div>
-                                <a class="apart fr hide" href="/userController/goResetPwd">忘记密码</a>
-                            </div>
-            </form>
+                                    <a class="apart fr hide" href="/userController/goResetPwd">忘记密码</a>
+                                </div>
+                            </form>
                         </blockquote>
 
                         <!-- 动态密码登录 -->
                         <blockquote id="tab2" class="">
-                            <form action="/userController/signIn" method="post">
-                            <div class="pad10B pad30RL">
-                                <div class="input-item clrfix">
-                                    <div class="input-box"><input id="inputNumber2" name="uphone" type="text" maxlength="11" class="inputNumber AppCheck nocheck data border1" autocomplete="off" placeholder="请输入手机号"></div>
+                            <form id="login2" action="/userController/signIn" method="post">
+                                <div class="pad10B pad30RL">
+                                    <div class="input-item clrfix">
+                                        <div class="input-box"><input id="inputNumber2" name="uphone" type="text"
+                                                                      maxlength="11"
+                                                                      class="inputNumber AppCheck nocheck data border1"
+                                                                      autocomplete="off" placeholder="请输入手机号"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="jyts-box"><span class="jyts jyts-mobile" id="mobileFalse2">请输入正确的手机号</span></div>
+                                <div class="jyts-box"><span class="jyts jyts-mobile" id="mobileFalse2">请输入正确的手机号</span>
+                                </div>
                                 <div class="jyts-box"><span class="jyts" id="mobileNotExist2">请先注册</span></div>
 
-                            <div class="pad10B pad30RL clrfix border1 nocheck">
-                                <div class="input-item fl clrfix w-180">
-                                    <div class="input-box"><input id="ValidateCode" autocomplete="off" name="mobileValidateCode" maxlength="4" type="text" class="inputNumber AppCheck data w-120" placeholder="请输入验证码"></div>
+                                <div class="pad10B pad30RL clrfix border1 nocheck">
+                                    <div class="input-item fl clrfix w-180">
+                                        <div class="input-box"><input id="ValidateCode" autocomplete="off"
+                                                                      name="mobileValidateCode" maxlength="4"
+                                                                      type="text"
+                                                                      class="inputNumber AppCheck data w-120"
+                                                                      placeholder="请输入验证码"></div>
+                                    </div>
+                                    <div id="GetValidateCode" class="fr btn code-btn disable">获取动态密码</div>
                                 </div>
-                                <div id="GetValidateCode" class="fr btn code-btn disable">获取动态密码</div>
-                            </div>
-                            <div class="jyts-box"><span class="jyts jyts-mobileValidateCode" id="codeFalse">请输入正确的验证码</span></div>
-                            <%--<div class="clrfix tools-box">
-                                <div class="fl"><input id="rememberMe2" name="rememberMe" class="data" type="checkbox" value="false"> 自动登录</div>
-                            </div>--%>
+                                <div class="jyts-box"><span class="jyts jyts-mobileValidateCode" id="codeFalse">请输入正确的验证码</span>
+                                </div>
+                              <%-- <div class="clrfix tools-box">
+                                    <div class="fl"><input id="rememberMe2" name="rememberMe" class="data" type="checkbox" value="false"> 自动登录</div>
+                                </div>--%>
                             </form>
                         </blockquote>
 
@@ -172,13 +190,12 @@
 <!--Content-->
 
 
-
 <script src="../../statics/js/common.js"></script>
 <script src="../../statics/js/index.js"></script>
 <script src="../../statics/js/header_common.js"></script>
 <script src="../../statics/js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-   $(document).ready(function () {
+    $(document).ready(function () {
         /*判断手机号*/
         function isPoneAvailable(pone) {
             var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
@@ -201,6 +218,7 @@
 
         /*60s重新发送验证码*/
         var countdown = 8;
+
         function countDown60(val) {
             if (countdown == 0) {
                 $(val).removeClass("disable");
@@ -219,7 +237,7 @@
 
         /*选择登录方式*/
 
-        $("#choose1").on("click",function () {
+        $("#choose1").click(function () {
             $("#choose1").addClass("cur");
             $("#tab1").removeClass("hide");
             $("#user-btn1").removeClass("hide");
@@ -239,12 +257,11 @@
         /*判断是否是手机号码*/
         var phone;
         $("#inputNumber2").blur(function () {
-            phone ==$("#inputNumber2").val();
+            phone = $("#inputNumber2").val();
             if (!isPoneAvailable(phone)) {
                 $("#mobileFalse2").removeClass("jyts");
                 $("#GetValidateCode").addClass("disable");
             } else {
-                alert("正在查询号码是否已注册")
                 /*判断手机号码是否注册*/
                 $.ajax({
                     url: "${pageContext.request.contextPath}/userController/checkPhoneNum",
@@ -255,10 +272,8 @@
                         var isExist = data
                         alert(isExist);
                         if (!isExist) {
-                            alert("号码没注册");
                             $("#mobileNotExist2").removeClass("jyts");
                         } else {
-                            alert("可以发送验证码");
                             $("#GetValidateCode").removeClass("disable");
                         }
                     },
@@ -266,18 +281,18 @@
                 })
             }
         });
-        $("#inputMobile2").focus(function () {
+        $("#inputNumber2").focus(function () {
             $("#mobileFalse1").addClass("jyts");
             $("#mobileNotExist1").addClass("jyts");
             $("#mobileFalse2").addClass("jyts");
             $("#mobileNotExist2").addClass("jyts");
         });
-       $("#inputMobile1").focus(function () {
-           $("#mobileFalse1").addClass("jyts");
-           $("#mobileNotExist1").addClass("jyts");
-           $("#mobileFalse2").addClass("jyts");
-           $("#mobileNotExist2").addClass("jyts");
-       });
+        $("#inputNumber1").focus(function () {
+            $("#mobileFalse1").addClass("jyts");
+            $("#mobileNotExist1").addClass("jyts");
+            $("#mobileFalse2").addClass("jyts");
+            $("#mobileNotExist2").addClass("jyts");
+        });
 
         /!*发送验证码*!/
         var code;
@@ -312,34 +327,34 @@
         $("#ValidateCode").focus(function () {
             $("#codeFalse").addClass("jyts");
         });
-       $("#user-btn2").click(function () {
-           if(!$(this).hasClass("disabled")){
-               $("#login2").submit();
-           }
-       });
+        $("#user-btn2").click(function () {
+            if (!$(this).hasClass("disabled")) {
+                $("#login2").submit();
+            }
+        });
 
         /*账号密码登录*/
-       $("#inputNumber1").blur(function () {
-           phone ==$("#inputNumber1").val();
-           if (!isPoneAvailable(phone)) {
-               $("#mobileFalse1").removeClass("jyts");
-           } else {
-               /*判断手机号码是否注册*/
-               $.ajax({
-                   url: "${pageContext.request.contextPath}/userController/checkPhoneNum",
-                   async: true,
-                   data: {"phoneInput": phone},
-                   type: "POST",
-                   success: function (data) {
-                       var isExist = data;
-                       if (!isExist) {
-                           $("#mobileNotExist1").removeClass("jyts");
-                       }
-                   },
-                   dataType: "json"
-               })
-           }
-       });
+        $("#inputNumber1").blur(function () {
+            phone = $("#inputNumber1").val();
+            if (!isPoneAvailable(phone)) {
+                $("#mobileFalse1").removeClass("jyts");
+            } else {
+                /*判断手机号码是否注册*/
+                $.ajax({
+                    url: "${pageContext.request.contextPath}/userController/checkPhoneNum",
+                    async: true,
+                    data: {"phoneInput": phone},
+                    type: "POST",
+                    success: function (data) {
+                        var isExist = data;
+                        if (!isExist) {
+                            $("#mobileNotExist1").removeClass("jyts");
+                        }
+                    },
+                    dataType: "json"
+                })
+            }
+        });
 
         /*密码验证*/
         $("#password").focus(function () {
@@ -363,7 +378,7 @@
                 dataType: "json"
             });
             $("#user-btn1").click(function () {
-                if(!$(this).hasClass("disabled")){
+                if (!$(this).hasClass("disabled")) {
                     $("#login1").submit();
                 }
             });

@@ -22,8 +22,8 @@ public class SendCode {
     static final String accessKeyId = "LTAIqftwjNDpGo1i";//"LTAImmRUibPmArPj";//"LTAIqftwjNDpGo1i"
     static final String accessKeySecret = "bflxRd7D9XsvEIn3UG9TornIzFIAHv";//"UuDuhRuqoyyzBZcYjhH5Y5G0O6sGzg";
 
-    public static SendSmsResponse sendSms(String phone, String code) {
-        try {
+    public static SendSmsResponse sendSms(String phone, String code) throws Exception{
+
             //可自助调整超时时间
             System.setProperty("sun.net.client.defaultConnectTimeout", "5000");
             System.setProperty("sun.net.client.defaultReadTimeout", "5000");
@@ -38,7 +38,7 @@ public class SendCode {
             //必填:待发送手机号
             request.setPhoneNumbers(phone);
             //必填:短信签名-可在短信控制台中找到
-            request.setSignName("simpleCar");//
+            request.setSignName("李俊鹏");//
             //必填:短信模板-可在短信控制台中找到
             request.setTemplateCode("SMS_126330119");//SMS_126330119,SMS_125116001
             //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
@@ -53,9 +53,6 @@ public class SendCode {
             //hint 此处可能会抛出异常，注意catch
             SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
             return sendSmsResponse;
-        } catch (ClientException e) {
-            e.printStackTrace();
-        }
-        return null;
+
     }
 }
