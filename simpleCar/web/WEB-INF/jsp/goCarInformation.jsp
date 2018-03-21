@@ -15,7 +15,7 @@
     <script type="text/javascript" async="" src="../../statics/js/dc.js"></script>
     <script src="../../statics/js/hm(1).js"></script>
     <script type="text/javascript" src="../../statics/js/irt.js"></script>
-    <title>广州奥迪Q5贷款方案_车贷|首付|分期|月供-淘车</title>
+    <title>广州车贷</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
@@ -2558,7 +2558,7 @@
                       /*  data = '[{"bid":0,"cars":[],"cid":1,"createdate":"2018-03-20%2014:42:22.0","oid":1,"orderNum":21729309,"state":0,"uid":1}]';*/
                          /*var str =  JSON.parse(data);
                         alert(str);*/
-                        window.location = "/orderController/goToOrdel"
+                        window.location = "/orderController/goto"
                         alert("成功")
                           /*  "?data="+data;*/
                     },
