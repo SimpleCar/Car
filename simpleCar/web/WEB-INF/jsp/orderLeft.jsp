@@ -19,7 +19,7 @@
             <span class="bg_txt">点我换一个</span>
             <img src="../../statics/credit/car-008.png" class="photo"/>
         </div>
-        <div class="user_name">132****6334</div>
+        <div class="user_name">${uname}</div>
     </div>
     <script src="../../statics/js/jquery-3.3.1.js">
 

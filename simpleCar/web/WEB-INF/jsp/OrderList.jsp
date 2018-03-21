@@ -126,7 +126,6 @@
 
             <div class="order_thead">
                 <div>商品信息</div>
-                <div>分期信息</div>
                 <div>订单金额</div>
                 <div>交易状态</div>
                 <div>操作</div>
@@ -151,22 +150,17 @@
                             <p title="鑫氧贷"><span>鑫氧贷</span></p>
                         </li>
                         <li>
-                            <p>月供&nbsp;<span class="highlight">9010.03元</span></p>
-                            <p>总成本&nbsp;<span class="highlight">4.74万 </span></p>
-                        </li>
-                        <li>
-
-                            <p><span>无需订金</span></p>
+                            <p>金额&nbsp;<span class="highlight">${car.cprice}</span></p>
                         </li>
                         <li stateid="789">
-                            <p><span>提交成功</span></p>
+                            <p><span>${car.cState}</span></p>
                             <!--分期礼包start-->
                             <!--分期礼包end-->
                         </li>
                         <li>
 
                             <a target="_blank"
-                               href="https://home.taoche.com/myorder/OrderDetail?childOrderId=741521166860123"
+                               href="#"
                                class="btn-link"><span>订单详情</span></a>
                         </li>
                     </ul>
